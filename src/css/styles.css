@@ -13,29 +13,21 @@
 @import url('./modal.css');
 
 :root {
-  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
-  font-size: 16px;
+  font-family: Neue Montreal, Arial, sans-serif;
+  font-size: 18px;
   line-height: 24px;
   font-weight: 400;
 
   color: #242424;
-  background-color: rgba(255, 255, 255, 0.87);
-
+  background-color: #F4F4F4;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
 
-  
-  /* --primary-dark-color: #141414;
-  --primary-green-color: #A1C487;
-  --secondary-green-color: #EAF7E5;
-  --accent-color: #FC8A11;
-  --light-bg-color: #FAF3E7;
-  --white-gray-color: #F3F3F3;
-  --white: #fff;
-  --modal-white-color: #f8f8fa;
-  --gray-color: #8e8f99;
-  --accent-green-color: #77AC63; */
+  <!-- Колір тексту, іконок, лого, бекграунд футер-->
+  --primary-dark-color: #242424;
+  <!-- Колір бекграунду і світлих елементів-->
+  --primary-light-color: #F4F4F4;
 } 
