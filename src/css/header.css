@@ -24,3 +24,23 @@
   display: flex;
    justify-content: center;
 } */
+
+.heder-container {
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.logo-link {
+  fill: ;
+}
+.nav-heder {
+  display: flex;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  align-items: center;
+}
+
+.nav-list {
+  display: none;
+}
