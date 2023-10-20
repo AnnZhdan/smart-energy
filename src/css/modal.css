@@ -240,3 +240,32 @@
   font-weight: 500;
   line-height: 18px;
 }
+
+@media screen and (min-width: 768px) {
+  .modal {
+  }
+
+  .modal-content {
+    width: 704px;
+    height: auto;
+  }
+
+  .modal-rating-content {
+    width: 430px;
+  }
+
+  .modal {
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .modal {
+  }
+
+  .modal-content {
+    width: 708px;
+  }
+
+  .modal-rating-content {
+  }
+}
