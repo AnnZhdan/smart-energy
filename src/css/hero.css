@@ -54,3 +54,33 @@
 
 }
 
+.tags__list {
+    display: flex;
+    justify-content: center;
+    margin-left: -6px;
+}
+
+.tags__list-item {
+    flex-basis: calc(100% / 4 - 6px);
+    margin-left: 6px;
+    /* justify-content: center; */
+    font-style: normal;
+    font-size: 14px;
+    line-height: 1.29;  
+    /* height: 26px; */
+    padding-top: 4px;
+    padding-bottom: 4px;
+    padding-left: 16px;
+    padding-right: 16px;
+    border: 1px solid #242424;
+    border-radius: 30px;
+    margin-top: 20px;
+    /* fill: #AFB1B8; */
+}
+
+.working-out-outdoors-img {
+    width: 335px;
+    height: 450px;
+    margin-top: 16px;
+    
+}
