@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Your Energy</title>
     
-    <script type="module" crossorigin src="/smart-energy/assets/index-3b8c53ef.js"></script>
-    <link rel="stylesheet" href="/smart-energy/assets/index-014efc49.css">
+    <script type="module" crossorigin src="/smart-energy/assets/index-34f5d827.js"></script>
+    <link rel="stylesheet" href="/smart-energy/assets/index-6cd0e277.css">
   </head>
   <body>
 
@@ -135,7 +135,189 @@
     <!--Serhiy-->
     
     <!--Andrii S.-->
-    
+    <container>
+  <button id="openModalButton">Опен</button>
+
+  <div id="myModal" class="modal">
+    <div class="modal-content">
+      <span class="close" id="closeModalButton">&times;</span>
+
+      <img src="your_gif_image.gif" alt="Air bake" width="295" height="258" />
+
+      <div class="rating-container">
+        <label for="rating1">
+          <input type="radio" name="rating" id="rating1" value="1" required />
+        </label>
+      </div>
+
+      <div>
+        <div class="container-text-block">
+          <div class="text-block">
+            <p class="modal-parameters">Target</p>
+            <p class="modal-core">Abs</p>
+          </div>
+          <div class="text-block">
+            <p class="modal-parameters">Body Part</p>
+            <p class="modal-core">Waist</p>
+          </div>
+          <div class="text-block">
+            <p class="modal-parameters">Equipment</p>
+            <p class="modal-core">Body weight</p>
+          </div>
+          <div class="text-block">
+            <p class="modal-parameters">Popular</p>
+            <p class="modal-core">150</p>
+          </div>
+          <div class="text-block">
+            <p class="modal-parameters">Burned Calorie</p>
+            <p class="modal-core">323/3 min</p>
+          </div>
+        </div>
+        <div></div>
+      </div>
+      <p>
+        This refers to your core muscles, which include the rectus abdominis,
+        obliques, and transverse abdominis. They're essential for maintaining
+        posture, stability, and generating force in many movements. Exercises
+        that target the abs include crunches, leg raises, and planks.
+      </p>
+
+      <div class="container-button">
+        <button id="additionalButton1" class="button-favorites">
+          <p class="button-name-favorites">Add to favorites</p>
+        </button>
+        <button id="additionalButton2" class="button-rating">
+          <p class="button-name-rating">Give a rating</p>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div id="myModal2" class="modal">
+    <div class="modal-rating-content">
+      <span class="close" id="closeModalButton2">&times;</span>
+      <div class="modal-body">
+        <p class="modal-body-rating">Rating:</p>
+        <form id="ratingForm">
+          <div class="rating-container">
+            <label for="rating1">
+              <input
+                type="radio"
+                name="rating"
+                id="rating1"
+                value="1"
+                required
+              />
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="100"
+                height="100"
+                viewBox="0 0 100 100"
+              >
+                <use xlink:href="./images/icons.svg#icon-Star-1"></use>
+              </svg>
+            </label>
+            <label for="rating2">
+              <input
+                type="radio"
+                name="rating"
+                id="rating2"
+                value="2"
+                required
+              />
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="100"
+                height="100"
+                viewBox="0 0 100 100"
+              >
+                <use xlink:href="./images/icons.svg#icon-Star-1"></use>
+              </svg>
+            </label>
+            <label for="rating3">
+              <input
+                type="radio"
+                name="rating"
+                id="rating3"
+                value="3"
+                required
+              />
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="100"
+                height="100"
+                viewBox="0 0 100 100"
+              >
+                <use xlink:href="./images/icons.svg#icon-Star-1"></use>
+              </svg>
+            </label>
+            <label for="rating4">
+              <input
+                type="radio"
+                name="rating"
+                id="rating4"
+                value="4"
+                required
+              />
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="100"
+                height="100"
+                viewBox="0 0 100 100"
+              >
+                <use xlink:href="./images/icons.svg#icon-Star-1"></use>
+              </svg>
+            </label>
+            <label for="rating5">
+              <input
+                type="radio"
+                name="rating"
+                id="rating5"
+                value="5"
+                required
+              />
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="100"
+                height="100"
+                viewBox="0 0 100 100"
+              >
+                <use xlink:href="./images/icons.svg#icon-Star-1"></use>
+              </svg>
+            </label>
+          </div>
+          <div class="form-group">
+            <label for="email"></label>
+            <input
+              type="email"
+              name="email"
+              class="form-email"
+              required
+              placeholder="   Email"
+            />
+          </div>
+          <div class="form-group">
+            <label for="comment"></label>
+            <textarea
+              name="comment"
+              rows="4"
+              class="form-comment"
+              required
+              placeholder=" Your comment"
+            ></textarea>
+          </div>
+          <button type="submit" id="submitRatingButton" class="button-send">
+            Send
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <script src="modal.js"></script>
+  <script src="rating.js"></script>
+  <script src="server.js"></script>
+</container>
+
     
     
   </body>
