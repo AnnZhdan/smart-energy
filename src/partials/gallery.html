@@ -1,0 +1,69 @@
+<section class="galary">
+  <div class="container">
+    <h2 class="galary-title">Exercises</h2>
+    <ul class="galary-filters">
+      <button type="button" class="galary-filters-button">Body parts</button>
+      <button type="button" class="galary-filters-button">Muscles</button>
+      <button type="button" class="galary-filters-button">Equipment</button>
+    </ul>
+    <!-- Привіт, Олеся! В цей <ul> ти додасиш клас і будеш відмалювувати галерею через JS.
+     Ця li покищо тут, але ти скопіюєш її в свою функцію і відмалюєш через innerHTML,
+    а звідси видалиш)))-->
+    <ul>
+      <li class="galary-item">
+        <img
+          src="./img/back_wzzphw.jpg"
+          alt="${yourAlt}"
+          loading="lazy"
+          class="galary-item-img"
+        />
+        <div class="galary-item-text-wrapper">
+          <h3 class="galary-item-subtitle">Back</h3>
+          <p class="galery-item-text">Body parts</p>
+        </div>
+      </li>
+    </ul>
+
+ <!-- При натисканні на картку буде відмальовуватись список вправ. Я зверстав одну
+  вправу. Тут також скопіюєш <li> в свою функцію, а тут все видалиш -->
+
+    <ul>
+    <li class="exercise-item">
+      <div class="exercise-item-firth-wrapper">
+        <p class="exercise-item-workout">WORKOUT</p>
+      <p class="exercise-item-rating">4.0</p>
+      <svg class="exercise-item-star" width="18px" height="18px">
+        <use href="../img/icon-sprite.svg#icon-Star-1"></use>
+      </svg>
+      <button type="button" class="exercise-item-button">Start</button>
+    </div>
+      <div class="exercise-item-second-wrapper">
+        <svg class="exercise-item-run" width="18px" height="18px">
+        <use href="../img/icon-sprite.svg#icon-Star-1"></use>
+      </svg>
+      <h3 class="exercise-item-subtitle">Air bike</h3>
+    </div>
+      <ul class="exercise-item-list">
+        <li class="exercise-item-list-information">
+          <p class="information-text">
+            Burned calories:<span class="information-text-span"
+              >312 / 3 min</span
+            >
+          </p>
+        </li>
+        <li class="exercise-item-list-information">
+          <p class="information-text">
+            Body part:<span class="information-text-span">Waist</span>
+          </p>
+        </li>
+        <li class="exercise-item-list-information">
+          <p class="information-text">
+            Target:<span class="information-text-span">Abs</span>
+          </p>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</section>
+  </div>
+  

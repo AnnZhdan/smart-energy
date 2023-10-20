@@ -1,0 +1,106 @@
+.galary {
+}
+.container {
+}
+.galary-title {
+  color: var(--primary-dark-color);
+  margin-bottom: 20px;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 38px;
+  letter-spacing: -0.56px;
+}
+.galary-filters {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 28px;
+}
+.galary-filters-button {
+  border: none;
+  background-color: transparent;
+  color: var(--primary-dark-color);
+  font-family: Neue Montreal;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+}
+.galary-item {
+  width: 335px;
+  height: 225px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  position: relative;
+  background: linear-gradient(
+    0deg,
+    rgba(17, 17, 17, 0.5) 0%,
+    rgba(17, 17, 17, 0.5) 100%
+  );
+}
+.galary-item-img {
+  display: block;
+  max-width: 100%;
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+  border-radius: 12px;
+  position: relative;
+  z-index: -1;
+}
+.galary-item-text-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.galary-item-subtitle {
+  color: var(--primary-light-color);
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+}
+.galery-item-text {
+  color: rgba(244, 244, 244, 0.4);
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 18px;
+}
+
+.exercise-item {
+  width: 335px;
+  height: 141px;
+  border-radius: 15px;
+  background: #fff;
+  padding: 16px;
+}
+.exercise-item-firth-wrapper {
+  display: flex;
+}
+.exercise-item-workout {
+}
+.exercise-item-rating {
+}
+.exercise-item-star {
+  background-color: #000000;
+}
+.exercise-item-button {
+}
+.exercise-item-run {
+  background-color: #000000;
+}
+.exercise-item-subtitle {
+}
+.exercise-item-list {
+  display: flex;
+}
+.exercise-item-list-information {
+}
+.information-text {
+}
+.information-text-span {
+}
