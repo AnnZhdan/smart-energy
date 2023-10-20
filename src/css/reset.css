@@ -32,11 +32,9 @@ button {
   cursor: pointer;
 }
 
-.container {
+/* .container {
   width: 100%;
-  padding-left:20px;
-  padding-right: 20px;
-}
+} */
 
 
 @media screen and (min-width: 375px) {
