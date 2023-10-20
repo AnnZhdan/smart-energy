@@ -1,0 +1,42 @@
+.hero {
+    min-width: 335px;
+    margin-left: auto;
+    margin-right: auto;
+    background-repeat: no-repeat;  
+    background-position: center;
+    background-size: cover;
+}
+
+.container__title {
+    font-family: Neue Montreal;
+    color: #242424;
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 1.2;             
+    letter-spacing: 0.02em; 
+    margin-top: 80px;
+      
+}
+
+.container__title-accent {
+    font-family: Neue Montreal;
+    color: #242424;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 1.2;             
+    letter-spacing: 0.02em; 
+     
+}
+
+.container__text {
+    font-family: Neue Montreal;
+    color: #242424;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.29;             
+    letter-spacing: 0.02em; 
+    margin-top: 20px;
+
+}
+
