@@ -12,8 +12,15 @@
 @import url('./footer.css');
 @import url('./modal.css');
 
+
+@font-face {
+    font-family: 'Neue Montreal';
+    src: url('../fonts/NeueMontreal-Regular.woff') format('woff');
+    src: url('../fonts/NeueMontreal-Regular.woff2') format('woff2');
+  }
+
 :root {
-  font-family: Neue Montreal, Arial, sans-serif;
+  font-family: 'Neue Montreal', sans-serif;
   font-size: 18px;
   line-height: 24px;
   font-weight: 400;
