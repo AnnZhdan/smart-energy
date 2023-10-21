@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Your Energy</title>
     
-    <script type="module" crossorigin src="/smart-energy/assets/index-fbdcf727.js"></script>
-    <link rel="stylesheet" href="/smart-energy/assets/styles-3acf2081.css">
+    <script type="module" crossorigin src="/smart-energy/assets/index-40851cbf.js"></script>
+    <link rel="stylesheet" href="/smart-energy/assets/styles-b12571b5.css">
   </head>
   <body>
     <!--Anna V.-->
@@ -767,31 +767,46 @@
         </svg>
       </button>
       <div class="modal-info">
-        <img class="gif-modal" src="" alt="" width="295" height="258" />
-        <div class="title-inform-modal">
-          <h2 class="title-modal"></h2>
-          <p class="modal-rating"></p>
+        <div>
+          <img class="gif-modal" src="" alt="" width="295" height="258" />
         </div>
-        <div class="text-container">
-          <p class="modal-part"></p>
-          <p class="modal-equipment"></p>
-          <p class="modal-target"></p>
-          <p class="modal-popularity"></p>
-          <p class="burn-modal"></p>
-          <p class="time-burn"></p>
+        <div class="modal-details-container">
+          <div class="title-inform-modal">
+            <h2 class="title-modal"></h2>
+            <p class="modal-rating"></p>
+          </div>
+          <div class="text-container">
+            <div class="text-modal-container">
+              <p class="modal-part"></p>
+              <p class="modal-equipment"></p>
+              <p class="modal-target"></p>
+              <p class="modal-popularity"></p>
+              <p class="burn-modal"></p>
+              <p class="time-burn"></p>
+            </div>
+            <div><p class="text-modal"></p></div>
+          </div>
         </div>
       </div>
-      <div class="description-modal"><p class="text-modal"></p></div>
       <div class="container-button">
-        <button id="additionalButton1" class="button-favorites">
-          <p class="button-name-favorites">Add to favorites</p>
-          <svg class="favorites-svg" width="24" height="24" viewBox="0 0 24 24">
-            <use xlink:href="/smart-energy/assets/icon-sprite-f219f677.svg#heart"></use>
-          </svg>
-        </button>
-        <button id="additionalButton2" class="button-rating">
-          <p class="button-name-rating">Give a rating</p>
-        </button>
+        <div class="button-favorites-container">
+          <button id="additionalButton1" class="button-favorites">
+            <p class="button-name-favorites">Add to favorites</p>
+            <svg
+              class="favorites-svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+            >
+              <use xlink:href="/smart-energy/assets/icon-sprite-f219f677.svg#heart"></use>
+            </svg>
+          </button>
+        </div>
+        <div class="button-rating-container">
+          <button id="additionalButton2" class="button-rating">
+            <p class="button-name-rating">Give a rating</p>
+          </button>
+        </div>
       </div>
     </div>
   </div>
