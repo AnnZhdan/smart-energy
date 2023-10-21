@@ -5,8 +5,10 @@ const closeModalButton2 = document.getElementById('closeModalButton2');
 const myModal = document.getElementById('myModal');
 const myModal2 = document.getElementById('myModal2');
 
+
 function showExerciseModal(exerciseData) {
   myModal.style.display = 'block';
+ 
 
   const modalImage = myModal.querySelector('img');
   const modalName = myModal.querySelector('h2');
@@ -83,6 +85,11 @@ exerciseItemButtons.forEach(button => {
 });
 
 closeModalButton.addEventListener('click', () => myModal.style.display = 'none');
-additionalButton2.addEventListener('click', () => myModal2.style.display = 'block');
+additionalButton2.addEventListener('click', () => {
+  myModal.style.display = 'none';
+  myModal2.style.display = 'block'; 
+});
 closeModalButton2.addEventListener('click', () => myModal2.style.display = 'none');
 
+myModal.style.display = 'none';
+myModal2.style.display = 'none';

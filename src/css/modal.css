@@ -4,11 +4,13 @@
   display: block;
   margin-right: 2px;
   border: 1px solid #ccc;
-  margin-top: 20px;
+  margin-top: 40px;
   border-radius: 12px;
+  margin-left: 20px;
+  margin-right: 20px;
 }
 
-.text-container::after {
+.text-modal-container::after {
   content: '';
   display: block;
   width: 295px;
@@ -19,7 +21,7 @@
   margin-bottom: 20px;
 }
 
-.text-container::before {
+.text-modal-container::before {
   content: '';
   display: block;
   width: 295px;
@@ -43,7 +45,6 @@
   font-style: normal;
   font-weight: 500;
   line-height: 20px;
-  padding-top: 20px;
 }
 
 .time-burn {
@@ -72,7 +73,7 @@
   margin-top: 10px;
 }
 .modal {
-  display: none;
+  display: block;
   position: fixed;
   z-index: 1;
   left: 0;
@@ -83,9 +84,9 @@
 }
 
 .modal-content {
+  width: 335px;
   border-radius: 20px;
   margin: 15% 20px;
-  padding: 20px;
   position: relative;
   background-color: #242424;
   display: flex;
@@ -119,11 +120,12 @@
 }
 
 .container-button {
-  width: 100%;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 40px;
   display: flex;
   justify-content: space-between;
   gap: 6px;
-  padding: 0 20px 20px;
 }
 
 .button-favorites {
@@ -158,9 +160,9 @@
 }
 
 .button-rating {
+  width: 122px;
   height: 42px;
   display: inline-flex;
-  padding: 12px 24px;
   justify-content: center;
   align-items: center;
   gap: 8px;
@@ -168,6 +170,9 @@
   border: 1px solid #f4f4f4;
   background-color: #242424;
   white-space: nowrap;
+}
+.button-rating-container {
+  flex: 1;
 }
 
 .button-rating:hover {
@@ -189,9 +194,9 @@
 }
 
 .modal-rating-content {
+  width: 335px;
+  height: 357px;
   border-radius: 20px;
-  margin: 15% 20px;
-  padding: 40px 20px;
   position: relative;
   background-color: #242424;
   display: flex;
@@ -200,7 +205,10 @@
 }
 
 .modal-body {
-  width: 100%;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: 40px;
+  margin-bottom: 40px;
 }
 
 .modal-body-rating {
@@ -235,7 +243,7 @@
 .form-email {
   margin-top: 20px;
   display: inline-flex;
-  width: 100%;
+  width: 295px;
   height: 42px;
   align-items: center;
   border-radius: 30px;
@@ -244,7 +252,7 @@
 }
 
 .form-comment {
-  width: 100%;
+  width: 295px;
   height: 93px;
   display: inline-flex;
   align-items: center;
@@ -259,7 +267,7 @@
 .button-send {
   display: flex;
   width: 295px;
-  padding: 12px 131px;
+  height: 42px;
   justify-content: center;
   align-items: center;
   gap: 8px;
@@ -339,7 +347,12 @@
   font-weight: 500;
   line-height: 18px;
 }
-
+.modal-details-container {
+  margin-top: 20px;
+  margin-right: 20px;
+  margin-left: 20px;
+  margin-bottom: 40px;
+}
 @media screen and (min-width: 768px) {
   .modal {
   }
@@ -347,19 +360,97 @@
   .modal-content {
     width: 704px;
     height: auto;
+
+    padding-bottom: 0px;
+    display: flex;
   }
 
   .modal-rating-content {
     width: 430px;
+    height: 412px;
   }
 
   .modal {
   }
 
+  .modal-info {
+    display: flex;
+  }
+
   .button-rating {
+    margin-right: 348px;
+  }
+
+  .gif-modal {
+    display: flex;
+    margin-top: 32px;
+    margin-left: 32px;
+    margin-right: 0px;
+    width: 270px;
+    height: 259px;
+  }
+
+  .container-button {
+    margin-left: 32px;
+    margin-bottom: 32px;
+    margin-right: 32px;
+    margin-top: 64px;
+    gap: 8px;
+  }
+  .description-modal {
+    margin-right: 32px;
+  }
+
+  .modal-details-container {
+    margin-left: 28px;
+    margin-right: 32px;
+    margin-top: 32px;
+  }
+
+  .text-modal-container::after {
+    content: '';
+    display: block;
+    width: 342px;
+    height: 1px;
+    background-color: rgba(244, 244, 244, 0.2);
+    margin: 0 auto;
+    margin-top: 8px;
+    margin-bottom: 16px;
+  }
+
+  .text-modal-container::before {
+    content: '';
+    display: block;
+    width: 342px;
+    height: 1px;
+    background-color: rgba(244, 244, 244, 0.2);
+    margin: 0 auto;
+
+    margin-bottom: 8px;
+  }
+
+  .close-button {
+    top: 16px;
+    right: 16px;
+  }
+  .form-email {
+    width: 350px;
+    height: 48px;
+  }
+
+  .form-comment {
+    width: 350px;
+    height: 106px;
+  }
+
+  .button-send {
+    width: 350px;
+    height: 48px;
+  }
+  .modal-body {
+    margin: 40px;
   }
 }
-
 @media screen and (min-width: 1280px) {
   .modal {
   }
@@ -369,5 +460,9 @@
   }
 
   .modal-rating-content {
+  }
+
+  .modal-details-container {
+    margin-left: 32px;
   }
 }
