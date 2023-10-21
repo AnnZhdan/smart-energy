@@ -1,10 +1,9 @@
-const openModalButton = document.getElementById('openModalButton');
+
 const closeModalButton = document.getElementById('closeModalButton');
 const additionalButton2 = document.getElementById('additionalButton2');
 const closeModalButton2 = document.getElementById('closeModalButton2');
 const myModal = document.getElementById('myModal');
 const myModal2 = document.getElementById('myModal2');
-
 
 function showExerciseModal(exerciseData) {
   myModal.style.display = 'block';
@@ -21,7 +20,6 @@ function showExerciseModal(exerciseData) {
 
   modalRating.innerHTML = '';
 
-  
   for (let i = 0; i < exerciseData.rating; i++) {
     const starSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
     starSVG.setAttribute('width', '25');
@@ -62,12 +60,16 @@ async function fetchExerciseDetails(exerciseID) {
   }
 }
 
+const exerciseItemButtons = document.querySelectorAll('.exercise-item-button');
 
-openModalButton.addEventListener('click', () => {
-  const exerciseID = '64f389465ae26083f39b17c2';
-  updateModalWithExerciseData(exerciseID);
+exerciseItemButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    const exerciseID = '64f389465ae26083f39b17c2';
+    updateModalWithExerciseData(exerciseID);
+  });
 });
 
 closeModalButton.addEventListener('click', () => myModal.style.display = 'none');
 additionalButton2.addEventListener('click', () => myModal2.style.display = 'block');
 closeModalButton2.addEventListener('click', () => myModal2.style.display = 'none');
+

@@ -2,8 +2,10 @@
   width: 295px;
   height: 258px;
   display: block;
-  margin: 0 auto;
+  margin-right: 2px;
   border: 1px solid #ccc;
+  margin-top: 20px;
+  border-radius: 12px;
 }
 
 .title-modal {
@@ -54,15 +56,19 @@
   align-items: center;
 }
 
-.close {
+.close-button {
   position: absolute;
-  top: 0;
-  right: 0;
+  top: 14px;
+  right: 14px;
   padding: 10px;
   cursor: pointer;
-  color: #f4f4f4;
-  width: 28px;
-  height: 28px;
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.modal-close {
 }
 
 .container-button {
@@ -237,6 +243,17 @@
 .rating-container label svg {
   width: 24px;
   height: 24px;
+}
+
+.selectedRat {
+  color: #f4f4f4;
+
+  font-feature-settings: 'clig' off, 'liga' off;
+  font-family: Neue Montreal;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 18px;
 }
 
 .container-text-block {

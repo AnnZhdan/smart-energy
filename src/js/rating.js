@@ -27,3 +27,12 @@ ratingLabels.forEach((label, index) => {
     }
   });
 });
+
+const selectedRating = document.getElementById('selectedRat');
+
+ratingLabels.forEach((label, index) => {
+  label.addEventListener('click', (event) => {
+    const ratingValue = (index + 1).toFixed(1); 
+    selectedRating.textContent = ratingValue;
+  });
+});
