@@ -1,6 +1,4 @@
 <container>
-  <button id="openModalButton">Модальне вікно</button>
-
   <div id="myModal" class="modal">
     <div class="modal-content">
       <button id="closeModalButton" class="close-button">
@@ -8,14 +6,28 @@
           <use xlink:href="./img/icon-sprite.svg#icon-x"></use>
         </svg>
       </button>
-      <img class="gif-modal" src="" alt="" width="295" height="258" />
-      <h2 class="title-modal"></h2>
-      <p class="text-modal"></p>
-      <p class="modal-rating"></p>
-
+      <div class="modal-info">
+        <img class="gif-modal" src="" alt="" width="295" height="258" />
+        <div class="title-inform-modal">
+          <h2 class="title-modal"></h2>
+          <p class="modal-rating"></p>
+        </div>
+        <div class="text-container">
+          <p class="modal-part"></p>
+          <p class="modal-equipment"></p>
+          <p class="modal-target"></p>
+          <p class="modal-popularity"></p>
+          <p class="burn-modal"></p>
+          <p class="time-burn"></p>
+        </div>
+      </div>
+      <div class="description-modal"><p class="text-modal"></p></div>
       <div class="container-button">
         <button id="additionalButton1" class="button-favorites">
           <p class="button-name-favorites">Add to favorites</p>
+          <svg class="favorites-svg" width="24" height="24" viewBox="0 0 24 24">
+            <use xlink:href="./img/icon-sprite.svg#heart"></use>
+          </svg>
         </button>
         <button id="additionalButton2" class="button-rating">
           <p class="button-name-rating">Give a rating</p>
@@ -23,6 +35,7 @@
       </div>
     </div>
   </div>
+
   <div id="myModal2" class="modal">
     <div class="modal-rating-content">
       <button id="closeModalButton2" class="close-button">
