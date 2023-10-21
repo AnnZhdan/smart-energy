@@ -10,13 +10,26 @@ function showExerciseModal(exerciseData) {
 
   const modalImage = myModal.querySelector('img');
   const modalName = myModal.querySelector('h2');
-  const modalDescription = myModal.querySelector('p');
+  const modalDescription = myModal.querySelector('.text-modal');
+  const modalBurned = myModal.querySelector('.burn-modal');
+  const modalTime = myModal.querySelector('.time-burn');
   const modalRating = myModal.querySelector('.modal-rating');
+  const modalPart = myModal.querySelector('.modal-part');
+  const modalEquipment = myModal.querySelector('.modal-equipment');
+  const modalTarget = myModal.querySelector('.modal-target');
+  const modalPopularity = myModal.querySelector('.modal-popularity');
+
 
   modalImage.src = exerciseData.gifUrl;
-  modalImage.alt = exerciseData.name;
-  modalName.textContent = exerciseData.name;
+  modalName.textContent = exerciseData.name.charAt(0).toUpperCase() + exerciseData.name.slice(1);
   modalDescription.textContent = exerciseData.description;
+  modalBurned.textContent = exerciseData.burnedCalories;
+  modalTime.textContent = exerciseData.duration;
+  modalPart.textContent = exercise.bodyPart;
+  modalEquipment.textContent = exercise.equipment;
+  modalTarget.textContent = exercise.target;
+  modalPopularity.textContent = exercise.popularity;
+  
 
   modalRating.innerHTML = '';
 
