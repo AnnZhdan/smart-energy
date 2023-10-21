@@ -1,42 +1,86 @@
 .hero {
-    min-width: 335px;
-    margin-left: auto;
-    margin-right: auto;
-    background-repeat: no-repeat;  
+    /* min-width: 335px; */
+    margin-left: 20px;
+    margin-right: 20px;
+    /* background-repeat: no-repeat;  
     background-position: center;
-    background-size: cover;
+    background-size: cover; */
+}
+
+/* .icon-sprite::before {
+    background-image: url(../img/icon-sprite.svg);
+} */
+
+.hero__icon {
+    stroke-width: 4px;
+    stroke: #242424;
+    flex-shrink: 0;
+    
 }
 
 .container__title {
-    font-family: Neue Montreal;
+    /* font-family: 'Neue Montreal';
     color: #242424;
-    font-weight: 400;
+    font-weight: 400; */
+    font-style: normal;
     font-size: 40px;
     line-height: 1.2;             
-    letter-spacing: 0.02em; 
+    letter-spacing: -0.8px;
     margin-top: 80px;
       
 }
 
 .container__title-accent {
-    font-family: Neue Montreal;
-    color: #242424;
+    font-family: 'Neue Montreal, italic';
+    /* color: #242424; */
+    /* font-style: italic - не працює щось перебиває */
     font-style: italic;
     font-weight: 400;
     font-size: 40px;
     line-height: 1.2;             
-    letter-spacing: 0.02em; 
+    letter-spacing: -0.8px; 
      
 }
 
 .container__text {
-    font-family: Neue Montreal;
+    /* font-family: 'Neue Montreal';
     color: #242424;
-    font-weight: 400;
+    font-weight: 400; */
+    font-style: normal;
     font-size: 14px;
     line-height: 1.29;             
-    letter-spacing: 0.02em; 
+    letter-spacing: -0.28px;
     margin-top: 20px;
 
 }
 
+.tags__list {
+    display: flex;
+    justify-content: center;
+    margin-left: -6px;
+}
+
+.tags__list-item {
+    flex-basis: calc(100% / 4 - 6px);
+    margin-left: 6px;
+    /* justify-content: center; */
+    font-style: normal;
+    font-size: 14px;
+    line-height: 1.29;  
+    /* height: 26px; */
+    padding-top: 4px;
+    padding-bottom: 4px;
+    padding-left: 16px;
+    padding-right: 16px;
+    border: 1px solid #242424;
+    border-radius: 30px;
+    margin-top: 20px;
+    /* fill: #AFB1B8; */
+}
+
+.working-out-outdoors-img {
+    width: 335px;
+    height: 450px;
+    margin-top: 16px;
+    
+}

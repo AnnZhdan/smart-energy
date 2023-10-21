@@ -1,3 +1,76 @@
+.gif-modal {
+  width: 295px;
+  height: 258px;
+  display: block;
+  margin-right: 2px;
+  border: 1px solid #ccc;
+  margin-top: 20px;
+  border-radius: 12px;
+}
+
+.text-container::after {
+  content: '';
+  display: block;
+  width: 295px;
+  height: 1px;
+  background-color: rgba(244, 244, 244, 0.2);
+  margin: 0 auto;
+  margin-top: 8px;
+  margin-bottom: 20px;
+}
+
+.text-container::before {
+  content: '';
+  display: block;
+  width: 295px;
+  height: 1px;
+  background-color: rgba(244, 244, 244, 0.2);
+  margin: 0 auto;
+
+  margin-bottom: 8px;
+}
+
+.description-modal {
+  margin-bottom: 40px;
+}
+
+.title-modal {
+  color: #f4f4f4;
+
+  font-feature-settings: 'clig' off, 'liga' off;
+  font-family: Neue Montreal;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px;
+  padding-top: 20px;
+}
+
+.time-burn {
+  color: #f4f4f4;
+  font-feature-settings: 'clig' off, 'liga' off;
+  font-family: Neue Montreal;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 18px;
+}
+
+.text-modal {
+  color: rgba(244, 244, 244, 0.6);
+
+  font-family: Neue Montreal;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 18px;
+}
+
+.modal-rating {
+  color: aliceblue;
+  font-size: 16px;
+  margin-top: 10px;
+}
 .modal {
   display: none;
   position: fixed;
@@ -20,15 +93,29 @@
   align-items: center;
 }
 
-.close {
+.close-button {
   position: absolute;
-  top: 0;
-  right: 0;
+  top: 14px;
+  right: 14px;
   padding: 10px;
   cursor: pointer;
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+.burn-modal {
   color: #f4f4f4;
-  width: 28px;
-  height: 28px;
+
+  font-feature-settings: 'clig' off, 'liga' off;
+  font-family: Neue Montreal;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 18px;
+}
+
+.modal-close {
 }
 
 .container-button {
@@ -36,7 +123,7 @@
   display: flex;
   justify-content: space-between;
   gap: 6px;
-  padding: 0 20px 40px;
+  padding: 0 20px 20px;
 }
 
 .button-favorites {
@@ -49,6 +136,7 @@
   gap: 8px;
   border-radius: 30px;
   background-color: #f4f4f4;
+  white-space: nowrap;
 }
 
 .button-favorites:hover {
@@ -70,7 +158,6 @@
 }
 
 .button-rating {
-  width: 100%;
   height: 42px;
   display: inline-flex;
   padding: 12px 24px;
@@ -80,6 +167,7 @@
   border-radius: 30px;
   border: 1px solid #f4f4f4;
   background-color: #242424;
+  white-space: nowrap;
 }
 
 .button-rating:hover {
@@ -205,6 +293,17 @@
   height: 24px;
 }
 
+.selectedRat {
+  color: #f4f4f4;
+
+  font-feature-settings: 'clig' off, 'liga' off;
+  font-family: Neue Montreal;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 18px;
+}
+
 .container-text-block {
   display: flex;
   flex-wrap: wrap;
@@ -239,4 +338,36 @@
   font-style: normal;
   font-weight: 500;
   line-height: 18px;
+}
+
+@media screen and (min-width: 768px) {
+  .modal {
+  }
+
+  .modal-content {
+    width: 704px;
+    height: auto;
+  }
+
+  .modal-rating-content {
+    width: 430px;
+  }
+
+  .modal {
+  }
+
+  .button-rating {
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .modal {
+  }
+
+  .modal-content {
+    width: 708px;
+  }
+
+  .modal-rating-content {
+  }
 }

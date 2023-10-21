@@ -1,53 +1,33 @@
 <container>
-  <button id="openModalButton">Модальне вікно</button>
-
   <div id="myModal" class="modal">
     <div class="modal-content">
-      <span class="close" id="closeModalButton">&times;</span>
-
-      <img src="your_gif_image.gif" alt="Air bake" width="295" height="258" />
-
-      <div class="rating-container">
-        <label for="rating1">
-          <input type="radio" name="rating" id="rating1" value="1" required />
-        </label>
-      </div>
-
-      <div>
-        <div class="container-text-block">
-          <div class="text-block">
-            <p class="modal-parameters">Target</p>
-            <p class="modal-core">Abs</p>
-          </div>
-          <div class="text-block">
-            <p class="modal-parameters">Body Part</p>
-            <p class="modal-core">Waist</p>
-          </div>
-          <div class="text-block">
-            <p class="modal-parameters">Equipment</p>
-            <p class="modal-core">Body weight</p>
-          </div>
-          <div class="text-block">
-            <p class="modal-parameters">Popular</p>
-            <p class="modal-core">150</p>
-          </div>
-          <div class="text-block">
-            <p class="modal-parameters">Burned Calorie</p>
-            <p class="modal-core">323/3 min</p>
-          </div>
+      <button id="closeModalButton" class="close-button">
+        <svg width="24" height="24" class="modal-close">
+          <use xlink:href="./img/icon-sprite.svg#icon-x"></use>
+        </svg>
+      </button>
+      <div class="modal-info">
+        <img class="gif-modal" src="" alt="" width="295" height="258" />
+        <div class="title-inform-modal">
+          <h2 class="title-modal"></h2>
+          <p class="modal-rating"></p>
         </div>
-        <div></div>
+        <div class="text-container">
+          <p class="modal-part"></p>
+          <p class="modal-equipment"></p>
+          <p class="modal-target"></p>
+          <p class="modal-popularity"></p>
+          <p class="burn-modal"></p>
+          <p class="time-burn"></p>
+        </div>
       </div>
-      <p>
-        This refers to your core muscles, which include the rectus abdominis,
-        obliques, and transverse abdominis. They're essential for maintaining
-        posture, stability, and generating force in many movements. Exercises
-        that target the abs include crunches, leg raises, and planks.
-      </p>
-
+      <div class="description-modal"><p class="text-modal"></p></div>
       <div class="container-button">
         <button id="additionalButton1" class="button-favorites">
           <p class="button-name-favorites">Add to favorites</p>
+          <svg class="favorites-svg" width="24" height="24" viewBox="0 0 24 24">
+            <use xlink:href="./img/icon-sprite.svg#heart"></use>
+          </svg>
         </button>
         <button id="additionalButton2" class="button-rating">
           <p class="button-name-rating">Give a rating</p>
@@ -58,17 +38,22 @@
 
   <div id="myModal2" class="modal">
     <div class="modal-rating-content">
-      <span class="close" id="closeModalButton2">&times;</span>
+      <button id="closeModalButton2" class="close-button">
+        <svg width="24" height="24" class="modal-close">
+          <use xlink:href="./img/icon-sprite.svg#icon-x"></use>
+        </svg>
+      </button>
       <div class="modal-body">
         <p class="modal-body-rating">Rating:</p>
         <form id="ratingForm">
           <div class="rating-container">
-            <label for="rating1">
+            <div id="selectedRat" class="selectedRat">0.0</div>
+            <label for="rating11">
               <input
                 type="radio"
                 name="rating"
-                id="rating1"
-                value="1"
+                id="rating11"
+                value="11"
                 required
               />
               <svg
@@ -77,15 +62,15 @@
                 height="100"
                 viewBox="0 0 100 100"
               >
-                <use xlink:href="./images/icons.svg#icon-Star-1"></use>
+                <use xlink:href="./img/icon-sprite.svg#icon-Star-1"></use>
               </svg>
             </label>
-            <label for="rating2">
+            <label for="rating12">
               <input
                 type="radio"
                 name="rating"
-                id="rating2"
-                value="2"
+                id="rating12"
+                value="12"
                 required
               />
               <svg
@@ -94,15 +79,15 @@
                 height="100"
                 viewBox="0 0 100 100"
               >
-                <use xlink:href="./images/icons.svg#icon-Star-1"></use>
+                <use xlink:href="./img/icon-sprite.svg#icon-Star-1"></use>
               </svg>
             </label>
-            <label for="rating3">
+            <label for="rating13">
               <input
                 type="radio"
                 name="rating"
-                id="rating3"
-                value="3"
+                id="rating13"
+                value="13"
                 required
               />
               <svg
@@ -111,15 +96,15 @@
                 height="100"
                 viewBox="0 0 100 100"
               >
-                <use xlink:href="./images/icons.svg#icon-Star-1"></use>
+                <use xlink:href="./img/icon-sprite.svg#icon-Star-1"></use>
               </svg>
             </label>
-            <label for="rating4">
+            <label for="rating14">
               <input
                 type="radio"
                 name="rating"
-                id="rating4"
-                value="4"
+                id="rating14"
+                value="14"
                 required
               />
               <svg
@@ -128,15 +113,15 @@
                 height="100"
                 viewBox="0 0 100 100"
               >
-                <use xlink:href="./images/icons.svg#icon-Star-1"></use>
+                <use xlink:href="./img/icon-sprite.svg#icon-Star-1"></use>
               </svg>
             </label>
-            <label for="rating5">
+            <label for="rating15">
               <input
                 type="radio"
                 name="rating"
-                id="rating5"
-                value="5"
+                id="rating15"
+                value="15"
                 required
               />
               <svg
@@ -145,7 +130,7 @@
                 height="100"
                 viewBox="0 0 100 100"
               >
-                <use xlink:href="./images/icons.svg#icon-Star-1"></use>
+                <use xlink:href="./img/icon-sprite.svg#icon-Star-1"></use>
               </svg>
             </label>
           </div>
