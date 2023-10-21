@@ -1,4 +1,4 @@
-/* .modal {
+.modal {
   display: none;
   position: fixed;
   z-index: 1;
@@ -239,4 +239,4 @@
   font-style: normal;
   font-weight: 500;
   line-height: 18px;
-} */
+}
