@@ -1,7 +1,13 @@
 .galary {
+  margin-top: 40px;
 }
-.container {
+.galary-container {
+  width: 100%;
+  min-width: 320px;
+  max-width: 335px;
+  margin: 0 auto;
 }
+
 .galary-title {
   color: var(--primary-dark-color);
   margin-bottom: 20px;
@@ -11,6 +17,9 @@
   line-height: 38px;
   letter-spacing: -0.56px;
 }
+
+/* Фільтри */
+
 .galary-filters {
   display: flex;
   gap: 20px;
@@ -25,6 +34,29 @@
   font-style: normal;
   font-weight: 400;
   line-height: 20px;
+  padding: 0;
+}
+.galary-filter-checkt {
+  position: relative;
+}
+.galary-filter-checkt::after {
+  position: absolute;
+  bottom: -7px;
+  display: block;
+  content: '';
+  height: 4px;
+  width: 100%;
+  border-radius: 2px;
+  background-color: var(--primary-dark-color);
+}
+
+/* Картки */
+
+.galary-list {
+  margin-bottom: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
 }
 .galary-item {
   width: 335px;
@@ -50,18 +82,16 @@
   position: relative;
   z-index: -1;
 }
-.galary-item-text-wrapper {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
 .galary-item-subtitle {
   color: var(--primary-light-color);
   font-size: 20px;
   font-style: normal;
   font-weight: 400;
   line-height: 20px;
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 .galery-item-text {
   color: rgba(244, 244, 244, 0.4);
@@ -69,38 +99,213 @@
   font-style: normal;
   font-weight: 400;
   line-height: 18px;
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
+
+/* Вправи */
 
 .exercise-item {
   width: 335px;
-  height: 141px;
+  height: 140px;
   border-radius: 15px;
   background: #fff;
+}
+.exercise-item-wrapper {
   padding: 16px;
 }
 .exercise-item-firth-wrapper {
   display: flex;
+  align-items: center;
+  margin-bottom: 27px;
 }
 .exercise-item-workout {
+  color: var(--primary-dark-color);
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  border-radius: 15px;
+  border: 1px solid var(--primary-dark-color);
+  padding: 5px 7.5px;
+  margin-right: 16px;
 }
 .exercise-item-rating {
+  color: var(--primary-dark-color);
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 18px;
+  margin-right: 2px;
 }
 .exercise-item-star {
-  background-color: #000000;
+  padding-bottom: 4px;
 }
 .exercise-item-button {
+  margin-left: auto;
+  background-color: transparent;
+  border: none;
+  color: var(--primary-dark-color);
+  font-family: Neue Montreal;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 18px;
+  align-items: center;
+  height: 18px;
+  padding: 0;
+
+  display: flex;
+  align-items: center;
+}
+.exercise-item-button svg {
+  stroke: var(--primary-dark-color);
+}
+.exercise-item-second-wrapper {
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
+}
+.exercise-item-run-box {
+  width: 24px;
+  height: 24px;
+  background-color: var(--primary-dark-color);
+  border-radius: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 16px;
 }
 .exercise-item-run {
-  background-color: #000000;
+  fill: var(--primary-light-color);
 }
 .exercise-item-subtitle {
+  color: var(--primary-dark-color);
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
 }
 .exercise-item-list {
   display: flex;
+  gap: 10px;
 }
 .exercise-item-list-information {
+  display: flex;
 }
 .information-text {
+  color: rgba(36, 36, 36, 0.4);
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 18px;
 }
 .information-text-span {
+  color: var(--primary-dark-color);
+  opacity: none;
+  font-feature-settings: 'clig' off, 'liga' off;
+  font-family: Neue Montreal;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 18px;
+  margin-left: 4px;
+}
+
+/* Пагінація */
+
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 80px;
+}
+.pagination-button {
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  color: #d4d4d4;
+  font-family: Neue Montreal;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: 0.8px;
+}
+.current-page {
+  border: 1px solid var(--primary-dark-color);
+  padding: 6px 12px;
+  border-radius: 18px;
+  color: var(--primary-dark-color);
+}
+
+/*  Media  */
+
+@media screen and (min-width: 768px) {
+  .galary {
+    margin-top: 64px;
+  }
+  .galary-container {
+    max-width: 706px;
+  }
+  .galary-title {
+    margin-bottom: 32px;
+    font-size: 44px;
+    line-height: 48px;
+    letter-spacing: -0.88px;
+  }
+  .galary-filters {
+    margin-bottom: 32px;
+  }
+  .galary-filters-button {
+    font-size: 16px;
+    line-height: 24px;
+  }
+  .galary-list {
+    margin-bottom: 32px;
+    gap: 32px 15px;
+  }
+  .galary-item {
+    width: 225px;
+    height: 225px;
+  }
+  .galary-item-subtitle {
+    font-size: 24px;
+    line-height: 24px;
+  }
+  .exercise-item {
+    width: 344px;
+    height: 141px;
+  }
+  .pagination-button {
+    font-size: 24px;
+    line-height: 32px;
+    letter-spacing: 0.96px;
+  }
+  .current-page {
+    padding: 0 12px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .galary-container {
+    max-width: 900px;
+  }
+  .galaty-title-and-list-wrapper {
+    display: flex;
+  }
+  .galary-filters {
+    margin-left: auto;
+  }
+  .galary-item {
+    width: 290px;
+    height: 242px;
+  }
+  .exercise-item {
+    width: 442px;
+    height: 141px;
+  }
 }
