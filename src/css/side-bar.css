@@ -1,17 +1,14 @@
-.quote-section {
-    margin-bottom: 80px;
-
-}
-
-.qoute-container {
+img {
+    display: block;
     width: 100%;
-    min-width: 320px;
-    max-width: 335px;
-    /* padding-left: 20px;
-    padding-right: 20px; */
-    margin: 0 auto;
+}
+
+.quote-section {
+    padding-bottom: 80px;
 
 }
+
+.qoute-container {}
 
 .quote-box {
     display: flex;
@@ -141,6 +138,32 @@
 
 
 @media screen and (min-width: 768px) {
+    .quote-section {
+        padding-bottom: 100px;
+
+    }
+
+    .qoute-container {
+        display: flex;
+        flex-wrap: wrap;
+        column-gap: 16px;
+        row-gap: 16px;
+        /* width: calc((100% - 16px) / 2); */
+
+    }
+
+
+    .quote-box {
+        width: 360px;
+        padding: 40px;
+    }
+
+    .qoute-run-box {}
+
+    .quote-icon-box {
+        margin-bottom: 6px;
+    }
+
     .quotes-day-title {
 
         font-size: 24px;
@@ -148,26 +171,97 @@
 
     }
 
-    .quotes-day-text {}
+    .quotes-day-text {
+        margin-bottom: 18px;
+    }
 
     .quotes-day-author {
         font-size: 16px;
         line-height: 1.5;
     }
 
+
+
+    .quote-image-box {}
+
+
+    .quote-girls-img {
+        width: 288px;
+        height: 267px;
+        border-radius: 20px;
+    }
+
+    .recommend-box {
+        width: 360px;
+        padding: 40px;
+    }
+
+    .recommend-icon-box {
+        margin-right: 16px;
+    }
+
     .recommend-title {
         font-size: 24px;
         line-height: 1.33;
+        margin-bottom: 6px;
+
     }
 
-    .recommend-text {}
+    .recommend-text {
+        width: 270px;
+    }
 
     .recommend-desc {}
 }
 
 @media screen and (min-width: 1280px) {
+
+    .qoute-container {
+        flex-direction: column;
+        flex-wrap: nowrap;
+        gap: 32px;
+    }
+
+    .quote-box {}
+
+    .quote-icon-box {
+        gap: 108px;
+
+    }
+
+    .quotes-day-box {
+        width: 314px;
+
+    }
+
+    .quotes-day-text {
+        max-width: 314px;
+    }
+
     .quotes-day-author {
         font-size: 24px;
         line-height: 1.33;
+    }
+
+    .quote-girls-img {
+        width: 444px;
+        height: 242px;
+
+    }
+
+    .recommend-box {
+        gap: 18px;
+    }
+
+    .recommend-icon-box {
+        margin-right: 0;
+    }
+
+    .recommend-desc {
+        max-width: 314px;
+        overflow: unset;
+        /* -webkit-line-clamp: 5; */
+        -webkit-box-orient: unset;
+        text-overflow: unset;
     }
 }
