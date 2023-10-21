@@ -1,0 +1,32 @@
+.favorites-title {
+  margin-bottom: 20px;
+  font-size: 28px;
+  line-height: 1.35;
+  letter-spacing: -0.56px;
+}
+.favorites-img-girl {
+  margin: auto;
+  width: 335px;
+  height: 119px;
+  border-radius: 20px;
+}
+
+.favorites-img-box {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+
+.favorites-box {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 80px; /* потім потріно буде це задати в секції доавання карток */
+}
+
+.favorites-box-deskription {
+  max-width: 318px;
+  font-size: 14px;
+  text-align: center;
+  line-height: 1.28;
+}
