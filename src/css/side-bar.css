@@ -78,8 +78,9 @@ img {
 .quote-girls-picture {}
 
 .quote-girls-img {
-    width: 345px;
-    height: 242px;
+    border-radius: 20px;
+    width: 375px;
+    height: 251px;
 }
 
 .recommend-box {
@@ -188,7 +189,7 @@ img {
     .quote-girls-img {
         width: 288px;
         height: 267px;
-        border-radius: 20px;
+
     }
 
     .recommend-box {
@@ -244,8 +245,8 @@ img {
     }
 
     .quote-girls-img {
-        width: 444px;
-        height: 242px;
+        width: 440px;
+        height: 275px;
 
     }
 
