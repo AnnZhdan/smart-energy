@@ -5,7 +5,7 @@
             <p><strong>Target:</strong> ${r.target}</p>
             <p><strong>Description:</strong> ${r.description}</p>
             <p><strong>Burned Calories:</strong> ${r.burnedCalories}</p>
-            <p><strong>Duration:</strong> ${r.duration} minutes</p>
+            <p><strong>Duration:</strong> ${r.time} minutes</p>
             <p><strong>Rating:</strong> ${r.rating}</p>
             <p><strong>Popularity:</strong> ${r.popularity}</p>
             <p><strong>GIF URL:</strong> <a href="${r.gifUrl}" target="_blank">View</a></p>
