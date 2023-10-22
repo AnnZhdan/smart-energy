@@ -1,6 +1,11 @@
 <section class="galary">
   <div class="galary-container">
-    <div class="galaty-title-and-list-wrapper">
+
+<!--------Так як ми і говорили в цей дів ти будеш перемальовувати секцію з фільтрами 
+  коли нажимаєш на картку, бо там має добавлятись /Waist та Searhch,
+  а також міняється позиціонування (варіант з пошуком буде нижче)-->
+
+    <div class="galary-title-and-list-wrapper">
       <h2 class="galary-title">Exercises</h2>
 
       <!---------Фільтри
@@ -83,6 +88,31 @@
       </li>
     </ul>
 
+    <!----- це розділ з фільтрами, яки ти будеш перемальвувати при натисканні на картку-->
+
+<div class="galary-title-and-list-wrapper">
+      <h2 class="galary-title2">Exercises / <span>Waist</span></h2>
+      <div class="galary-searc-filters-wrapper">
+        <div class="galary-search-wrapper">
+        <input type="search" name="search" placeholder="Search" class="galary-search">
+        <svg class="galary-search-svg" width="18" height="18">
+                <use href="./img/icon-sprite.svg#search"></use>
+              </svg>
+      </div>
+      <ul class="galary-filters2">
+        <button
+          type="button"
+          class="galary-filters-button galary-filter-checkt2"
+        >
+          Body parts
+        </button>
+        <button type="button" class="galary-filters-button">Muscles</button>
+        <button type="button" class="galary-filters-button">Equipment</button>
+      </ul>
+    </div>
+  </div>
+
+
     <!-- При натисканні на картку буде відмальовуватись список вправ. Я зверстав одну
   вправу. Тут також скопіюєш <li> в свою функцію, а тут все видалиш -->
 
@@ -101,7 +131,7 @@
             >
               <use xlink:href="./img/icon-sprite.svg#icon-Star-2"></use>
             </svg>
-            <button type="button" class="exercise-item-button">
+            <button type="button" class="exercise-item-button" id="1">
               Start&nbsp;&nbsp;
               <svg width="16" height="16">
                 <use href="./img/icon-sprite.svg#arrow"></use>
@@ -151,7 +181,7 @@
             >
               <use xlink:href="./img/icon-sprite.svg#icon-Star-2"></use>
             </svg>
-            <button type="button" class="exercise-item-button">
+            <button type="button" class="exercise-item-button" id="2">
               Start&nbsp;&nbsp;
               <svg width="16" height="16">
                 <use href="./img/icon-sprite.svg#arrow"></use>
@@ -164,7 +194,7 @@
                 <use href="./img/icon-sprite.svg#Group"></use>
               </svg>
             </div>
-            <h3 class="exercise-item-subtitle">Air bike</h3>
+            <h3 class="exercise-item-subtitle">3/4 sit-up</h3>
           </div>
           <ul class="exercise-item-list">
             <li class="exercise-item-list-information">
@@ -201,7 +231,7 @@
             >
               <use xlink:href="./img/icon-sprite.svg#icon-Star-2"></use>
             </svg>
-            <button type="button" class="exercise-item-button">
+            <button type="button" class="exercise-item-button" id="3">
               Start&nbsp;&nbsp;
               <svg width="16" height="16">
                 <use href="./img/icon-sprite.svg#arrow"></use>
@@ -214,13 +244,14 @@
                 <use href="./img/icon-sprite.svg#Group"></use>
               </svg>
             </div>
-            <h3 class="exercise-item-subtitle">Air bike</h3>
+            <h3 class="exercise-item-subtitle">Barbell rollerout</h3>
           </div>
           <ul class="exercise-item-list">
             <li class="exercise-item-list-information">
               <p class="information-text">
-                Burned calories:
-                <span class="information-text-span">312 / 3 min</span>
+                Burned calories:<span class="information-text-span"
+                  >312 / 3 min</span
+                >
               </p>
             </li>
             <li class="exercise-item-list-information">
@@ -233,6 +264,9 @@
                 Target:<span class="information-text-span">Abs</span>
               </p>
             </li>
+          </ul>
+        </div>
+      </li>
           </ul>
         </div>
       </li>
