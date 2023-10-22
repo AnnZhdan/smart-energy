@@ -8,7 +8,6 @@ const myModal2 = document.getElementById('myModal2');
 
 function showExerciseModal(exerciseData) {
   myModal.style.display = 'block';
- 
 
   const modalImage = myModal.querySelector('img');
   const modalName = myModal.querySelector('h2');
@@ -21,17 +20,16 @@ function showExerciseModal(exerciseData) {
   const modalTarget = myModal.querySelector('.modal-target');
   const modalPopularity = myModal.querySelector('.modal-popularity');
 
-
   modalImage.src = exerciseData.gifUrl;
   modalName.textContent = exerciseData.name.charAt(0).toUpperCase() + exerciseData.name.slice(1);
   modalDescription.textContent = exerciseData.description;
-  modalBurned.textContent = exerciseData.burnedCalories;
-  modalTime.textContent = exerciseData.duration;
-  modalPart.textContent = exercise.bodyPart;
-  modalEquipment.textContent = exercise.equipment;
-  modalTarget.textContent = exercise.target;
-  modalPopularity.textContent = exercise.popularity;
   
+  modalBurned.textContent = `${exerciseData.burnedCalories}/${exerciseData.time} min`;
+
+  modalPart.textContent = exerciseData.bodyPart;
+  modalEquipment.textContent = exerciseData.equipment;
+  modalTarget.textContent = exerciseData.target;
+  modalPopularity.textContent = exerciseData.popularity;
 
   modalRating.innerHTML = '';
 
@@ -40,7 +38,7 @@ function showExerciseModal(exerciseData) {
     starSVG.setAttribute('width', '25');
     starSVG.setAttribute('height', '25');
     const useElement = document.createElementNS('http://www.w3.org/2000/svg', 'use');
-    useElement.setAttribute('xlink:href', './img/icon-sprite.svg#icon-Star-2');
+    useElement.setAttribute('xlink:href', './img/icon-sprite.svg#icon-Star-1');
     starSVG.appendChild(useElement);
     modalRating.appendChild(starSVG);
   }
@@ -79,7 +77,7 @@ const exerciseItemButtons = document.querySelectorAll('.exercise-item-button');
 
 exerciseItemButtons.forEach(button => {
   button.addEventListener('click', () => {
-    const exerciseID = '64f389465ae26083f39b17c2';
+    const exerciseID = button.getAttribute('id');
     updateModalWithExerciseData(exerciseID);
   });
 });
