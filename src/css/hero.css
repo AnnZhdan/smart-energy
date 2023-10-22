@@ -1,10 +1,6 @@
-.hero {
+/* .hero {
     
-    /* margin-left: auto;
-    margin-right: auto; */
-    margin-left: 20px;
-   
-}
+} */
 
 .hero__icon {
     stroke-width: 4px;
@@ -15,7 +11,8 @@
 }
 
 .container__title {
-    
+    display: inline-block;
+    position: relative;
     font-style: normal;
     font-size: 40px;
     line-height: 1.2;             
@@ -44,12 +41,23 @@
 
 }
 
+.hero__img-small {
+        
+    display: none;
+    
+}
+
 .hero__img {
     
     border-radius: 30px;
     width: 100%;
     height: 450px;
     margin-top: 16px;
+}
+
+
+.hidden {
+    display: none;
 }
 
 .tags__list {
@@ -139,6 +147,30 @@
     }
 
 
-/* @media screen and (min-width: 1280px) {
+@media screen and (min-width: 1440px) {
 
-} */
+    .hero__img-small {
+        position: absolute;
+        top: 0px;
+        right: 15px;
+        border-radius: 20px;
+        display: block;
+        width: 168px;
+        height: 100px;
+    }
+
+    .tags__list {
+        position: absolute;
+        top: 135px;
+        right: 15px;
+        max-width: 188px;
+    }
+    .hero__img {
+        width: 1376px;
+        height: 350px;
+        border-radius: 60px;
+
+    }
+
+   
+}
