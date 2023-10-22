@@ -50,6 +50,8 @@ button {
 
 .header-burger {
   stroke: var(--primary-dark-color);
+  fill: none;
+transition: .25s cubic-bezier(.4, 0, .2, 1);
 }
 
 .nav-list {
@@ -64,11 +66,21 @@ button {
 
 @media screen and (min-width: 768px) {
 
-  .menu-toggle,
-  .mob-menu-close,
-  .header-burger,
-  .icon-close,
-  .mob-menu.is-open {
+  .menu-toggle {
+    display: none;
+  }
+
+  .header-burger {
+    display: none;
+  }
+
+  .mob-menu-close  {
+    display: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .mob-menu {
     display: none;
   }
 
@@ -76,15 +88,18 @@ button {
     /* padding-top: 24px; */
     margin-bottom: 100px;
   }
+
   .header-container {
     padding-left: 32px;
     padding-right: 32px;
     height: 76px;
   }
+
   .logo-link {
     width: 132px;
     height: 24px;
   }
+
   .nav-header {
     display: flex;
     justify-content: center;

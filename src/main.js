@@ -1,4 +1,4 @@
-import './js/header.js';
+import './js/header';
 import './js/modal.js';
 import './js/rating.js';
 import './js/server.js';

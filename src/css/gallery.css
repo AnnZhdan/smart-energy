@@ -50,6 +50,78 @@
   background-color: var(--primary-dark-color);
 }
 
+/* розділ з exercises, search та фільтрами
+після того як натиснули на картку */
+
+.galary-title2 {
+  color: var(--primary-dark-color);
+  margin-bottom: 20px;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 38px;
+  letter-spacing: -0.56px;
+}
+.galary-title2 span {
+  color: var(--primary-dark-color);
+  opacity: 50%;
+  font-size: 20px;
+  line-height: 20px;
+  letter-spacing: -0.4px;
+}
+.galary-search-wrapper {
+  width: 335px;
+  padding: 12px 14px;
+  border-radius: 30px;
+  border: 1px solid var(--primary-dark-color);
+  display: flex;
+  margin-bottom: 20px;
+  margin-top: 40px;
+}
+.galary-search {
+  background-color: transparent;
+  flex-grow: 1;
+  border: none;
+}
+.galary-search:active,
+:hover,
+:focus {
+  outline: 0;
+  outline-offset: 0;
+}
+.galary-search::placeholder {
+  color: var(--primary-dark-color);
+  font-family: Neue Montreal;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+}
+.galary-search:focus::placeholder {
+  color: transparent;
+}
+.galary-search-svg {
+  stroke: var(--primary-dark-color);
+  fill: transparent;
+}
+.galary-filters2 {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 28px;
+}
+.galary-filter-checkt2 {
+  position: relative;
+}
+.galary-filter-checkt2::after {
+  position: absolute;
+  bottom: -7px;
+  display: block;
+  content: '';
+  height: 4px;
+  width: 100%;
+  border-radius: 2px;
+  background-color: var(--primary-dark-color);
+}
 /* Картки */
 
 .galary-list {
@@ -156,7 +228,6 @@
   align-items: center;
   height: 18px;
   padding: 0;
-
   display: flex;
   align-items: center;
 }
@@ -190,7 +261,7 @@
 }
 .exercise-item-list {
   display: flex;
-  gap: 10px;
+  gap: 9px;
 }
 .exercise-item-list-information {
   display: flex;
@@ -257,12 +328,32 @@
     line-height: 48px;
     letter-spacing: -0.88px;
   }
+  .galary-title2 {
+    margin-bottom: 32px;
+    font-size: 44px;
+    line-height: 48px;
+    letter-spacing: -0.88px;
+  }
   .galary-filters {
     margin-bottom: 32px;
+  }
+  .galary-filters2 {
+    margin-left: auto;
+    margin-bottom: 0;
+  }
+  .galary-filter-checkt2::after {
+    bottom: 39px;
   }
   .galary-filters-button {
     font-size: 16px;
     line-height: 24px;
+  }
+  .galary-searc-filters-wrapper {
+    display: flex;
+  }
+  .galary-search-wrapper {
+    width: 271px;
+    margin-bottom: 32px;
   }
   .galary-list {
     margin-bottom: 32px;
@@ -294,11 +385,23 @@
   .galary-container {
     max-width: 900px;
   }
-  .galaty-title-and-list-wrapper {
+  .galary-title-and-list-wrapper {
     display: flex;
+    align-items: center;
+  }
+  .galary-title {
+    flex-grow: 1;
+    margin-bottom: 32px;
+  }
+  .galary-title2 {
+    flex-grow: 1;
+    margin-bottom: 0px;
   }
   .galary-filters {
     margin-left: auto;
+  }
+  .galary-filters2 {
+    margin-left: 32px;
   }
   .galary-item {
     width: 290px;

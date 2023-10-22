@@ -4,22 +4,22 @@
  <div class="hero-container container">
      
     <h1 class="container__title">
-            <svg class="hero__icon" width="38" height="38">
+            <svg class="hero__icon">
                 <use href="../img/icon-sprite.svg#30"></use>
             </svg>            
             Get <span class="container__title-accent">Body</span> in shape, Stay healthy</h1>
 
     <p class="container__text">Transform your physique and embrace a healthier lifestyle with our comprehensive fitness and nutrition support.</p>
-      <picture class="working-out-outdoors">
-          <source srcset="./img/image3_desc@1x_.webp 1x, ./img/image3_desc@2x_.webp 2x"
-              media="(min-width: 1280px)" />
-          <source srcset="./img/image1_tab@1x_.webp 1x, ./img/image1_tab@2x_.webp 2x"
-              media="(min-width: 768px)" />
-          <source srcset="./img/image1_mob@1x_.webp 1x, ./img/image1_mob@2x_.webp 2x"
-              media="(max-width: 767px)" />
-          <img src="./img/image1_desc@1x_.webp" alt="working out outdoors" width="1394" height=""
-              class="working-out-outdoors-img" />
-      </picture> 
+    <picture class="hero__picture">
+      <source srcset="./img/image1_mob@1x.webp 1x, ./img/image1_mob@2x.webp 2x" media="(max-width: 767px)" type="image/webp" />
+      <source srcset="./img/image1_mob@1x.jpg 1x, ./img/image1_mob@2x.jpg 2x" media="(max-width: 767px)" type="image/jpeg" />
+      <source srcset="./img/image1_tab@1x.webp 1x, ./img/image1_tab@2x.webp 2x" media="(min-width: 768px)" type="image/webp" />
+      <source srcset="./img/image1_tab@1x.jpg 1x, ./img/image1_tab@2x.jpg 2x" media="(min-width: 768px)" type="image/jpeg" />
+      <source srcset="./img/image1_desc@1x.webp 1x, ./img/image1_desc@2x.webp 2x" media="(min-width: 1280px)" type="image/webp" />
+      <source srcset="./img/image1_desc@1x.jpg 1x, ./img/image1_desc@2x.jpg 2x" media="(min-width: 1280px)" type="image/jpeg" />
+      <img class="hero__img" src="./img/image1_desc@1x.jpg" alt="women doing fitness outdoors" loading="lazy"/>
+    </picture>
+  
       <div class="tags">
         <ul class="tags__list">
           <li class="tags__list-item">#Sport</li>
@@ -30,37 +30,5 @@
       </div>
  </div>
 </section>
-<!-- </section>
-<picture>
-    <source
-      srcset="
-        ./images/about/cow_mobile.png             1x,
-        ./images/about/about@2x/cow_mobile@2x.png 2x
-      "
-      type="image/png"
-      media="(max-width: 767px)"
-    />
 
-    <source
-      srcset="
-        ./images/about/cow_tablet.png             1x,
-        ./images/about/about@2x/cow_tablet@2x.png 2x
-      "
-      type="image/png"
-      media="(min-width: 768px) and (max-width: 1199px)"
-    />
 
-    <source
-      srcset="
-        ./images/about/cow_desktop.png             1x,
-        ./images/about/about@2x/cow_desktop@2x.png 2x
-      "
-      type="image/png"
-      media="(min-width: 1200px)"
-    />
-    <img
-      class="wrapper-img"
-      src="./images/about/cow_desktop.png"
-      alt="cow"
-    />
-  </picture> -->
