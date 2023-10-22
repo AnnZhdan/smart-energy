@@ -155,7 +155,7 @@ img {
 
 
     .quote-box {
-        width: 360px;
+        width: 400px;
         padding: 40px;
     }
 
@@ -188,12 +188,12 @@ img {
 
     .quote-girls-img {
         width: 288px;
-        height: 267px;
+        height: 287px;
 
     }
 
     .recommend-box {
-        width: 360px;
+        width: 400px;
         padding: 40px;
     }
 
@@ -223,7 +223,9 @@ img {
         gap: 32px;
     }
 
-    .quote-box {}
+    .quote-box {
+        width: 444px;
+    }
 
     .quote-icon-box {
         gap: 108px;
@@ -251,6 +253,7 @@ img {
     }
 
     .recommend-box {
+        width: 444px;
         gap: 18px;
     }
 
