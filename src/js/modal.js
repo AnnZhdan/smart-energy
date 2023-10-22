@@ -93,3 +93,4 @@ closeModalButton2.addEventListener('click', () => myModal2.style.display = 'none
 
 myModal.style.display = 'none';
 myModal2.style.display = 'none';
+
