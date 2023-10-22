@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Your Energy</title>
     
-    <link rel="stylesheet" href="/smart-energy/assets/styles-aa16645e.css">
+    <link rel="stylesheet" href="/smart-energy/assets/styles-ed4b855e.css">
   </head>
   <body>
     <!-- <section>
@@ -16,7 +16,6 @@
     </section> -->
     <header class="header-top">
   <div class="container header-container">
-
     <!-- logo -->
 
     <a href="../index.html" class="logo-link">
@@ -66,7 +65,10 @@
 
     <!-- durger -->
 
-    <button type="button" class="mob-menu-open js-open-menu" aria-expanded="false" aria-controls="mob-list">
+    <button type="button"
+      class="menu-toggle js-open-menu"
+      aria-expanded="false"
+      aria-controls="mobile-menu">
       <svg class="header-burger" width="32px" height="32px">
         <use href="../img/icon-sprite.svg#align-justify"></use>
       </svg>
@@ -76,14 +78,17 @@
 
 <!-- mobil-menu -->
 
-<div class="mob-menu js-menu-container is-open" id="mobil menu">
-    <button type="button" class="mob-menu-close js-close-menu">
-      <svg class="icon-close">
-        <use href="../img/icon-sprite.svg#x"></use>
-      </svg>
-    </button>
-<!-- mob-nav -->
-    <ul class="mob-list">
+<div class="mob-menu js-menu-container" id="mobile-menu">
+  <button class="mob-menu-close js-close-menu">
+    <svg class="icon-close">
+      <use href="../img/icon-sprite.svg#x"></use>
+    </svg>
+  </button>
+
+  <!-- mob-nav -->
+
+  <div class="mobil-list">
+    <ul class="mobile-menu">
       <li class="mob-item">
         <a class="mob-link" href="../index.html">Home</a>
       </li>
@@ -92,7 +97,8 @@
       </li>
     </ul>
 
-<!-- mob-social -->
+    <!-- mob-social -->
+
     <ul class="mob-social">
       <li class="mob-icon">
         <a href="https://www.facebook.com/goITclub/">
@@ -116,7 +122,6 @@
         </a>
       </li>
     </ul>
-  
   </div>
 </div>
 
