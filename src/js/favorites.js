@@ -28,3 +28,4 @@ addToFavoritesButton.addEventListener('click', () => {
   console.log('Exercise Description:', modalDescription);
   console.log('Favorites List:', favoritesList);
 });
+
