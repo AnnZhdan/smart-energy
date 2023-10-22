@@ -10,11 +10,9 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    cursor: pointer;
-    /* margin: 0 0 0 auto; */
+    margin: 0;
     padding: 0;
-    background-color: transparent;
-    border-radius: 50%;
+    /* background-color: transparent; */
   }
   
   .mob-menu {
@@ -48,6 +46,8 @@
   
     top: 20px;
     right: 20px;
+    margin: 0;
+    padding: 0;
   
     width: 40px;
     height: 40px;
