@@ -1,5 +1,5 @@
 ///A list of filters (exercises)
-async function fetchFilters(filter, page, limit) {
+export async function fetchFilters(filter, page, limit) {
     const apiUrl = `https://your-energy.b.goit.study/api/filters?filter=${filter}&page=${page}&limit=${limit}`;
 
     try {
@@ -78,7 +78,7 @@ async function fetchExerciseDetails(exerciseID) {
             <p><strong>Target:</strong> ${exercise.target}</p>
             <p><strong>Description:</strong> ${exercise.description}</p>
             <p><strong>Burned Calories:</strong> ${exercise.burnedCalories}</p>
-            <p><strong>Duration:</strong> ${exercise.duration} minutes</p>
+            <p><strong>Duration:</strong> ${exercise.time} minutes</p>
             <p><strong>Rating:</strong> ${exercise.rating}</p>
             <p><strong>Popularity:</strong> ${exercise.popularity}</p>
             <p><strong>GIF URL:</strong> <a href="${exercise.gifUrl}" target="_blank">View</a></p>
@@ -126,16 +126,12 @@ async function getQuoteOfTheDay() {
         const data = await response.json();
 
         if (data && data.author && data.quote) {
-            
-            return { quote: data.quote, author: data.author };
-    
+            console.log(`Quote of the day: "${data.quote}" - ${data.author}`);
         } else {
-            throw new Error("Failed to get the quote of the day.");
+            console.log("Failed to get the quote of the day.");
         }
     } catch (error) {
         console.error("Error while fetching the quote of the day:", error);
-        throw error; // Повертаємо помилку, щоб інші частини коду могли її обробити, якщо потрібно
-    
     }
 }
 
