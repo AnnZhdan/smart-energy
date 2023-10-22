@@ -6,11 +6,9 @@ let isFavorite = false;
 
 favoritesButton.addEventListener('click', () => {
   if (isFavorite) {
-    
     favoritesText.textContent = 'Add to favorites';
     favoritesIcon.setAttribute('xlink:href', './img/icon-sprite.svg#heart');
   } else {
-    
     favoritesText.textContent = 'Remove from favorites';
     favoritesIcon.setAttribute('xlink:href', './img/icon-sprite.svg#trash');
   }
