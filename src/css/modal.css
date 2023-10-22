@@ -1,3 +1,40 @@
+.modal {
+  display: block;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+ }
+
+.modal-content {
+  width: 335px;
+  border-radius: 20px;
+  margin-top: 15%;
+  position: absolute;
+  background-color: #242424;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  left: 50%;
+  transform: translate(-50%, 0%);
+}
+
+.close-button {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  padding: 10px;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
 .gif-modal {
   width: 295px;
   height: 258px;
@@ -8,6 +45,36 @@
   border-radius: 12px;
   margin-left: 20px;
   margin-right: 20px;
+}
+
+.modal-details-container {
+  margin-top: 20px;
+  margin-right: 20px;
+  margin-left: 20px;
+  margin-bottom: 40px;
+}
+
+.title-modal {
+  color: #f4f4f4;
+  font-feature-settings: 'clig' off, 'liga' off;
+  font-family: Neue Montreal;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px;
+}
+
+.modal-rating {
+  color: aliceblue;
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+.text-modal-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 20px;
 }
 
 .text-modal-container::after {
@@ -28,26 +95,23 @@
   height: 1px;
   background-color: rgba(244, 244, 244, 0.2);
   margin: 0 auto;
-
   margin-bottom: 8px;
 }
 
-.description-modal {
-  margin-bottom: 40px;
-}
-
-.title-modal {
-  color: #f4f4f4;
+.modal-text-style {
+  color: rgba(244, 244, 244, 0.4);
 
   font-feature-settings: 'clig' off, 'liga' off;
   font-family: Neue Montreal;
-  font-size: 20px;
+  font-size: 12px;
   font-style: normal;
-  font-weight: 500;
-  line-height: 20px;
+  font-weight: 400;
+  line-height: 18px;
+  display: flex;
+  flex-direction: column;
 }
 
-.time-burn {
+.modal-api-style {
   color: #f4f4f4;
   font-feature-settings: 'clig' off, 'liga' off;
   font-family: Neue Montreal;
@@ -55,68 +119,16 @@
   font-style: normal;
   font-weight: 500;
   line-height: 18px;
+  order: -1;
 }
 
 .text-modal {
   color: rgba(244, 244, 244, 0.6);
-
   font-family: Neue Montreal;
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
   line-height: 18px;
-}
-
-.modal-rating {
-  color: aliceblue;
-  font-size: 16px;
-  margin-top: 10px;
-}
-.modal {
-  display: block;
-  position: fixed;
-  z-index: 1;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.7);
-}
-
-.modal-content {
-  width: 335px;
-  border-radius: 20px;
-  margin: 15% 20px;
-  position: relative;
-  background-color: #242424;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.close-button {
-  position: absolute;
-  top: 14px;
-  right: 14px;
-  padding: 10px;
-  cursor: pointer;
-  background-color: transparent;
-  border: none;
-  padding: 0;
-  cursor: pointer;
-}
-.burn-modal {
-  color: #f4f4f4;
-
-  font-feature-settings: 'clig' off, 'liga' off;
-  font-family: Neue Montreal;
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 18px;
-}
-
-.modal-close {
 }
 
 .container-button {
@@ -150,6 +162,10 @@
   color: #f4f4f4;
 }
 
+.description-modal {
+  margin-bottom: 40px;
+}
+
 .button-name-favorites {
   color: #242424;
   font-family: Neue Montreal;
@@ -157,6 +173,10 @@
   font-style: normal;
   font-weight: 400;
   line-height: 18px;
+}
+
+.button-rating-container {
+  flex: 1;
 }
 
 .button-rating {
@@ -170,9 +190,6 @@
   border: 1px solid #f4f4f4;
   background-color: #242424;
   white-space: nowrap;
-}
-.button-rating-container {
-  flex: 1;
 }
 
 .button-rating:hover {
@@ -194,6 +211,7 @@
 }
 
 .modal-rating-content {
+  margin-top: 15%;
   width: 335px;
   height: 357px;
   border-radius: 20px;
@@ -202,6 +220,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  left: 50%;
+  transform: translate(-50%, 0%);
 }
 
 .modal-body {
@@ -213,7 +233,6 @@
 
 .modal-body-rating {
   color: rgba(244, 244, 244, 0.4);
-
   font-feature-settings: 'clig' off, 'liga' off;
   font-family: Neue Montreal;
   font-size: 12px;
@@ -222,10 +241,31 @@
   line-height: 18px;
 }
 
-.ratingForm {
+.rating-container {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+}
+
+.rating-container label {
+  cursor: pointer;
+}
+
+.rating-container input[type='radio'] {
+  display: none;
+}
+
+.rating-container label svg {
+  width: 24px;
+  height: 24px;
+}
+
+.selectedRat {
+  color: #f4f4f4;
+  font-feature-settings: 'clig' off, 'liga' off;
+  font-family: Neue Montreal;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 18px;
 }
 
 .form-group {
@@ -235,9 +275,6 @@
 .form-group label,
 .form-group input[type='radio'] {
   display: inline;
-}
-
-.rating-container {
 }
 
 .form-email {
@@ -281,78 +318,6 @@
   color: #f4f4f4;
 }
 
-.button-send:hover .button-name-favorites {
-}
-
-.rating-container {
-  display: flex;
-}
-
-.rating-container label {
-  cursor: pointer;
-}
-
-.rating-container input[type='radio'] {
-  display: none;
-}
-
-.rating-container label svg {
-  width: 24px;
-  height: 24px;
-}
-
-.selectedRat {
-  color: #f4f4f4;
-
-  font-feature-settings: 'clig' off, 'liga' off;
-  font-family: Neue Montreal;
-  font-size: 12px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 18px;
-}
-
-.container-text-block {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  gap: 20px;
-}
-
-.text-block {
-  width: auto;
-  white-space: nowrap;
-  display: inline-flex;
-  flex-wrap: wrap;
-}
-
-.modal-parameters {
-  color: rgba(244, 244, 244, 0.4);
-
-  font-feature-settings: 'clig' off, 'liga' off;
-  font-family: Neue Montreal;
-  font-size: 12px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 18px;
-}
-
-.modal-core {
-  color: #f4f4f4;
-
-  font-feature-settings: 'clig' off, 'liga' off;
-  font-family: Neue Montreal;
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 18px;
-}
-.modal-details-container {
-  margin-top: 20px;
-  margin-right: 20px;
-  margin-left: 20px;
-  margin-bottom: 40px;
-}
 @media screen and (min-width: 768px) {
   .modal {
   }
@@ -360,25 +325,12 @@
   .modal-content {
     width: 704px;
     height: auto;
-
     padding-bottom: 0px;
     display: flex;
   }
 
-  .modal-rating-content {
-    width: 430px;
-    height: 412px;
-  }
-
-  .modal {
-  }
-
   .modal-info {
     display: flex;
-  }
-
-  .button-rating {
-    margin-right: 348px;
   }
 
   .gif-modal {
@@ -390,21 +342,8 @@
     height: 259px;
   }
 
-  .container-button {
-    margin-left: 32px;
-    margin-bottom: 32px;
-    margin-right: 32px;
-    margin-top: 64px;
-    gap: 8px;
-  }
-  .description-modal {
-    margin-right: 32px;
-  }
-
-  .modal-details-container {
-    margin-left: 28px;
-    margin-right: 32px;
-    margin-top: 32px;
+  .text-modal-container {
+    gap: 16px;
   }
 
   .text-modal-container::after {
@@ -425,8 +364,36 @@
     height: 1px;
     background-color: rgba(244, 244, 244, 0.2);
     margin: 0 auto;
-
     margin-bottom: 8px;
+  }
+
+  .modal-text-style {
+  }
+
+  .modal-api-style {
+  }
+
+  .modal-details-container {
+    margin-left: 28px;
+    margin-right: 32px;
+    margin-top: 32px;
+  }
+
+  .container-button {
+    margin-left: 32px;
+    margin-bottom: 32px;
+    margin-right: 32px;
+    margin-top: 64px;
+    gap: 8px;
+  }
+
+  .button-rating {
+    margin-right: 348px;
+  }
+
+  .modal-rating-content {
+    width: 430px;
+    height: 412px;
   }
 
   .close-button {
