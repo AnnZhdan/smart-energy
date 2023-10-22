@@ -42,6 +42,8 @@ button {
   .container {
     max-width: 375px;
     margin: 0 auto;
+    padding-left: 20px;
+    padding-right: 20px;
   }
 }
 
@@ -53,22 +55,8 @@ button {
   }
 }
 
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 1440px) {
   .container {
-    max-width: 1280px;
-  }
-}
-
-@media screen and (min-width: 768px) {
-  .container {
-    width: 768px;
-  }
-}
-
-@media screen and (min-width: 1158px) {
-  .container {
-    width: 1158px;
-    /* padding-left: 15px;
-    padding-right: 15px; */
+    max-width: 1440px;
   }
 }
