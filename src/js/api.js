@@ -126,12 +126,16 @@ async function getQuoteOfTheDay() {
         const data = await response.json();
 
         if (data && data.author && data.quote) {
-            console.log(`Quote of the day: "${data.quote}" - ${data.author}`);
+            
+            return { quote: data.quote, author: data.author };
+    
         } else {
-            console.log("Failed to get the quote of the day.");
+            throw new Error("Failed to get the quote of the day.");
         }
     } catch (error) {
         console.error("Error while fetching the quote of the day:", error);
+        throw error; // Повертаємо помилку, щоб інші частини коду могли її обробити, якщо потрібно
+    
     }
 }
 
