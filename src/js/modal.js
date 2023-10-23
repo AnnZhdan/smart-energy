@@ -27,18 +27,7 @@ function showExerciseModal(exerciseData) {
   modalEquipment.textContent = exerciseData.equipment;
   modalTarget.textContent = exerciseData.target;
   modalPopularity.textContent = exerciseData.popularity;
-
-  modalRating.innerHTML = '';
-
-  for (let i = 0; i < exerciseData.rating; i++) {
-    const starSVG = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
-    starSVG.setAttribute('width', '25');
-    starSVG.setAttribute('height', '25');
-    const useElement = document.createElementNS('http://www.w3.org/2000/svg', 'use');
-    useElement.setAttribute('xlink:href', './img/icon-sprite.svg#icon-Star-1');
-    starSVG.appendChild(useElement);
-    modalRating.appendChild(starSVG);
-  }
+  modalRating.textContent = exerciseData.rating;
 }
 
 async function updateModalWithExerciseData(exerciseID) {
