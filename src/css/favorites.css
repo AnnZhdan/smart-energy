@@ -23,7 +23,6 @@
 }
 
 .favorites-box {
-  display: flex;
   justify-content: center;
 }
 
@@ -33,7 +32,13 @@
   text-align: center;
   line-height: 1.28;
 }
-
+.exercise-item-trash {
+  stroke: #fff;
+}
+.favourite-delete-button {
+  border: none;
+  background-color: inherit;
+}
 @media screen and (min-width: 768px) {
   .favorites-title {
     margin-top: 100px;
@@ -85,8 +90,11 @@
   .favorites-img-box {
     margin-top: 0px;
   }
+
+  /* .favorites-box {
+  } */
 }
-@media screen and (min-width: 1158px) {
+@media screen and (min-width: 1440px) {
   .favorites-title {
     margin-top: 90px;
     margin-bottom: 44px;
