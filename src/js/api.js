@@ -126,7 +126,7 @@ async function setExerciseRating(exerciseID, rating) {
 }
 
 ///Quote of the day
-async function getQuoteOfTheDay() {
+export async function getQuoteOfTheDay() {
   try {
     const response = await fetch('https://your-energy.b.goit.study/api/quote');
 
@@ -138,6 +138,7 @@ async function getQuoteOfTheDay() {
 
     if (data && data.author && data.quote) {
       console.log(`Quote of the day: "${data.quote}" - ${data.author}`);
+      return data;
     } else {
       console.log('Failed to get the quote of the day.');
     }
