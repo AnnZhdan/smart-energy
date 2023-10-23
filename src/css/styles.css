@@ -12,6 +12,7 @@
 @import url('./footer.css');
 @import url('./modal.css');
 @import url('./mobile-menu.css');
+@import url('./scroll-up-button.css');
 
 @font-face {
     font-family: 'Neue Montreal';
@@ -38,3 +39,4 @@
   /* Колір бекграунду і світлих елементів */
   --primary-light-color: #F4F4F4;
 } 
+

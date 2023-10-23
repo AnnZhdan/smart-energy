@@ -1,0 +1,29 @@
+* {
+  scroll-behavior: smooth;
+}
+
+.scroll-up {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 10px 10px;
+  z-index: 5;
+  border: none;
+   border-radius: 50%;
+  border-color: var(--primary-dark-color);
+  background-color: var(--primary-dark-color);
+  cursor: pointer;
+  transition: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  display: block;
+}
+
+
+.btn-hidden {
+  display: none;
+}
+
+.scroll-up-btn {
+ width: 33px;
+ height: 33px;
+}
+
