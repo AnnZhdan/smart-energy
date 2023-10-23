@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Your Energy</title>
     
-    <script type="module" crossorigin src="/smart-energy/assets/main-74ec880d.js"></script>
-    <link rel="stylesheet" href="/smart-energy/assets/main-b5091ae9.css">
+    <script type="module" crossorigin src="/smart-energy/assets/main-86f5eede.js"></script>
+    <link rel="stylesheet" href="/smart-energy/assets/main-61d1ccb3.css">
   </head>
   <body>
     <!--Anna V.-->
@@ -608,7 +608,7 @@
         <div class="modal-details-container">
           <div class="title-inform-modal">
             <h2 class="title-modal"></h2>
-            <p class="modal-rating">4</p>
+            <p class="modal-rating"></p>
             <div class="modal-raring-svg">
               <svg
                 id="1"
@@ -817,23 +817,25 @@
             </label>
           </div>
           <div class="form-group">
-            <label for="email"></label>
+            <label for="email">Email:</label>
             <input
-              type="email"
+              type="text"
               name="email"
+              id="emailInput"
               class="form-email"
               required
-              placeholder="   Email"
+              placeholder="Email"
             />
           </div>
           <div class="form-group">
-            <label for="comment"></label>
+            <label for="comment">Comment:</label>
             <textarea
               name="comment"
+              id="commentInput"
               rows="4"
               class="form-comment"
               required
-              placeholder=" Your comment"
+              placeholder="Your comment"
             ></textarea>
           </div>
           <button type="submit" id="submitRatingButton" class="button-send">
