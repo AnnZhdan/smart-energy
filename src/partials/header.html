@@ -1,6 +1,5 @@
-<header class="header-top">
+<header class="header-top fixed-header">
   <div class="container header-container">
-
     <!-- logo -->
 
     <a href="../index.html" class="logo-link">
@@ -13,7 +12,7 @@
 
     <nav class="nav-header">
       <ul class="nav-list">
-        <li class="nav-item active">     
+        <li class="nav-item active">
           <a href="../index.html" class="nav-link link">Home</a>
         </li>
         <li class="nav-item">
@@ -26,21 +25,36 @@
 
     <ul class="nav-social">
       <li class="nav-icon">
-        <a class="nav-soc-link" href="https://www.facebook.com/goITclub/" target="_blank" rel="noopener nofollow noreferer">
+        <a
+          class="nav-soc-link"
+          href="https://www.facebook.com/goITclub/"
+          target="_blank"
+          rel="noopener nofollow noreferer"
+        >
           <svg class="nav-icon-social" width="28px" height="28px">
             <use href="../img/icon-sprite.svg#facebook"></use>
           </svg>
         </a>
       </li>
       <li class="nav-icon">
-        <a class="nav-soc-link" href="https://www.instagram.com/goitclub/" target="_blank" rel="noopener nofollow noreferer">
+        <a
+          class="nav-soc-link"
+          href="https://www.instagram.com/goitclub/"
+          target="_blank"
+          rel="noopener nofollow noreferer"
+        >
           <svg class="nav-icon-social" width="28px" height="28px">
             <use href="../img/icon-sprite.svg#instagram"></use>
           </svg>
         </a>
       </li>
       <li class="nav-icon">
-        <a class="nav-soc-link" href="https://www.youtube.com/c/GoIT" target="_blank" rel="noopener nofollow noreferer">
+        <a
+          class="nav-soc-link"
+          href="https://www.youtube.com/c/GoIT"
+          target="_blank"
+          rel="noopener nofollow noreferer"
+        >
           <svg class="nav-icon-social" width="28px" height="28px">
             <use href="../img/icon-sprite.svg#youtube"></use>
           </svg>
@@ -49,67 +63,86 @@
     </ul>
 
     <!-- durger -->
-
-    <button
-      type="button"
-      class="menu-toggle js-open-menu"
-      aria-expanded="false"
-      aria-controls="mobile-menu"
-    >
-      <svg class="header-burger" width="32px" height="32px">
-        <use href="../img/icon-sprite.svg#align-justify"></use>
-      </svg>
-    </button>
+    <div class="header-btn">
+      <button
+        type="button"
+        class="menu-toggle js-open-menu"
+        aria-expanded="false"
+        aria-controls="mobile-menu"
+      >
+        <svg class="header-burger" width="32px" height="32px">
+          <use href="../img/icon-sprite.svg#align-justify"></use>
+        </svg>
+      </button>
+    </div>
   </div>
 </header>
 
 <!-- mobil-menu -->
 
-<div class="mob-menu js-menu-container is-hidden-mobile is-open" id="mobile-menu">
-  <button class="mob-menu-close js-close-menu is-hidden-close-burg">
-    <svg class="icon-close">
-      <use href="../img/icon-sprite.svg#x"></use>
-    </svg>
-  </button>
+<button type="button" class="hide-header" id="hide-header-button"></button>
+ <!-- <div id="overlay" class="overlay"> -->
+<div class="mob-menu js-menu-container" id="mobile-menu">
+     <button class="mob-menu-close js-close-menu">
+      <svg class="icon-close">
+        <use href="../img/icon-sprite.svg#x"></use>
+      </svg>
+    </button>
 
-  <!-- mob-nav -->
+    <!-- mob-nav -->
 
-  <div class="mobil-list">
-    <ul class="mobile-menu">
-      <li class="mob-item">
-        <a class="mob-link" href="../index.html">Home</a>
-      </li>
-      <li class="mob-item">
-        <a class="mob-link" href="../favourites.html">Favorites</a>
-      </li>
-    </ul>
+    <div class="mobil-list">
+      <ul class="mobile-menu">
+        <li class="mob-item">
+          <a class="mob-link" href="../index.html">Home</a>
+        </li>
+        <li class="mob-item">
+          <a class="mob-link" href="../favourites.html">Favorites</a>
+        </li>
+      </ul>
 
-    <!-- mob-social -->
+      <!-- mob-social -->
 
-    <ul class="mob-social">
-      <li class="mob-icon">
-        <a class="soc-icon-mobil" href="https://www.facebook.com/goITclub/" target="_blank" rel="noopener nofollow noreferer">
-          <svg class="mob-social-icon" width="28px" height="28px">
-            <use href="../img/icon-sprite.svg#facebook"></use>
-         </svg>
-        </a>
-      </li>
-      <li class="mob-icon">
-        <a  class="soc-icon-mobil"  href="https://www.instagram.com/goitclub/" target="_blank" rel="noopener nofollow noreferer">
-          <svg class="mob-social-icon" width="28px" height="28px">
-            <use href="../img/icon-sprite.svg#instagram"></use>
-          </svg>
-        </a>
-      </li>
-      <li class="mob-icon">
-        <a class="soc-icon-mobil"  href="https://www.youtube.com/c/GoIT" target="_blank" rel="noopener nofollow noreferer">
-          <svg class="mob-social-icon" width="28px" height="28px">
-            <use href="../img/icon-sprite.svg#youtube"></use>
-          </svg>
-        </a>
-      </li>
-    </ul>
-  </div>
+      <ul class="mob-social">
+        <li class="mob-icon">
+          <a
+            class="soc-icon-mobil"
+            href="https://www.facebook.com/goITclub/"
+            target="_blank"
+            rel="noopener nofollow noreferer"
+          >
+            <svg class="mob-social-icon" width="28px" height="28px">
+              <use href="../img/icon-sprite.svg#facebook"></use>
+            </svg>
+          </a>
+        </li>
+        <li class="mob-icon">
+          <a
+            class="soc-icon-mobil"
+            href="https://www.instagram.com/goitclub/"
+            target="_blank"
+            rel="noopener nofollow noreferer"
+          >
+            <svg class="mob-social-icon" width="28px" height="28px">
+              <use href="../img/icon-sprite.svg#instagram"></use>
+            </svg>
+          </a>
+        </li>
+        <li class="mob-icon">
+          <a
+            class="soc-icon-mobil"
+            href="https://www.youtube.com/c/GoIT"
+            target="_blank"
+            rel="noopener nofollow noreferer"
+          >
+            <svg class="mob-social-icon" width="28px" height="28px">
+              <use href="../img/icon-sprite.svg#youtube"></use>
+            </svg>
+          </a>
+        </li>
+      </ul>
+    </div>
+  <!-- </div> -->
 </div>
 
 <script scr="../js/header.js"></script>
