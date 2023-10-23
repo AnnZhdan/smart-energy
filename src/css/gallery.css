@@ -1,3 +1,16 @@
+.is-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
 .galary {
   margin-top: 40px;
 }
@@ -25,7 +38,12 @@
   gap: 20px;
   margin-bottom: 28px;
 }
-.galary-filters-button {
+.galary-filters-button1,
+.galary-filters-button2,
+.galary-filters-button3,
+.galary-filters-button4,
+.galary-filters-button5,
+.galary-filters-button6 {
   border: none;
   background-color: transparent;
   color: var(--primary-dark-color);
@@ -36,10 +54,10 @@
   line-height: 20px;
   padding: 0;
 }
-.galary-filter-checkt {
+.galary-filter-checked {
   position: relative;
 }
-.galary-filter-checkt::after {
+.galary-filter-checked::after {
   position: absolute;
   bottom: -7px;
   display: block;
