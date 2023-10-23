@@ -1,9 +1,11 @@
-
 const closeModalButton = document.getElementById('closeModalButton');
 const additionalButton2 = document.getElementById('additionalButton2');
 const closeModalButton2 = document.getElementById('closeModalButton2');
 const myModal = document.getElementById('myModal');
 const myModal2 = document.getElementById('myModal2');
+
+let currentExerciseData = null;
+let currentExerciseID = null;
 
 
 function showExerciseModal(exerciseData) {
@@ -28,6 +30,8 @@ function showExerciseModal(exerciseData) {
   modalTarget.textContent = exerciseData.target;
   modalPopularity.textContent = exerciseData.popularity;
   modalRating.textContent = exerciseData.rating;
+
+  currentExerciseData = exerciseData;
 }
 
 async function updateModalWithExerciseData(exerciseID) {
@@ -40,6 +44,7 @@ async function updateModalWithExerciseData(exerciseID) {
     }
 
     showExerciseModal(exerciseData);
+    currentExerciseID = exerciseID;
   } catch (error) {
     console.error(`Помилка: ${error.message}`);
   }
@@ -71,10 +76,12 @@ exerciseItemButtons.forEach(button => {
 closeModalButton.addEventListener('click', () => myModal.style.display = 'none');
 additionalButton2.addEventListener('click', () => {
   myModal.style.display = 'none';
-  myModal2.style.display = 'block'; 
+  if (currentExerciseData && currentExerciseID) {
+    showExerciseModal(currentExerciseData);
+    myModal2.style.display = 'block';
+  }
 });
 closeModalButton2.addEventListener('click', () => myModal2.style.display = 'none');
 
 myModal.style.display = 'none';
 myModal2.style.display = 'none';
-
