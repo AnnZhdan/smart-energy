@@ -1,25 +1,27 @@
-.mobil-list {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 100%;
-}
 
 .menu-toggle {
-  border: none;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0;
-  padding: 0;
-  /* background-color: transparent; */
+ align-items: center;
+ justify-content: center;
+ margin: 0 0 0 auto;
+ padding: 0;
+ background-color: transparent;
+ cursor: pointer;
+ border: none;
+}
+
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); 
+  z-index: 5;
 }
 
 .mob-menu {
-  /* opacity: 1;
-      visibility: visible;
-      pointer-events: auto; */
-
   width: 210px;
   height: 100%;
   padding: 200px 87px 40px;
@@ -46,8 +48,8 @@
 
   top: 20px;
   right: 20px;
-  margin: 0;
-  padding: 0;
+  /* margin: 0;
+  padding: 0; */
 
   width: 40px;
   height: 40px;
@@ -59,6 +61,13 @@
   width: 32px;
   height: 32px;
   stroke: var(--primary-light-color);
+}
+
+.mobil-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
 }
 
 .mobile-menu {
@@ -76,15 +85,11 @@
   gap: 12px;
 }
 
-.mob-icon:hover {
+ 
+.mob-icon:focus {
+  border-radius: 10px;
   border: 1px solid rgba(244, 244, 244, 0.1);
   background: var(--primary-light-color);
-}
-
-.mob-social-icon:hover {
-  border: 10px;
-  fill: var(--primary-dark-color);
-  opacity: 80%;
 }
 
 .soc-icon-mobil {
@@ -98,20 +103,22 @@
   cursor: pointer;
 }
 
-.soc-icon-mobil:hover,
-.soc-icon-mobil:focus {
-  border: 10px;
-  background: var(--primary-light-color);
-  opacity: 80%;
-}
 .mob-social-icon {
   width: 28px;
   height: 28px;
   opacity: 80%;
   fill: var(--primary-light-color)
 }
-.mob-social-icon:hover {
-    border: 10px;
-    fill: var(--primary-dark-color);
-    opacity: 80%;
-  }
+
+
+.mob-social-icon:focus {
+  fill: var(--primary-dark-color);
+  opacity: 80%;
+}
+
+.soc-icon-mobil:hover,
+.soc-icon-mobil:focus {
+  background: var(--primary-light-color);
+  opacity: 80%;
+}
+
