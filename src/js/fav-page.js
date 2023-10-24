@@ -49,14 +49,14 @@ window.addEventListener('load', function () {
     });
   });
 
-  const currentUrl = window.location.href;
-  const menuLinks = document.querySelectorAll('.header-menu a');
+  // const currentUrl = window.location.href;
+  // const menuLinks = document.querySelectorAll('.header-menu a');
 
-  menuLinks.forEach(link => {
-    if (link.href === currentUrl || currentUrl.includes('favourites.html')) {
-      link.parentElement.classList.add('active');
-    }
-  });
+  // menuLinks.forEach(link => {
+  //   if (link.href === currentUrl || currentUrl.includes('favourites.html')) {
+  //     link.parentElement.classList.add('active');
+  //   }
+  // });
 
   // const listItems = document.querySelectorAll('.nav-list li');
   // const homeNavItem = listItems[0];
@@ -154,6 +154,26 @@ window.addEventListener('load', function () {
 
           favorites.appendChild(exerciseCard);
         });
+        // Видалення картки
+
+        const deleteButtons = document.querySelectorAll(
+          '.favourite-delete-button'
+        );
+        deleteButtons.forEach(button => {
+          button.addEventListener('click', handleDelete);
+        });
+
+        function handleDelete(event) {
+          const cardId = event.target.getAttribute('data-card-id');
+
+          const newFavBox = favBox.filter(item => item.id !== cardId);
+          localStorage.setItem(LS_KEY, JSON.stringify(newFavBox));
+
+          const cardElement = event.target.closest('.exercise-item');
+          if (cardElement) {
+            cardElement.remove();
+          }
+        }
       } else {
         paragraph.style.display = 'block';
       }
@@ -164,28 +184,6 @@ window.addEventListener('load', function () {
 
   createCards();
 });
-
-// Видалення картки
-const deleteButtons = document.querySelectorAll('.favourite-delete-button');
-deleteButtons.forEach(button => {
-  button.addEventListener('click', handleDelete);
-});
-
-function handleDelete(event) {
-  const cardId = event.target.getAttribute('data-card-id');
-
-  const newFavBox = favBox.filter(item => item.id !== cardId);
-  localStorage.setItem(LS_KEY, JSON.stringify(newFavBox));
-
-  const cardElement = event.target.closest('.exercise-item');
-  if (cardElement) {
-    cardElement.remove();
-  }
-}
-
-// 64f389465ae26083f39b17df
-// 64f389465ae26083f39b17a5
-// 64f389465ae26083f39b18d7
 
 // АНімація для кліку
 
