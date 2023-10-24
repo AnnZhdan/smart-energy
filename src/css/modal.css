@@ -275,7 +275,6 @@
 
 .selectedRat {
   display: flex;
-
   justify-content: center;
   color: #f4f4f4;
   font-feature-settings: 'clig' off, 'liga' off;
