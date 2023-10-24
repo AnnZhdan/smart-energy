@@ -131,6 +131,7 @@ export async function getQuoteOfTheDay() {
 
     if (data && data.author && data.quote) {
       console.log(`Quote of the day: "${data.quote}" - ${data.author}`);
+      
       return data;
     } else {
       console.log('Failed to get the quote of the day.');
