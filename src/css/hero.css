@@ -169,6 +169,10 @@
     
 }
 
+.tags__list-item {
+    margin: 0 auto;
+}
+
 
 .hero__img {
     width: 1376px;
