@@ -48,6 +48,16 @@ window.addEventListener('load', function () {
       duration: 800,
     });
   });
+
+  const currentUrl = window.location.href;
+  const menuLinks = document.querySelectorAll('.header-menu a');
+
+  menuLinks.forEach(link => {
+    if (link.href === currentUrl || currentUrl.includes('favourites.html')) {
+      link.parentElement.classList.add('active');
+    }
+  });
+
   // const listItems = document.querySelectorAll('.nav-list li');
   // const homeNavItem = listItems[0];
   // const favoritesNavItem = listItems[1];

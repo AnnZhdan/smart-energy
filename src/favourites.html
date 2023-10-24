@@ -8,6 +8,7 @@
     <title>Your Energy</title>
     <link rel="stylesheet" href="./css/styles.css" />
     <link rel="stylesheet" href="./css/favorites.css" />
+    <script type="module" src="./js/fav-page.js"></script>
   </head>
   <body>
     <!-- <section>
@@ -32,18 +33,12 @@
               </div>
               <div class="quotes-day-box">
                 <div class="quote-icon-box">
-                  <h3 class="quotes-day-title">Quote of the day</h3>
+                  <!-- <h3 class="quotes-day-title">Quote of the day</h3> -->
                   <svg class="qoute-item-icon" width="24" height="24">
                     <use href="./img/icon-sprite.svg#inverted-commas"></use>
                   </svg>
                 </div>
-                <p class="quotes-day-text favorites-day-text">
-                  A lot of times I find that people who are blessed with the
-                  most talent don't ever develop that attitude, and the ones who
-                  aren't blessed in that way are the most competitive and have
-                  the biggest heart.
-                </p>
-                <p class="quotes-day-author">Tom Brady</p>
+                <div class="qoute-inside-container"></div>
               </div>
             </div>
             <div class="favorites-rec-box">
@@ -118,9 +113,8 @@
         </div>
       </div>
     </main>
-    <script type="module" src="/main.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://unpkg.com/scrollreveal"></script>
-    <script type="module" src="./js/fav-page.js"></script>
+    <script type="module" src="./js/quote.js"></script>
   </body>
 </html>
