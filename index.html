@@ -7,9 +7,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Your Energy</title>
   
-  <script type="module" crossorigin src="/smart-energy/assets/index-e3aeec48.js"></script>
-  <link rel="modulepreload" crossorigin href="/smart-energy/assets/quote-30209c56.js">
-  <link rel="stylesheet" href="/smart-energy/assets/quote-337a32f1.css">
+  <script type="module" crossorigin src="/smart-energy/assets/index-49172434.js"></script>
+  <link rel="modulepreload" crossorigin href="/smart-energy/assets/quote-6462fda4.js">
+  <link rel="stylesheet" href="/smart-energy/assets/quote-44edb06f.css">
 </head>
 
 <body>
@@ -580,22 +580,22 @@
         <ul class="social">
           <li class="footer-li">
             <a href="https://www.facebook.com/goITclub/" target="_blank">
-              <svg class="footer-icons" width="" height="">
-                <use href="/smart-energy/assets/icon-sprite-84cf747f.svg#facebook" fill=""></use>
+              <svg class="footer-icons" width="24px" height="24px">
+                <use href="/smart-energy/assets/icon-sprite-84cf747f.svg#facebook"></use>
               </svg>
             </a>
           </li>
           <li class="footer-li">
             <a href="https://www.instagram.com/goitclub/" target="_blank">
-              <svg class="footer-icons" width="" height="">
-                <use href="/smart-energy/assets/icon-sprite-84cf747f.svg#instagram" fill=""></use>
+              <svg class="footer-icons" width="24px" height="24px">
+                <use href="/smart-energy/assets/icon-sprite-84cf747f.svg#instagram"></use>
               </svg>
             </a>
           </li>
           <li class="footer-li">
             <a href="https://www.youtube.com/c/GoIT" target="_blank">
-              <svg class="footer-icons" width="" height="" fill="">
-                <use href="/smart-energy/assets/icon-sprite-84cf747f.svg#youtube" fill=""></use>
+              <svg class="footer-icons" width="24px" height="24px">
+                <use href="/smart-energy/assets/icon-sprite-84cf747f.svg#youtube"></use>
               </svg>
             </a>
           </li>
@@ -605,16 +605,18 @@
         <h2 class="footer-h2">
           Transforming your <span class="footer-text">body</span> shape with us
         </h2>
-        <form class="footer-form">
+        <form class="footer-form" id="feedback-form">
           <h3 class="footer-h3">Subscribe and learn about new exercises!</h3>
           <input
-            type="text"
+            type="email"
             class="footer-input"
             placeholder="Email"
             name="email"
             id="mailto"
+            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+            required
           />
-          <button type="submit" class="footer-buttom">Send</button>
+          <button type="submit" class="footer-button">Send</button>
         </form>
       </div>
     </div>
@@ -646,25 +648,26 @@
         <div class="modal-details-container">
           <div class="title-inform-modal">
             <h2 class="title-modal"></h2>
-            <p class="modal-rating"></p>
-            <div class="modal-raring-svg">
-              <svg
-                id="1"
-                xmlns="http://www.w3.org/2000/svg"
-                width="18"
-                height="18"
-                viewBox="0 0 100 100"
-              >
-                <use xlink:href="/smart-energy/assets/icon-sprite-84cf747f.svg#icon-Star-1"></use>
-              </svg>
-              <svg
+            <div class="modal-rating-stars">
+              <p class="modal-rating"></p>
+              <div class="modal-raring-svg">
+                <svg
+                  id="1"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="18"
+                  height="18"
+                  viewBox="0 0 100 100"
+                >
+                  <use xlink:href="/smart-energy/assets/icon-sprite-84cf747f.svg#icon-Star-2"></use>
+                </svg>
+                <!-- <svg
                 id="2"
                 xmlns="http://www.w3.org/2000/svg"
                 width="18"
                 height="18"
                 viewBox="0 0 100 100"
               >
-                <use xlink:href="/smart-energy/assets/icon-sprite-84cf747f.svg#icon-Star-1"></use>
+                <use xlink:href="./img/icon-sprite.svg#icon-Star-1"></use>
               </svg>
               <svg
                 id="3"
@@ -673,7 +676,7 @@
                 height="18"
                 viewBox="0 0 100 100"
               >
-                <use xlink:href="/smart-energy/assets/icon-sprite-84cf747f.svg#icon-Star-1"></use>
+                <use xlink:href="./img/icon-sprite.svg#icon-Star-1"></use>
               </svg>
               <svg
                 id="4"
@@ -682,7 +685,7 @@
                 height="18"
                 viewBox="0 0 100 100"
               >
-                <use xlink:href="/smart-energy/assets/icon-sprite-84cf747f.svg#icon-Star-1"></use>
+                <use xlink:href="./img/icon-sprite.svg#icon-Star-1"></use>
               </svg>
               <svg
                 id="5"
@@ -691,8 +694,9 @@
                 height="18"
                 viewBox="0 0 100 100"
               >
-                <use xlink:href="/smart-energy/assets/icon-sprite-84cf747f.svg#icon-Star-1"></use>
-              </svg>
+                <use xlink:href="./img/icon-sprite.svg#icon-Star-1"></use>
+              </svg> -->
+              </div>
             </div>
           </div>
           <div class="text-container">
@@ -768,94 +772,95 @@
         <form id="ratingForm">
           <div class="rating-container">
             <div id="selectedRat" class="selectedRat">0.0</div>
-            <label for="rating11">
-              <input
-                type="radio"
-                name="rating"
-                id="rating11"
-                value="11"
-                required
-              />
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="100"
-                height="100"
-                viewBox="0 0 100 100"
-              >
-                <use xlink:href="/smart-energy/assets/icon-sprite-84cf747f.svg#icon-Star-1"></use>
-              </svg>
-            </label>
-            <label for="rating12">
-              <input
-                type="radio"
-                name="rating"
-                id="rating12"
-                value="12"
-                required
-              />
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="100"
-                height="100"
-                viewBox="0 0 100 100"
-              >
-                <use xlink:href="/smart-energy/assets/icon-sprite-84cf747f.svg#icon-Star-1"></use>
-              </svg>
-            </label>
-            <label for="rating13">
-              <input
-                type="radio"
-                name="rating"
-                id="rating13"
-                value="13"
-                required
-              />
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="100"
-                height="100"
-                viewBox="0 0 100 100"
-              >
-                <use xlink:href="/smart-energy/assets/icon-sprite-84cf747f.svg#icon-Star-1"></use>
-              </svg>
-            </label>
-            <label for="rating14">
-              <input
-                type="radio"
-                name="rating"
-                id="rating14"
-                value="14"
-                required
-              />
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="100"
-                height="100"
-                viewBox="0 0 100 100"
-              >
-                <use xlink:href="/smart-energy/assets/icon-sprite-84cf747f.svg#icon-Star-1"></use>
-              </svg>
-            </label>
-            <label for="rating15">
-              <input
-                type="radio"
-                name="rating"
-                id="rating15"
-                value="15"
-                required
-              />
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="100"
-                height="100"
-                viewBox="0 0 100 100"
-              >
-                <use xlink:href="/smart-energy/assets/icon-sprite-84cf747f.svg#icon-Star-1"></use>
-              </svg>
-            </label>
+            <div class="modal-label">
+              <label for="rating11">
+                <input
+                  type="radio"
+                  name="rating"
+                  id="rating11"
+                  value="11"
+                  required
+                />
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="100"
+                  height="100"
+                  viewBox="0 0 100 100"
+                >
+                  <use xlink:href="/smart-energy/assets/icon-sprite-84cf747f.svg#icon-Star-1"></use>
+                </svg>
+              </label>
+              <label for="rating12">
+                <input
+                  type="radio"
+                  name="rating"
+                  id="rating12"
+                  value="12"
+                  required
+                />
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="100"
+                  height="100"
+                  viewBox="0 0 100 100"
+                >
+                  <use xlink:href="/smart-energy/assets/icon-sprite-84cf747f.svg#icon-Star-1"></use>
+                </svg>
+              </label>
+              <label for="rating13">
+                <input
+                  type="radio"
+                  name="rating"
+                  id="rating13"
+                  value="13"
+                  required
+                />
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="100"
+                  height="100"
+                  viewBox="0 0 100 100"
+                >
+                  <use xlink:href="/smart-energy/assets/icon-sprite-84cf747f.svg#icon-Star-1"></use>
+                </svg>
+              </label>
+              <label for="rating14">
+                <input
+                  type="radio"
+                  name="rating"
+                  id="rating14"
+                  value="14"
+                  required
+                />
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="100"
+                  height="100"
+                  viewBox="0 0 100 100"
+                >
+                  <use xlink:href="/smart-energy/assets/icon-sprite-84cf747f.svg#icon-Star-1"></use>
+                </svg>
+              </label>
+              <label for="rating15">
+                <input
+                  type="radio"
+                  name="rating"
+                  id="rating15"
+                  value="15"
+                  required
+                />
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="100"
+                  height="100"
+                  viewBox="0 0 100 100"
+                >
+                  <use xlink:href="/smart-energy/assets/icon-sprite-84cf747f.svg#icon-Star-1"></use>
+                </svg>
+              </label>
+            </div>
           </div>
           <div class="form-group">
-            <label for="email">Email:</label>
             <input
               type="text"
               name="email"
@@ -866,7 +871,6 @@
             />
           </div>
           <div class="form-group">
-            <label for="comment">Comment:</label>
             <textarea
               name="comment"
               id="commentInput"
