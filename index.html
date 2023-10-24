@@ -1,17 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/smart-energy/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Your Energy</title>
-    
-    <script type="module" crossorigin src="/smart-energy/assets/main-39a9c055.js"></script>
-    <link rel="stylesheet" href="/smart-energy/assets/main-56286b3b.css">
-  </head>
-  <body>
-    <!--Anna V.-->
-    <header class="header-top fixed-header">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/smart-energy/favicon.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Your Energy</title>
+  
+  <script type="module" crossorigin src="/smart-energy/assets/main-a7ddd13b.js"></script>
+  <link rel="stylesheet" href="/smart-energy/assets/main-d56d3163.css">
+</head>
+
+<body>
+  <!--Anna V.-->
+  <header class="header-top fixed-header">
   <div class="container header-container">
     <!-- logo -->
 
@@ -79,9 +81,9 @@
     <div class="header-btn">
       <button
         type="button"
-        class="menu-toggle js-open-menu"
+        class="menu-toggle js-open-menu hide-header"
         aria-expanded="false"
-        aria-controls="mobile-menu"
+        aria-controls="mobile-menu" id="mobile-menu" 
       >
         <svg class="header-burger" width="32px" height="32px">
           <use href="../img/icon-sprite.svg#align-justify"></use>
@@ -91,11 +93,11 @@
   </div>
 </header>
 
-<!-- mobil-menu -->
+<!--------------------- mobile-menu ---------------->
 
-<button type="button" class="hide-header" id="hide-header-button"></button>
+<!-- <button type="button" class="hide-header" id="hide-header-button"></button> -->
  <!-- <div id="overlay" class="overlay"> -->
-<div class="mob-menu js-menu-container" id="mobile-menu">
+<div class="mob-menu js-menu-container">
      <button class="mob-menu-close js-close-menu">
       <svg class="icon-close">
         <use href="../img/icon-sprite.svg#x"></use>
@@ -158,52 +160,48 @@
   <!-- </div> -->
 </div>
 
-<script scr="../js/header.js"></script>
 
 
-    <!-- <main>
-      Alina-->
-      
-<!-- Hero -->
+
+ <main>
+  <!--  Alina-->
+  <!-- Hero -->
 <section class="hero"> 
- <div class="hero-container container">
-     
-    <h1 class="container__title">
-      <svg class="hero__icon">
-        <use href="../img/icon-sprite.svg#icon-circle"></use>
-      </svg> 
-      Get <span class="container__title-accent">Body</span> in shape, Stay healthy</h1>
-
-    <p class="container__text">Transform your physique and embrace a healthier lifestyle with our comprehensive fitness and nutrition support.</p>
-    <picture>
-      <source srcset="/smart-energy/assets/image_desc@1x-aa78ac89.webp 1x, /smart-energy/assets/image_desc@2x-f44e04ac.webp 2x" media="(min-width: 1440px)" type="image/webp" />
-      <source srcset="/smart-energy/assets/image_desc@1x-e8e3c1cb.jpg 1x, /smart-energy/assets/image_desc@2x-4467cf0e.jpg 2x" media="(min-width: 1440px)" type="image/jpeg" />
-      <img class="hero__img-small hidden" src="../img/image_desc@1x.jpg" alt="women doing fitness outdoors" loading="lazy"/>
-    </picture>
-    <picture class="hero__picture">
-      <source srcset="/smart-energy/assets/image1_desc@1x-02946fc2.webp 1x, /smart-energy/assets/image1_desc@2x-aeda0495.webp 2x" media="(min-width: 1440px)" type="image/webp" />
-      <source srcset="/smart-energy/assets/image1_desc@1x-296d7fb3.jpg 1x, /smart-energy/assets/image1_desc@2x-32b21de8.jpg 2x" media="(min-width: 1440px)" type="image/jpeg" />
-      <source srcset="/smart-energy/assets/image1_tab@1x-bc2d934f.webp 1x, /smart-energy/assets/image1_tab@2x-0098339f.webp 2x" media="(min-width: 768px)" type="image/webp" />
-      <source srcset="/smart-energy/assets/image1_tab@1x-0049a51b.jpg 1x, /smart-energy/assets/image1_tab@2x-1ecee24f.jpg 2x" media="(min-width: 768px)" type="image/jpeg" />
-      <source srcset="/smart-energy/assets/image1_mob@1x-63d94d05.webp 1x, /smart-energy/assets/image1_mob@2x-a0991193.webp 2x" media="(max-width: 767px)" type="image/webp" />
-      <source srcset="/smart-energy/assets/image1_mob@2x-f13888d3.jpg 1x, /smart-energy/assets/image1_mob@2x-f13888d3.jpg 2x" media="(max-width: 767px)" type="image/jpeg" />
-      <img class="hero__img" src="../img/image1_mob@1x.jpg" alt="women doing fitness outdoors" loading="lazy"/>
-    </picture>  
-      <div class="tags">
-        <ul class="tags__list">
-          <li class="tags__list-item">#Sport</li>
-          <li class="tags__list-item">#Healthy</li>
-          <li class="tags__list-item">#Workout</li>
-          <li class="tags__list-item">#Diet</li>
-        </ul>
-      </div>
- </div>
-</section>
-
-
-
-      <!--Andrii H.-->
-      <section class="galary">
+  <div class="hero-container container">
+       <h1 class="container__title">
+       <svg class="hero__icon">
+         <use href="../img/icon-sprite.svg#icon-circle"></use>        
+       </svg> 
+       Get <span class="container__title-accent">Body</span> in shape, Stay healthy</h1>
+ 
+     <p class="container__text">Transform your physique and embrace a healthier lifestyle with our comprehensive fitness and nutrition support.</p>
+     <picture>
+       <source srcset="/smart-energy/assets/image_desc@1x-aa78ac89.webp 1x, /smart-energy/assets/image_desc@2x-f44e04ac.webp 2x" media="(min-width: 1440px)" type="image/webp" />
+       <source srcset="/smart-energy/assets/image_desc@1x-e8e3c1cb.jpg 1x, /smart-energy/assets/image_desc@2x-4467cf0e.jpg 2x" media="(min-width: 1440px)" type="image/jpeg" />
+       <img class="hero__img-small hidden" src="../img/image_desc@1x.jpg" alt="women doing fitness outdoors" loading="lazy"/>
+     </picture>
+     <picture class="hero__picture">
+       <source srcset="/smart-energy/assets/image1_desc@1x-02946fc2.webp 1x, /smart-energy/assets/image1_desc@2x-aeda0495.webp 2x" media="(min-width: 1440px)" type="image/webp" />
+       <source srcset="/smart-energy/assets/image1_desc@1x-296d7fb3.jpg 1x, /smart-energy/assets/image1_desc@2x-32b21de8.jpg 2x" media="(min-width: 1440px)" type="image/jpeg" />
+       <source srcset="/smart-energy/assets/image1_tab@1x-bc2d934f.webp 1x, /smart-energy/assets/image1_tab@2x-0098339f.webp 2x" media="(min-width: 768px)" type="image/webp" />
+       <source srcset="/smart-energy/assets/image1_tab@1x-0049a51b.jpg 1x, /smart-energy/assets/image1_tab@2x-1ecee24f.jpg 2x" media="(min-width: 768px)" type="image/jpeg" />
+       <source srcset="/smart-energy/assets/image1_mob@1x-63d94d05.webp 1x, /smart-energy/assets/image1_mob@2x-a0991193.webp 2x" media="(max-width: 767px)" type="image/webp" />
+       <source srcset="/smart-energy/assets/image1_mob@2x-f13888d3.jpg 1x, /smart-energy/assets/image1_mob@2x-f13888d3.jpg 2x" media="(max-width: 767px)" type="image/jpeg" />
+       <img class="hero__img" src="../img/image1_mob@1x.jpg" alt="women doing fitness outdoors" loading="lazy"/>
+     </picture>  
+       <div class="tags">
+         <ul class="tags__list">
+           <li class="tags__list-item">#Sport</li>
+           <li class="tags__list-item">#Healthy</li>
+           <li class="tags__list-item">#Workout</li>
+           <li class="tags__list-item">#Diet</li>
+         </ul>
+       </div>
+  </div>
+ </section>
+ 
+  <!--Andrii H.-->
+  <section class="galary">
   <div class="galary-container">
 
     <div class="galary-title-and-list-wrapper-ex is-hidden">
@@ -212,7 +210,7 @@
         <div class="galary-search-wrapper">
         <input type="search" name="search" placeholder="Search" class="galary-search">
         <svg class="galary-search-svg" width="18" height="18">
-                <use href="/smart-energy/assets/icon-sprite-53904c84.svg#search"></use>
+                <use href="/smart-energy/assets/icon-sprite-84cf747f.svg#search"></use>
               </svg>
       </div>
       <ul class="galary-filters2">
@@ -499,70 +497,76 @@
   </div>
 </section>
 
-      <!--Dana-->
-      <section class="quote-section">
-    <div class="container">
-        <div class="qoute-container">
-            <div class="quote-box">
-                <div class="qoute-run-box">
-                    <svg class="quote-run-icon" width="18" height="20">
-                        <use href="/smart-energy/assets/icon-sprite-53904c84.svg#Group"></use>
+  <!--Dana-->
+  <section class="quote-section">
+    <!-- <div class="container"> -->
+    <div class="qoute-container container">
+        <div class="quote-box">
+            <div class="qoute-run-box">
+                <svg class="quote-run-icon" width="18" height="20">
+                    <use href="/smart-energy/assets/icon-sprite-84cf747f.svg#Group"></use>
+                </svg>
+            </div>
+            <div class="quotes-day-box">
+                <div class="quote-icon-box">
+                    <!-- <h3 class="quotes-day-title">Quote of the day</h3> -->
+                    <svg class="qoute-item-icon" width="24" height="24">
+                        <use href="/smart-energy/assets/icon-sprite-84cf747f.svg#inverted-commas"></use>
                     </svg>
                 </div>
-                <div class="quotes-day-box">
-                    <div class="quote-icon-box">
-                        <h3 class="quotes-day-title">Quote of the day</h3>
-                        <svg class="qoute-item-icon" width="24" height="24">
-                            <use href="/smart-energy/assets/icon-sprite-53904c84.svg#inverted-commas"></use>
-                        </svg>
-                    </div>
-                    <div class="qoute-inside-container">
+                <div class="qoute-inside-container">
 
-                    </div>
-                </div>
-            </div>
-            <div class="quote-image-box">
-                <picture>
-                    <source media="(min-width: 1440px)"
-                        srcset="/smart-energy/assets/image2_desc@1x-eab1c07c.webp 1x, /smart-energy/assets/image2_desc@2x-c1507b3a.webp 2x" />
-                    <source media="(min-width: 768px)" type="image/webp"
-                        srcset="/smart-energy/assets/image2_tab@1x-cfbdedde.webp 1x, /smart-energy/assets/image2_tab@2x-9120a89c.webp 2x" />
-                    <source media="(max-width: 767px)" type="image/webp" image=""
-                        srcset="/smart-energy/assets/image2_mob@1x-9daf6212.webp 1x, /smart-energy/assets/image2_mob@2x-f3e885ca.webp 2x" /> <img
-                        src="/smart-energy/assets/image2_mob@1x-5860c4d1.jpg" srcset="./img/image2_mob@2x.jpg, 2x " alt="girls talking"
-                        class="quote-girls-img" />
-                </picture>
-            </div>
-            <div class="recommend-box">
-                <div class="recommend-icon-box">
-                    <svg class="recommend-item-icon" width="20" height="20">
-                        <use href="/smart-energy/assets/icon-sprite-53904c84.svg#fluent_food"></use>
-                    </svg>
-
-                </div>
-                <div class="recommend-text-box">
-                    <h3 class="recommend-title">110 min</h3>
-                    <p class="recommend-text">Daily norm of sports</p>
-                    <p class="recommend-desc">The World Health Organization recommends at least 150 minutes of
-                        moderate-intensity aerobic physical
-                        activity throughout
-                        the week for adults aged 18-64. However, what happens if we adjust that number to 110 minutes
-                        every
-                        day?
-                        While it might
-                        seem like a high number to hit, dedicating 110 minutes daily to sporting activities may offer
-                        unparalleled benefits to
-                        physical health, mental well-being, and overall quality of life.</p>
                 </div>
             </div>
         </div>
+        <div class="quote-image-box">
+            <picture>
+                <source media="(min-width: 1440px)"
+                    srcset="/smart-energy/assets/image2_desc@1x-eab1c07c.webp 1x, /smart-energy/assets/image2_desc@2x-c1507b3a.webp 2x" />
+                <source media="(min-width: 768px)" type="image/webp"
+                    srcset="/smart-energy/assets/image2_tab@1x-cfbdedde.webp 1x, /smart-energy/assets/image2_tab@2x-9120a89c.webp 2x" />
+                <source media="(max-width: 767px)" type="image/webp" image=""
+                    srcset="/smart-energy/assets/image2_mob@1x-9daf6212.webp 1x, /smart-energy/assets/image2_mob@2x-f3e885ca.webp 2x" /> <img
+                    src="/smart-energy/assets/image2_mob@1x-5860c4d1.jpg" srcset="./img/image2_mob@2x.jpg, 2x " alt="girls talking"
+                    class="quote-girls-img" />
+            </picture>
+        </div>
+        <div class="recommend-box">
+            <div class="recommend-icon-box">
+                <svg class="recommend-item-icon" width="20" height="20">
+                    <use href="/smart-energy/assets/icon-sprite-84cf747f.svg#fluent_food"></use>
+                </svg>
+
+            </div>
+            <div class="recommend-text-box">
+                <h3 class="recommend-title">110 min</h3>
+                <p class="recommend-text">Daily norm of sports</p>
+                <p class="recommend-desc">The World Health Organization recommends at least 150 minutes of
+                    moderate-intensity aerobic physical
+                    activity throughout
+                    the week for adults aged 18-64. However, what happens if we adjust that number to 110 minutes
+                    every
+                    day?
+                    While it might
+                    seem like a high number to hit, dedicating 110 minutes daily to sporting activities may offer
+                    unparalleled benefits to
+                    physical health, mental well-being, and overall quality of life.</p>
+            </div>
+        </div>
     </div>
+    <!-- </div> -->
 </section>
 
-    </main>
+  <!-- Anna V. SCROLL-UP  -->
+  <button class="scroll-up">
+    <svg class="scroll-up-btn" width="30" height="30">
+    <use href="../img/icon-sprite.svg#icon-arrow-top-right"></use>
+</svg>
+</button>
+ </main>
 
-    <!--Serhiy-->
-    <footer class="footer">
+  <!--Serhiy-->
+  <footer class="footer">
   <div class="container">
     <div class="footer-tab">
       <div>
@@ -576,21 +580,21 @@
           <li class="footer-li">
             <a href="https://www.facebook.com/goITclub/" target="_blank">
               <svg class="footer-icons" width="" height="">
-                <use href="/smart-energy/assets/icon-sprite-53904c84.svg#facebook" fill=""></use>
+                <use href="/smart-energy/assets/icon-sprite-84cf747f.svg#facebook" fill=""></use>
               </svg>
             </a>
           </li>
           <li class="footer-li">
             <a href="https://www.instagram.com/goitclub/" target="_blank">
               <svg class="footer-icons" width="" height="">
-                <use href="/smart-energy/assets/icon-sprite-53904c84.svg#instagram" fill=""></use>
+                <use href="/smart-energy/assets/icon-sprite-84cf747f.svg#instagram" fill=""></use>
               </svg>
             </a>
           </li>
           <li class="footer-li">
             <a href="https://www.youtube.com/c/GoIT" target="_blank">
               <svg class="footer-icons" width="" height="" fill="">
-                <use href="/smart-energy/assets/icon-sprite-53904c84.svg#youtube" fill=""></use>
+                <use href="/smart-energy/assets/icon-sprite-84cf747f.svg#youtube" fill=""></use>
               </svg>
             </a>
           </li>
@@ -625,13 +629,13 @@
   </div>
 </footer>
 
-    <!-- Andrii S. -->
-    <container>
+  <!-- Andrii S. -->
+  <container>
   <div id="myModal" class="modal">
     <div class="modal-content">
       <button id="closeModalButton" class="close-button">
         <svg width="24" height="24" class="modal-close">
-          <use xlink:href="/smart-energy/assets/icon-sprite-53904c84.svg#icon-x"></use>
+          <use xlink:href="/smart-energy/assets/icon-sprite-84cf747f.svg#icon-x"></use>
         </svg>
       </button>
       <div class="modal-info">
@@ -650,7 +654,7 @@
                 height="18"
                 viewBox="0 0 100 100"
               >
-                <use xlink:href="/smart-energy/assets/icon-sprite-53904c84.svg#icon-Star-1"></use>
+                <use xlink:href="/smart-energy/assets/icon-sprite-84cf747f.svg#icon-Star-1"></use>
               </svg>
               <svg
                 id="2"
@@ -659,7 +663,7 @@
                 height="18"
                 viewBox="0 0 100 100"
               >
-                <use xlink:href="/smart-energy/assets/icon-sprite-53904c84.svg#icon-Star-1"></use>
+                <use xlink:href="/smart-energy/assets/icon-sprite-84cf747f.svg#icon-Star-1"></use>
               </svg>
               <svg
                 id="3"
@@ -668,7 +672,7 @@
                 height="18"
                 viewBox="0 0 100 100"
               >
-                <use xlink:href="/smart-energy/assets/icon-sprite-53904c84.svg#icon-Star-1"></use>
+                <use xlink:href="/smart-energy/assets/icon-sprite-84cf747f.svg#icon-Star-1"></use>
               </svg>
               <svg
                 id="4"
@@ -677,7 +681,7 @@
                 height="18"
                 viewBox="0 0 100 100"
               >
-                <use xlink:href="/smart-energy/assets/icon-sprite-53904c84.svg#icon-Star-1"></use>
+                <use xlink:href="/smart-energy/assets/icon-sprite-84cf747f.svg#icon-Star-1"></use>
               </svg>
               <svg
                 id="5"
@@ -686,7 +690,7 @@
                 height="18"
                 viewBox="0 0 100 100"
               >
-                <use xlink:href="/smart-energy/assets/icon-sprite-53904c84.svg#icon-Star-1"></use>
+                <use xlink:href="/smart-energy/assets/icon-sprite-84cf747f.svg#icon-Star-1"></use>
               </svg>
             </div>
           </div>
@@ -736,7 +740,7 @@
               viewBox="0 0 24 24"
             >
               <use
-                xlink:href="/smart-energy/assets/icon-sprite-53904c84.svg#heart"
+                xlink:href="/smart-energy/assets/icon-sprite-84cf747f.svg#heart"
                 style="fill: white; stroke: black"
               ></use>
             </svg>
@@ -755,7 +759,7 @@
     <div class="modal-rating-content">
       <button id="closeModalButton2" class="close-button">
         <svg width="24" height="24" class="modal-close">
-          <use xlink:href="/smart-energy/assets/icon-sprite-53904c84.svg#icon-x"></use>
+          <use xlink:href="/smart-energy/assets/icon-sprite-84cf747f.svg#icon-x"></use>
         </svg>
       </button>
       <div class="modal-body">
@@ -777,7 +781,7 @@
                 height="100"
                 viewBox="0 0 100 100"
               >
-                <use xlink:href="/smart-energy/assets/icon-sprite-53904c84.svg#icon-Star-1"></use>
+                <use xlink:href="/smart-energy/assets/icon-sprite-84cf747f.svg#icon-Star-1"></use>
               </svg>
             </label>
             <label for="rating12">
@@ -794,7 +798,7 @@
                 height="100"
                 viewBox="0 0 100 100"
               >
-                <use xlink:href="/smart-energy/assets/icon-sprite-53904c84.svg#icon-Star-1"></use>
+                <use xlink:href="/smart-energy/assets/icon-sprite-84cf747f.svg#icon-Star-1"></use>
               </svg>
             </label>
             <label for="rating13">
@@ -811,7 +815,7 @@
                 height="100"
                 viewBox="0 0 100 100"
               >
-                <use xlink:href="/smart-energy/assets/icon-sprite-53904c84.svg#icon-Star-1"></use>
+                <use xlink:href="/smart-energy/assets/icon-sprite-84cf747f.svg#icon-Star-1"></use>
               </svg>
             </label>
             <label for="rating14">
@@ -828,7 +832,7 @@
                 height="100"
                 viewBox="0 0 100 100"
               >
-                <use xlink:href="/smart-energy/assets/icon-sprite-53904c84.svg#icon-Star-1"></use>
+                <use xlink:href="/smart-energy/assets/icon-sprite-84cf747f.svg#icon-Star-1"></use>
               </svg>
             </label>
             <label for="rating15">
@@ -845,7 +849,7 @@
                 height="100"
                 viewBox="0 0 100 100"
               >
-                <use xlink:href="/smart-energy/assets/icon-sprite-53904c84.svg#icon-Star-1"></use>
+                <use xlink:href="/smart-energy/assets/icon-sprite-84cf747f.svg#icon-Star-1"></use>
               </svg>
             </label>
           </div>
@@ -881,6 +885,7 @@
 </container>
 
 
-    
-  </body>
+  
+</body>
+
 </html>
