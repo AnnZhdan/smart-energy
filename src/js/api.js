@@ -130,9 +130,13 @@ export async function getQuoteOfTheDay() {
     const data = await response.json();
 
     if (data && data.author && data.quote) {
-      console.log(`Quote of the day: "${data.quote}" - ${data.author}`);
-      
-      return data;
+      const quoteObject = {
+        quote: data.quote,
+        author: data.author
+      };
+
+      console.log('Quote of the day:', quoteObject);
+      return quoteObject;
     } else {
       console.log('Failed to get the quote of the day.');
     }
@@ -140,6 +144,7 @@ export async function getQuoteOfTheDay() {
     console.error('Error while fetching the quote of the day:', error);
   }
 }
+
 
 ///Subscription service
 async function subscribeToExerciseUpdates() {
