@@ -1,32 +1,26 @@
 // import throttle from 'lodash.throttle';
 
-const LOCAL_KEY = 'feedback-form-state';
-const refs = {
-  form: document.querySelector('.footer-form'),
-};
+function sendDataToBackend(event) {
+  event.preventDefault(); 
 
-refs.form.addEventListener('input', throttle(handleInput, 500));
-refs.form.addEventListener('submit', handleSubmit);
+    const email = document.getElementById('mailto').value;
 
-if (localStorage.getItem(LOCAL_KEY)) {
-  const data = JSON.parse(localStorage.getItem(LOCAL_KEY));
-  refs.form.elements.email.value = data.email;
-}
-
-function handleInput(event) {
-  const data = {
-    email: refs.form.elements.email.value,
-  };
-  localStorage.setItem(LOCAL_KEY, JSON.stringify(data));
-}
-
-function handleSubmit(event) {
-  event.preventDefault();
-
-  const data = {
-    email: refs.form.elements.email.value,
-  };
-  console.log(data);
-  event.currentTarget.reset();
-  localStorage.removeItem(LOCAL_KEY);
+  
+  fetch('https://your-energy.b.goit.study/api/subscription', {
+      method: 'POST',
+      headers: {
+          'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ email: email })
+  })
+  .then(response => {
+      if (response.ok) {
+          alert('Дані успішно відправлені');
+      } else {
+          alert('Під час відправлення сталася помилка');
+      }
+  })
+  .catch(error => {
+      console.error('Помилка:', error);
+  });
 }

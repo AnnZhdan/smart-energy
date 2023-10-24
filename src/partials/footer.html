@@ -36,19 +36,18 @@
         <h2 class="footer-h2">
           Transforming your <span class="footer-text">body</span> shape with us
         </h2>
-        <form class="footer-form" id="feedback-form">
+        <form class="footer-form" id="feedback-form" onsubmit="sendDataToBackend(event)">
           <h3 class="footer-h3">Subscribe and learn about new exercises!</h3>
           <input
-            type="email"
-            class="footer-input"
-            placeholder="Email"
-            name="email"
-            id="mailto"
-            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
-            required
+              type="email"
+              class="footer-input"
+              placeholder="Email"
+              name="email"
+              id="mailto"
+              required
           />
           <button type="submit" class="footer-button">Send</button>
-        </form>
+      </form>
       </div>
     </div>
     <div class="footer-div">
