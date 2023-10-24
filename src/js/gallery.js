@@ -212,7 +212,7 @@ import { fetchFilters } from './api.js';
       )
       .join('');
   }
-
+  // Search
   document
     .querySelector('.galary-search-wrapper input')
     .addEventListener('input', goToSearch);
@@ -256,7 +256,6 @@ import { fetchFilters } from './api.js';
     const keyword = event.target.value;
     paginationFn = (filter, page, limit) =>
       fetchExercisesByFiltersAndKeywordAndSearch(filter, page, keyword, limit);
-    fetchExercisesByFiltersAndKeywordAndSearch(filter, 1, keyword);
   }
 
   function reInitPagination(totalPage, currentPage = 1) {
