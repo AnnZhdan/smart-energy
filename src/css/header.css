@@ -166,7 +166,7 @@ button {
 .nav-icon-social:hover {
   background: none;
   fill: var(--primary-light-color);
-  /* opacity: 100%; */
+  opacity: 100%;
 }
 
 /*  min-width: 1440px */
