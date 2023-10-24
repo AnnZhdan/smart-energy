@@ -259,11 +259,9 @@
 }
 
 .selectedRat {
-<<<<<<< HEAD
   display: flex;
   justify-content: center;
-=======
->>>>>>> parent of e16d241 (16)
+
   color: #f4f4f4;
   font-feature-settings: 'clig' off, 'liga' off;
   font-family: Neue Montreal;
