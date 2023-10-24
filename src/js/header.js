@@ -2,18 +2,20 @@
   const mobileMenu = document.querySelector('.js-menu-container');
   const openMenuBtn = document.querySelector('.js-open-menu');
   const closeMenuBtn = document.querySelector('.js-close-menu');
+  const overlayMobile = document.getElementById('overlay');
 
   const toggleMenu = () => {
     const isMenuOpen =
       openMenuBtn.getAttribute('aria-expanded') === 'true' || false;
     openMenuBtn.setAttribute('aria-expanded', !isMenuOpen);
     mobileMenu.classList.toggle('is-open');
-
-    const scrollLockMethod = !isMenuOpen
-      ? 'disableBodyScroll'
-      : 'enableBodyScroll';
-    bodyScrollLock[scrollLockMethod](document.body);
   };
+
+  // if (isMenuOpen) {
+  //   overlayMobile.style.display = 'none'; 
+  // } else {
+  //   overlayMobile.style.display = 'block'; 
+  // }
 
   openMenuBtn.addEventListener('click', toggleMenu);
   closeMenuBtn.addEventListener('click', toggleMenu);
@@ -21,6 +23,7 @@
 	window.addEventListener('resize',() => {
 		if (window.innerWidth > 768) {
 	 mobileMenu.classList.remove('is-open');
+  //  overlayMobile.style.display = 'none';
  }
 });
 
@@ -32,11 +35,8 @@ document.addEventListener('DOMContentLoaded', function () {
   
   hideHeaderButton.addEventListener('click', function () {
     header.style.display = 'none'; 
-    overlay.style.display = 'none';
+    // overlayMobile.style.display = 'none';
   });
 });
 })();
  
-
-
-
