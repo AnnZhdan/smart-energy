@@ -71,8 +71,9 @@
 
 @media screen and (min-width: 768px) {
 .hero {
-    padding-top: 100px;
+   padding-top: 100px;
 }
+
 .hero__icon {
     width: 60px;
     height: 60px  
@@ -123,13 +124,11 @@
 .tags__list-item {
     font-size: 16px;
     line-height: 1.5;  
-    padding: 4px 16px;
+    padding: 4px 13px;
     border: 1px solid #242424;
     border-radius: 30px;
-    margin-top: 16px;
 }
 }
-
 
 @media screen and (min-width: 1440px) {
 .hero {
@@ -169,11 +168,6 @@
     
 }
 
-.tags__list-item {
-    margin: 0 auto;
-}
-
-
 .hero__img {
     width: 1376px;
     height: 350px;
@@ -181,5 +175,8 @@
 
 }
 
+.tags__list {
+    margin-top: 0;
+}
    
 }
