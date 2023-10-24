@@ -7,7 +7,6 @@ const myModal2 = document.getElementById('myModal2');
 let currentExerciseData = null;
 let currentExerciseID = null;
 
-
 function showExerciseModal(exerciseData) {
   myModal.style.display = 'block';
 
@@ -22,7 +21,8 @@ function showExerciseModal(exerciseData) {
   const modalPopularity = myModal.querySelector('.modal-popularity');
 
   modalImage.src = exerciseData.gifUrl;
-  modalName.textContent = exerciseData.name.charAt(0).toUpperCase() + exerciseData.name.slice(1);
+  modalName.textContent =
+    exerciseData.name.charAt(0).toUpperCase() + exerciseData.name.slice(1);
   modalDescription.textContent = exerciseData.description;
   modalBurned.textContent = `${exerciseData.burnedCalories}/${exerciseData.time} min`;
   modalPart.textContent = exerciseData.bodyPart;
@@ -52,7 +52,9 @@ async function updateModalWithExerciseData(exerciseID) {
 
 async function fetchExerciseDetails(exerciseID) {
   try {
-    const response = await fetch(`https://your-energy.b.goit.study/api/exercises/${exerciseID}`);
+    const response = await fetch(
+      `https://your-energy.b.goit.study/api/exercises/${exerciseID}`
+    );
     if (!response.ok) {
       throw new Error('Помилка запиту до API');
     }
@@ -64,16 +66,22 @@ async function fetchExerciseDetails(exerciseID) {
   }
 }
 
-const exerciseItemButtons = document.querySelectorAll('.exercise-item-button');
+// const exerciseItemButtons = document.querySelectorAll('.exercise-item-button');
 
-exerciseItemButtons.forEach(button => {
-  button.addEventListener('click', () => {
-    const exerciseID = button.getAttribute('id');
-    updateModalWithExerciseData(exerciseID);
-  });
+document.addEventListener('click', event => {
+  const button = event.target.closest('.exercise-item-button');
+  if (!button) {
+    return;
+  }
+  const exerciseID = button.getAttribute('id');
+
+  updateModalWithExerciseData(exerciseID);
 });
 
-closeModalButton.addEventListener('click', () => myModal.style.display = 'none');
+closeModalButton.addEventListener(
+  'click',
+  () => (myModal.style.display = 'none')
+);
 additionalButton2.addEventListener('click', () => {
   myModal.style.display = 'none';
   if (currentExerciseData && currentExerciseID) {
@@ -81,7 +89,10 @@ additionalButton2.addEventListener('click', () => {
     myModal2.style.display = 'block';
   }
 });
-closeModalButton2.addEventListener('click', () => myModal2.style.display = 'none');
+closeModalButton2.addEventListener(
+  'click',
+  () => (myModal2.style.display = 'none')
+);
 
 myModal.style.display = 'none';
 myModal2.style.display = 'none';
