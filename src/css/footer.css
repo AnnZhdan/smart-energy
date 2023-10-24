@@ -1,12 +1,8 @@
-.footer-body {
-  margin: 0;
-  padding: 0;
-}
-
 .footer {
   background: #242424;
   margin: auto;
-  padding: 12px;
+  padding-top: 40px;
+  padding-bottom: 20px;
 }
 
 @media screen and (min-width: 768px) {
@@ -29,24 +25,74 @@
   }
 }
 
-.footer-tab-right {
+/* .container {
   display: unset;
 }
 
 @media screen and (min-width: 768px) {
-  .footer-tab-right {
+  .container {
     display: unset;
   }
 }
 
-@media screen and (min-width: 1440px) {
-  .footer-tab-right {
+@media screen and (min-width: 768px) {
+  .container {
+    max-width: 1440px;
+    margin: auto;
+  }
+} */
+
+.footer-tab {
+  display: unset;
+}
+
+@media screen and (min-width: 768px) {
+  .footer-tab {
     display: flex;
+    gap: 100px;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .footer-tab {
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 }
 
 .footer-logo-link {
-  fill: #c6cdd1;
+  fill: #f4f4f4;
+}
+
+.social {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding-top: 20px;
+  padding-bottom: 40px;
+}
+
+@media screen and (min-width: 768px) {
+  .social {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding-top: 20px;
+    padding-bottom: 40px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .social {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding-top: 32px;
+    padding-bottom: 114px;
+  }
 }
 
 .footer-li {
@@ -54,8 +100,20 @@
   border: 1px solid rgba(244, 244, 244, 0.1);
 }
 
+.footer-li:hover {
+  background: #f4f4f4;
+  fill: #242424;
+  opacity: 100%;
+}
+
+.footer-li:focus {
+  background: #f4f4f4;
+  fill: #242424;
+  opacity: 100%;
+}
+
 .footer-icons {
-  fill: #c6cdd1;
+  fill: #f4f4f4;
   display: flex;
   width: 24px;
   height: 24px;
@@ -65,25 +123,13 @@
 
 .footer-icons:hover {
   fill: #242424;
-  /* background: #c6cdd1; */
+  /* background: #F4F4F4; */
   opacity: 100%;
 }
 
 .footer-icons:focus {
   fill: #242424;
-  /* background: #c6cdd1; */
-  opacity: 100%;
-}
-
-.footer-li:hover {
-  background: #c6cdd1;
-  fill: #242424;
-  opacity: 100%;
-}
-
-.footer-li:focus {
-  background: #c6cdd1;
-  fill: #242424;
+  /* background: #F4F4F4; */
   opacity: 100%;
 }
 
@@ -102,12 +148,14 @@
 }
 
 .footer-tab-right {
+  display: unset;
   margin: 0;
   padding: 0;
 }
 
 @media screen and (min-width: 768px) {
   .footer-tab-right {
+    display: unset;
     margin: 0;
     padding: 0;
   }
@@ -115,6 +163,7 @@
 
 @media screen and (min-width: 1440px) {
   .footer-tab-right {
+    display: flex;
     margin: 0;
     padding: 0;
   }
@@ -122,13 +171,13 @@
 
 .footer-h2 {
   color: #f4f4f4;
-  font-family: Neue Montreal;
+  font-family: 'Neue Montreal';
   font-size: 40px;
   font-style: normal;
   font-weight: 400;
   line-height: 48px;
   letter-spacing: -0.8px;
-  margin-bottom: 20px;
+  padding-bottom: 20px;
 }
 
 @media screen and (min-width: 768px) {
@@ -163,7 +212,7 @@
 
 .footer-text {
   color: #f4f4f4;
-  font-family: Neue Montreal;
+  font-family: 'Neue Montreal, italic';
   font-size: 40px;
   font-style: italic;
   font-weight: 400;
@@ -174,7 +223,7 @@
 @media screen and (min-width: 768px) {
   .footer-text {
     color: #f4f4f4;
-    font-family: Neue Montreal;
+    font-family: 'Neue Montreal, italic';
     font-size: 56px;
     font-style: italic;
     font-weight: 400;
@@ -240,7 +289,7 @@
   }
 }
 
-.footer-buttom {
+.footer-button {
   color: #242424;
   font-family: Neue Montreal;
   font-size: 14px;
@@ -257,7 +306,7 @@
 }
 
 @media screen and (min-width: 768px) {
-  .footer-buttom {
+  .footer-button {
     color: #242424;
     font-family: Neue Montreal;
     font-size: 14px;
@@ -273,32 +322,32 @@
   }
 }
 
-.footer-buttom:hover {
+.footer-button:hover {
   background-color: #242424;
-  color: #c6cdd1;
+  color: #f4f4f4;
 }
 
 @media screen and (min-width: 768px) {
-  .footer-buttom:hover {
+  .footer-button:hover {
     background-color: #242424;
-    color: #c6cdd1;
+    color: #f4f4f4;
   }
 }
 
-.footer-buttom:checked {
+.footer-button:checked {
   background-color: #242424;
-  color: #c6cdd1;
+  color: #f4f4f4;
 }
 
 @media screen and (min-width: 768px) {
-  .footer-buttom:checked {
+  .footer-button:checked {
     background-color: #242424;
-    color: #c6cdd1;
+    color: #f4f4f4;
   }
 }
 
 .footer-p {
-  color: #c6cdd1;
+  color: #f4f4f4;
   font-family: Neue Montreal;
   font-size: 14px;
   font-style: normal;
@@ -311,7 +360,7 @@
 
 @media screen and (min-width: 768px) {
   .footer-p {
-    color: #c6cdd1;
+    color: #f4f4f4;
     font-family: Neue Montreal;
     font-size: 14px;
     font-style: normal;
@@ -329,7 +378,7 @@
 }
 
 .footer-p1 {
-  color: #c6cdd1;
+  color: #f4f4f4;
   font-family: Neue Montreal;
   font-size: 14px;
   font-style: normal;
@@ -340,7 +389,7 @@
 
 @media screen and (min-width: 768px) {
   .footer-p1 {
-    color: #c6cdd1;
+    color: #f4f4f4;
     font-family: Neue Montreal;
     font-size: 14px;
     font-style: normal;
@@ -354,7 +403,7 @@
 
 @media screen and (min-width: 1440px) {
   .footer-p1 {
-    color: #c6cdd1;
+    color: #f4f4f4;
     font-family: Neue Montreal;
     font-size: 14px;
     font-style: normal;
@@ -367,7 +416,7 @@
 }
 
 .footer-p2 {
-  color: #c6cdd1;
+  color: #f4f4f4;
   font-family: Neue Montreal;
   font-size: 14px;
   font-style: normal;
@@ -379,7 +428,7 @@
 
 @media screen and (min-width: 768px) {
   .footer-p2 {
-    color: #c6cdd1;
+    color: #f4f4f4;
     font-family: Neue Montreal;
     font-size: 14px;
     font-style: normal;
@@ -393,7 +442,7 @@
 
 @media screen and (min-width: 1440px) {
   .footer-p2 {
-    color: #c6cdd1;
+    color: #f4f4f4;
     font-family: Neue Montreal;
     font-size: 14px;
     font-style: normal;
@@ -422,38 +471,6 @@
   }
 }
 
-.logo-link {
-  fill: #c6cdd1;
-}
-
-.social {
-  display: flex;
-  align-items: flex-start;
-  gap: 12px;
-  padding-top: 20px;
-  padding-bottom: 40px;
-}
-
-@media screen and (min-width: 768px) {
-  .social {
-    display: flex;
-    align-items: flex-start;
-    gap: 12px;
-    padding-top: 20px;
-    padding-bottom: 40px;
-  }
-}
-
-@media screen and (min-width: 1440px) {
-  .social {
-    display: flex;
-    align-items: flex-start;
-    gap: 12px;
-    padding-top: 32px;
-    padding-bottom: 114px;
-  }
-}
-
 .footer-div {
   display: unset;
   white-space: nowrap;
@@ -472,44 +489,6 @@
     /* margin-left: 40px; */
   }
 }
-
-.footer-tab {
-  display: unset;
-}
-
-@media screen and (min-width: 768px) {
-  .footer-tab {
-    display: flex;
-    gap: 100px;
-    margin: 0;
-    padding: 0;
-  }
-}
-
-@media screen and (min-width: 1440px) {
-  .footer-tab {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-}
-
-/* .container {
-  display: unset;
-}
-
-@media screen and (min-width: 768px) {
-  .container {
-    display: unset;
-  }
-}
-
-@media screen and (min-width: 768px) {
-  .container {
-    max-width: 1440px;
-    margin: auto;
-  }
-} */
 
 /* @media screen and (min-width: 768px) {
 }
