@@ -1,32 +1,26 @@
 .hero {
-    display: flex;
+    top: 0;
+  z-index: 100;
+  width: 100%;
+    padding-top: 80px;
     
   }
 
-  .hero__icon {
-    /* stroke-width: 4px; */
-    /* stroke: #242424; */
-    /* flex-shrink: 0; */
+.hero__icon {
+    stroke-width: 4px;
+    flex-shrink: 0;
     width: 38px;
     height: 38px  
 } 
 
-/* .container__title::before {
-    content: '';
-    display: inline-block;
-    width: 38px;
-    height: 38px;
-    background-image: url(../img/30_mob.png);
-  } */
-
 .container__title {
-    display: inline-block;
+    /* display: inline-block; */
     position: relative;
     font-style: normal;
     font-size: 40px;
     line-height: 1.2;             
     letter-spacing: -0,8px;
-    margin-top: 80px;
+   
 }
 
 .container__title-accent {
@@ -48,14 +42,11 @@
 
 }
 
-.hero__img-small {
-        
+.hero__img-small {        
     display: none;
-    
 }
 
 .hero__img {
-    
     border-radius: 30px;
     width: 100%;
     height: 450px;
@@ -64,13 +55,17 @@
 
 .tags__list {
     display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 6px;
+    max-width: 334px;
+
     margin-top: 20px;
-    justify-content: center;
 }
 
-.tags__list-item:not(:last-child) {
+/* .tags__list-item:not(:last-child) {
     margin-right: 6px;
-  }
+  } */
 
 .tags__list-item {
     font-size: 14px;
@@ -78,25 +73,16 @@
     padding: 4px 16px;
     border: 1px solid #242424;
     border-radius: 30px;
+    /* margin-right: 0px; */
     
 }
 
 @media screen and (min-width: 768px) {
     .hero__icon {
-        /* stroke-width: 4px;
-        stroke: #242424;
-        flex-shrink: 0; */
         width: 60px;
         height: 60px  
     }
     
-    /* /.container__title::before {
-      
-        width: 60px;
-        height: 60px;
-        background-image: url(../img/30_tabl_desc.png);
-      }  */
-
     .container__title {
         max-width: 593px;
         font-size: 74px;
@@ -131,6 +117,7 @@
         margin-top: 32px;
     }
     
+
     .tags__list {
         display: flex;
         justify-content: end;
@@ -168,22 +155,20 @@
     .hero__img-small {
         position: absolute;
         top: 0px;
-        right: 15px;
+        right: 32px;
         border-radius: 20px;
         display: block;
         width: 168px;
         height: 100px;
-        margin-top: 112px;
+        
     }
 
     .tags__list {
         position: absolute;
         top: 135px;
-        right: 15px;
-        /* flex-wrap: wrap; */
-        /* justify-content: right; */
+        right: 32px;
         max-width: 182px;
-        margin-top: 120px;
+       
     }
 
     
