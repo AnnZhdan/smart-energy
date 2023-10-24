@@ -44,6 +44,10 @@ document.addEventListener("DOMContentLoaded", function() {
       alert('Exercise added to favorites!');
     }
 
+    console.log('Exercise ID:', exerciseID);
+    console.log('Exercise Name:', modalName);
+    console.log('Exercise Description:', modalDescription);
+    console.log('Favorites List:', favoritesList);
   });
 
   additionalButton1.addEventListener('click', () => {
