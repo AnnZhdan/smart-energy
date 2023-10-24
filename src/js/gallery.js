@@ -19,7 +19,7 @@ import { fetchFilters } from './api.js';
   let totalPages = 1;
   let filter = 'Body parts';
   let currentFilterBtn = bodyPartsBtn;
-  let pgntPageBtn = listPaginationBtn.children[0].firstElementChild;
+  let currentPaginationBtn = listPaginationBtn.children[0].firstElementChild;
   let perPage = 9;
 
   const screenWidth = window.screen.availWidth;
@@ -33,13 +33,14 @@ import { fetchFilters } from './api.js';
   setPerPage();
 
   drawCurrentFilterPage(filter, 1, perPage);
+  let paginationFn = drawCurrentFilterPage;
   listPaginationBtn.classList.add('is-hidden');
 
-  bodyPartsBtn.addEventListener('click', handlClick);
-  musclesBtn.addEventListener('click', handlClick);
-  equipmentBtn.addEventListener('click', handlClick);
+  bodyPartsBtn.addEventListener('click', handleClick);
+  musclesBtn.addEventListener('click', handleClick);
+  equipmentBtn.addEventListener('click', handleClick);
 
-  function handlClick(event) {
+  function handleClick(event) {
     event.preventDefault();
     currentFilterBtn.classList.remove('galary-filter-checked');
     filter = String(this.textContent);
@@ -48,7 +49,7 @@ import { fetchFilters } from './api.js';
     currentFilterBtn = this;
   }
 
-  function drawCurrentFilterPage(currentFilters, page, limit) {
+  function drawCurrentFilterPage(currentFilters, page, limit = perPage) {
     listPaginationBtn.classList.add('is-hidden');
     listGallery.innerHTML = '';
     fetchFilters(currentFilters, page, limit).then(currentFilters => {
@@ -57,28 +58,7 @@ import { fetchFilters } from './api.js';
           'beforeend',
           createMarkUp(currentFilters.results)
         );
-
-        switch (currentFilters.totalPages) {
-          case 1:
-            listPaginationBtn.classList.remove('is-hidden');
-            listPaginationBtn.children[1].classList.add('is-hidden');
-            listPaginationBtn.children[2].classList.add('is-hidden');
-            break;
-
-          case 2:
-            listPaginationBtn.classList.remove('is-hidden');
-            listPaginationBtn.children[1].classList.remove('is-hidden');
-            listPaginationBtn.children[2].classList.add('is-hidden');
-            break;
-          case 3:
-            listPaginationBtn.classList.remove('is-hidden');
-            listPaginationBtn.children[1].classList.remove('is-hidden');
-            listPaginationBtn.children[2].classList.remove('is-hidden');
-            break;
-
-          default:
-            console.log('Something is wrong!');
-        }
+        reInitPagination(currentFilters.totalPages, page);
       }
     });
 
@@ -86,7 +66,7 @@ import { fetchFilters } from './api.js';
       return arr
         .map(
           ({ filter, name, imgURL }) => `
-           <li class="galary-item">
+           <li class="galary-item" data-name="${name}">
               <img
                 src="${imgURL}"
                 alt="${name}"
@@ -103,32 +83,49 @@ import { fetchFilters } from './api.js';
     }
   }
 
-  listPaginationBtn.children[0].addEventListener('click', onClickPagination);
-  listPaginationBtn.children[1].addEventListener('click', onClickPagination);
-  listPaginationBtn.children[2].addEventListener('click', onClickPagination);
+  listPaginationBtn.addEventListener('click', onClickPagination);
 
   function onClickPagination(event) {
-    if (this.firstElementChild.classList !== pgntPageBtn.classList) {
-      this.firstElementChild.classList.add('current-page');
-      pgntPageBtn.classList.remove('current-page');
-      pgntPageBtn = this.firstElementChild;
+    const $el = event.target.closest('.pagination-button');
+    if (!$el) {
+      return;
+    }
+    if ($el.classList !== currentPaginationBtn.classList) {
+      $el.classList.add('current-page');
+      currentPaginationBtn.classList.remove('current-page');
+      currentPaginationBtn = $el;
 
-      let page = Number(pgntPageBtn.textContent);
+      const page = Number(currentPaginationBtn.textContent);
       console.log(page);
-      drawCurrentFilterPage(filter, page);
+      paginationFn(filter, page);
+      document
+        .getElementsByClassName('galary-title-and-list-wrapper')[0]
+        ?.scrollIntoView({ behavior: 'smooth' });
     }
   }
 
   listGallery.addEventListener('click', selectExercise);
 
   function selectExercise(event) {
+    console.log(event);
+    const item = event.target.closest('.galary-item');
+    if (!item) {
+      return;
+    }
+    const category = item.dataset.name;
     listGallery.innerHTML = '';
-    fetchExercisesByFiltersAndKeyword('back', 1, perPage);
+    fetchExercisesByFiltersAndKeyword(category, 1, perPage);
+    filter = category;
+    paginationFn = fetchExercisesByFiltersAndKeyword;
   }
 
   // exersices
 
-  async function fetchExercisesByFiltersAndKeyword(category, page, limit) {
+  async function fetchExercisesByFiltersAndKeyword(
+    category,
+    page,
+    limit = perPage
+  ) {
     try {
       const apiUrl = `https://your-energy.b.goit.study/api/exercises?category=${category}&page=${page}&limit=${limit}`;
 
@@ -144,6 +141,7 @@ import { fetchFilters } from './api.js';
         console.log('No results found for your search parameters.');
         return;
       }
+      reInitPagination(data.totalPages, page);
       filtersEx.classList.remove('is-hidden');
       filtersBp.classList.add('is-hidden');
       listExersice.insertAdjacentHTML(
@@ -159,7 +157,7 @@ import { fetchFilters } from './api.js';
   function exCreateMarkUp(arr) {
     return arr
       .map(
-        ({ name, target, rating, burnedCalories, time, id, bodyPart }) => `
+        ({ name, target, rating, burnedCalories, time, _id, bodyPart }) => `
                <li class="exercise-item">
           <div class="exercise-item-wrapper">
             <div class="exercise-item-firth-wrapper">
@@ -174,7 +172,7 @@ import { fetchFilters } from './api.js';
               >
                 <use href="./img/icon-sprite.svg#icon-Star-2"></use>
               </svg>
-              <button type="button" class="exercise-item-button" id="${id}">
+              <button type="button" class="exercise-item-button" id=${_id}>
                 Start&nbsp;&nbsp;
                 <svg width="16" height="16">
                   <use href="./img/icon-sprite.svg#arrow"></use>
@@ -213,5 +211,68 @@ import { fetchFilters } from './api.js';
          `
       )
       .join('');
+  }
+
+  document
+    .querySelector('.galary-search-wrapper input')
+    .addEventListener('input', goToSearch);
+
+  async function fetchExercisesByFiltersAndKeywordAndSearch(
+    category,
+    page,
+    keyword,
+    limit = perPage
+  ) {
+    try {
+      const apiUrl = `https://your-energy.b.goit.study/api/exercises?bodypart=back&page=${page}&limit=${limit}&keyword=${keyword}`;
+
+      const response = await fetch(apiUrl);
+
+      if (!response.ok) {
+        throw new Error(`Request failed with status ${response.status}`);
+      }
+
+      const data = await response.json();
+
+      if (!data.results || data.results.length === 0) {
+        console.log('No results found for your search parameters.');
+        return;
+      }
+      reInitPagination(data.totalPages, page);
+      filtersEx.classList.remove('is-hidden');
+      filtersBp.classList.add('is-hidden');
+      listExersice.insertAdjacentHTML(
+        'beforeend',
+        exCreateMarkUp(data.results)
+      );
+      titleSpan.textContent = `${category}`;
+    } catch (error) {
+      console.error(`Error: ${error.message}`);
+    }
+  }
+
+  function goToSearch(event) {
+    console.log(event);
+    const keyword = event.target.value;
+    paginationFn = (filter, page, limit) =>
+      fetchExercisesByFiltersAndKeywordAndSearch(filter, page, keyword, limit);
+    fetchExercisesByFiltersAndKeywordAndSearch(filter, 1, keyword);
+  }
+
+  function reInitPagination(totalPage, currentPage = 1) {
+    const $root = document.getElementsByClassName('pagination')[0];
+    const generateElement = number => `
+      <li>
+        <button type="button" class="pagination-button">${number}</button>
+      </li>`;
+    const elementArray = [];
+    for (let i = 1; i <= totalPage; i++) {
+      elementArray.push(generateElement(i));
+    }
+    $root.innerHTML = elementArray.join('\n');
+    currentPaginationBtn =
+      listPaginationBtn.children[currentPage - 1]?.firstElementChild;
+    currentPaginationBtn?.classList?.add('current-page');
+    $root.classList.remove('is-hidden');
   }
 })();
