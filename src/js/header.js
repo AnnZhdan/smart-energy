@@ -1,16 +1,17 @@
 // import bodyScrollLock from 'body-scroll-lock';
 (() => {
+  const mobileContainer = document.querySelector('.mobile-menu-header');
   const mobileMenu = document.querySelector('.js-menu-container');
   const openMenuBtn = document.querySelector('.js-open-menu');
-  const closeMenuBtn = document.querySelector('.js-close-menu');
-  const overlayMobile = document.getElementById('overlay');
+  const closeMenuButton = document.querySelector('.js-close-menu');
+  const closeMenuBtn = document.querySelector('.mob-menu-close');  
+  // const overlayMobile = document.getElementById('overlay');
 
   const toggleMenu = () => {
     const isMenuOpen =
       openMenuBtn.getAttribute('aria-expanded') === 'true' || false;
     openMenuBtn.setAttribute('aria-expanded', !isMenuOpen);
     mobileMenu.classList.toggle('is-open');
-
   //   const scrollLockMethod = !isMenuOpen
   //   ? "disableBodyScroll"
   //   : "enableBodyScroll";
