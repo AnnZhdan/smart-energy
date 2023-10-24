@@ -83,12 +83,7 @@ button {
     display: none;
   }
 
-  .header-top {
-    /* padding-top: 24px; */
-    margin-bottom: 100px;
-  }
-
-  .header-container {
+   .header-container {
     padding-left: 32px;
     padding-right: 32px;
     height: 76px;
