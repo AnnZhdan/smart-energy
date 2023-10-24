@@ -66,8 +66,6 @@ async function fetchExerciseDetails(exerciseID) {
   }
 }
 
-// const exerciseItemButtons = document.querySelectorAll('.exercise-item-button');
-
 document.addEventListener('click', event => {
   const button = event.target.closest('.exercise-item-button');
   if (!button) {
@@ -82,13 +80,15 @@ closeModalButton.addEventListener(
   'click',
   () => (myModal.style.display = 'none')
 );
+
 additionalButton2.addEventListener('click', () => {
   myModal.style.display = 'none';
   if (currentExerciseData && currentExerciseID) {
-    showExerciseModal(currentExerciseData);
     myModal2.style.display = 'block';
+    myModal.style.display = 'none';
   }
 });
+
 closeModalButton2.addEventListener(
   'click',
   () => (myModal2.style.display = 'none')
