@@ -8,23 +8,10 @@ button {
   text-transform: none;
 }
 
-/* .visually-hidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  border: 0;
-  padding: 0;
-  white-space: nowrap;
-  clip-path: inset(100%);
-  clip: rect(0 0 0 0);
-  overflow: hidden;
-  } */
-
 .header-top {
   position: fixed;
   top: 0;
-  z-index: 100;
+  z-index: 10;
   width: 100%;
   /* padding-top: 20px; */
   margin-bottom: 80px;
@@ -47,19 +34,11 @@ button {
   z-index: 1;
 }
 
-.header-btn {
-display: flex;
-}
-
 .hide-header {
-  /* position: absolute;  */
  padding-right: 20px;
  padding-top: 20px;
   z-index: 1;
 }
- /* .header-button {
-  position: absolute;
- } */
 
 .logo-link {
   display: flex;
@@ -90,14 +69,11 @@ display: flex;
 /*------------------ min-width: 768px---------------- */
 
 @media screen and (min-width: 768px) {
-  .menu-toggle {
-    display: none;
-  }
 
-  .header-burger {
+  .header-btn {
     display: none;
-  }
-
+    }
+    
   .mob-menu-close {
     display: none;
     margin: 0;
@@ -169,8 +145,8 @@ display: flex;
   }
 
   .nav-soc-link {
-    width: 40px;
-    height: 40px;
+    width: 44px;
+    height: 44px;
     border-radius: 10px;
     border: 1px solid rgba(36, 36, 36, 0.1);
     display: flex;
@@ -198,9 +174,9 @@ display: flex;
   opacity: 100%;
 }
 
-/*  min-width: 1158px */
+/*  min-width: 1440px */
 
-@media screen and (min-width: 1158px) {
+@media screen and (min-width: 1440px) {
   .nav-header {
     width: 265px;
   }
