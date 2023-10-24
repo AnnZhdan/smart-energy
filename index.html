@@ -7,9 +7,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Your Energy</title>
   
-  <script type="module" crossorigin src="/smart-energy/assets/index-e6babe37.js"></script>
-  <link rel="modulepreload" crossorigin href="/smart-energy/assets/quote-e70db7bc.js">
-  <link rel="stylesheet" href="/smart-energy/assets/quote-4a3e0b6f.css">
+  <script type="module" crossorigin src="/smart-energy/assets/index-5cbd884b.js"></script>
+  <link rel="modulepreload" crossorigin href="/smart-energy/assets/quote-751e0a43.js">
+  <link rel="stylesheet" href="/smart-energy/assets/quote-cfc3337b.css">
 </head>
 
 <body>
@@ -604,19 +604,18 @@
         <h2 class="footer-h2">
           Transforming your <span class="footer-text">body</span> shape with us
         </h2>
-        <form class="footer-form" id="feedback-form">
+        <form class="footer-form" id="feedback-form" onsubmit="sendDataToBackend(event)">
           <h3 class="footer-h3">Subscribe and learn about new exercises!</h3>
           <input
-            type="email"
-            class="footer-input"
-            placeholder="Email"
-            name="email"
-            id="mailto"
-            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
-            required
+              type="email"
+              class="footer-input"
+              placeholder="Email"
+              name="email"
+              id="mailto"
+              required
           />
           <button type="submit" class="footer-button">Send</button>
-        </form>
+      </form>
       </div>
     </div>
     <div class="footer-div">
