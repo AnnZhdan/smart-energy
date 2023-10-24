@@ -1,8 +1,6 @@
 .hero {
-  
     padding-top: 132px;
-    
-  }
+}
 
 .hero__icon {
     stroke-width: 4px;
@@ -13,20 +11,14 @@
 
 .container__title {
     position: relative;
-    font-style: normal;
     font-size: 40px;
     line-height: 1.2;             
     letter-spacing: -0,8px;
 }
 
 .container__title-accent {
-    font-family: 'Neue Montreal, italic';
     font-style: italic;
-    font-weight: 400;
-    font-size: 40px;
-    line-height: 1.2;             
-    letter-spacing: -0,8px; 
-     
+       
 }
 
 .container__text {
@@ -85,14 +77,9 @@
     letter-spacing: -1.48px;      
 }
 
-.container__title-accent {
-    font-family: 'Neue Montreal, italic';
+/* .container__title-accent {
     font-style: italic;
-    font-size: 74px;
-    line-height: 1;             
-    letter-spacing: -1.48px;
-        
-}
+} */
 
 .container__text {
     max-width: 528px;
