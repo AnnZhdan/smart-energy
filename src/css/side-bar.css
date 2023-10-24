@@ -79,7 +79,7 @@ img {
 
 .quote-girls-img {
     border-radius: 20px;
-    width: 375px;
+    width: 335px;
     height: 251px;
 }
 
@@ -215,7 +215,7 @@ img {
     .recommend-desc {}
 }
 
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 1440px) {
 
     .qoute-container {
         flex-direction: column;

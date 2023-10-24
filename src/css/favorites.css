@@ -2,7 +2,6 @@
   padding: 80px 20px;
 }
 .favorites-title {
-  margin-top: 80px;
   margin-bottom: 20px;
   font-size: 28px;
   line-height: 1.35;
@@ -24,19 +23,58 @@
 
 .favorites-box {
   display: flex;
-  justify-content: center;
+  margin: 0 auto;
 }
 
 .favorites-box-deskription {
   max-width: 318px;
+  margin: 0 auto;
   font-size: 14px;
   text-align: center;
   line-height: 1.28;
 }
+.exercise-item-trash {
+  stroke: #fff;
+}
+.favourite-delete-button {
+  border: none;
+  background-color: inherit;
+}
 
+@keyframes girls {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(0.9);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+.cover-text {
+  position: absolute;
+  background-color: #fff;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  transform: translateY(100%);
+  transition: transform var(--transition) cubic-bezier(0.4, 0, 0.2, 1);
+  display: none;
+}
+
+.cover {
+  overflow: hidden;
+  position: relative;
+}
+.recommend-text-box:hover .recommend-desc {
+  display: inline;
+}
 @media screen and (min-width: 768px) {
   .favorites-title {
-    margin-top: 100px;
     margin-bottom: 32px;
     font-size: 44px;
     line-height: 1.09;
@@ -85,8 +123,11 @@
   .favorites-img-box {
     margin-top: 0px;
   }
+
+  /* .favorites-box {
+  } */
 }
-@media screen and (min-width: 1158px) {
+@media screen and (min-width: 1440px) {
   .favorites-title {
     margin-top: 90px;
     margin-bottom: 44px;
@@ -99,6 +140,10 @@
   .favorites-img-girl {
     max-width: 239px;
     max-height: 141px;
+    animation-name: girls;
+    animation-duration: 5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
   }
 
   .favorites-recomend-box {
