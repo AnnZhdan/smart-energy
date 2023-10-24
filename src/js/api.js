@@ -118,6 +118,22 @@ async function setExerciseRating(exerciseID, rating) {
   }
 }
 
+fetch('https://your-energy.b.goit.study/api/exercises')
+  .then(response => response.json())
+  .then(data => {
+    if (data.results && data.results.length > 0) {
+      const exerciseIDs = data.results.map(exercise => exercise._id); // Отримуємо всі ID вправ
+      console.log('IDs:', exerciseIDs);
+
+      // Ви можете використовувати exerciseIDs для подальших запитів або дій
+    } else {
+      console.error('Помилка при отриманні ID вправи: Відсутні дані про вправи.');
+    }
+  })
+  .catch(error => {
+    console.error('Помилка при отриманні даних від API:', error);
+  });
+
 ///Quote of the day
 export async function getQuoteOfTheDay() {
   try {

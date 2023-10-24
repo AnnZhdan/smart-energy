@@ -62,12 +62,20 @@
   font-style: normal;
   font-weight: 500;
   line-height: 20px;
+  margin-bottom: 10px;
 }
 
 .modal-rating {
+  display: flex;
   color: aliceblue;
+  justify-content: center;
   font-size: 16px;
-  margin-top: 10px;
+  margin-right: 5px;
+}
+
+.modal-reting-contant {
+  display: flex;
+  align-items: center;
 }
 
 .text-modal-container {
@@ -243,6 +251,7 @@
 
 .rating-container {
   display: flex;
+  align-items: center;
 }
 
 .rating-container label {
@@ -259,6 +268,11 @@
 }
 
 .selectedRat {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 24px;
+  height: 24px;
   color: #f4f4f4;
   font-feature-settings: 'clig' off, 'liga' off;
   font-family: Neue Montreal;
