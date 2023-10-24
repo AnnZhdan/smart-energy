@@ -1,17 +1,71 @@
+import ScrollReveal from 'scrollreveal';
+
 window.addEventListener('load', function () {
-  const listItems = document.querySelectorAll('.nav-list li');
-  const homeNavItem = listItems[0];
-  const favoritesNavItem = listItems[1];
+  // Анімація
+  $(function () {
+    window.sr = ScrollReveal();
 
-  const currentPageURL = window.location.href;
+    if ($(window).width() < 768) {
+      if ($('.timeline-content').hasClass('js--fadeInLeft')) {
+        $('.timeline-content')
+          .removeClass('js--fadeInLeft')
+          .addClass('js--fadeInRight');
+      }
 
-  function changeClass() {
-    if (currentPageURL.includes('favorites.html')) {
-      homeNavItem.classList.remove('active');
-      favoritesNavItem.classList.add('active');
+      sr.reveal('.js--fadeInRight', {
+        origin: 'right',
+        distance: '300px',
+        easing: 'ease-in-out',
+        duration: 800,
+      });
+    } else {
+      sr.reveal('.js--fadeInLeft', {
+        origin: 'left',
+        distance: '300px',
+        easing: 'ease-in-out',
+        duration: 800,
+      });
+
+      sr.reveal('.js--fadeInRight', {
+        origin: 'right',
+        distance: '300px',
+        easing: 'ease-in-out',
+        duration: 800,
+      });
     }
-  }
-  changeClass();
+
+    sr.reveal('.js--fadeInLeft', {
+      origin: 'left',
+      distance: '300px',
+      easing: 'ease-in-out',
+      duration: 800,
+    });
+
+    sr.reveal('.js--fadeInRight', {
+      origin: 'right',
+      distance: '300px',
+      easing: 'ease-in-out',
+      duration: 800,
+    });
+  });
+  // const listItems = document.querySelectorAll('.nav-list li');
+  // const homeNavItem = listItems[0];
+  // const favoritesNavItem = listItems[1];
+
+  // function changeClass() {
+  //   const currentPageURL = window.location.href;
+  //   const isFavoritesPage = currentPageURL.includes('favorites.html');
+
+  //   isFavoritesPage
+  //     ? (homeNavItem.classList.remove('active'),
+  //       favoritesNavItem.classList.add('active'))
+  //     : (homeNavItem.classList.add('active'),
+  //       favoritesNavItem.classList.remove('active'));
+  // }
+
+  // changeClass();
+
+  // window.addEventListener('hashchange', changeClass);
 
   // Для карток з ЛС
 
@@ -31,11 +85,11 @@ window.addEventListener('load', function () {
           exerciseCard.classList.add('galary-list');
 
           exerciseCard.innerHTML = `
-<li class="exercise-item">
+<li class="exercise-item timeline-content js--fadeInLeft">
   <div class="exercise-item-wrapper">
     <div class="exercise-item-firth-wrapper">
       <p class="exercise-item-workout">${item.exerciseName}</p>
-      <button type="button" class="button favourite-delete-button">
+      <button type="button" class="button favourite-delete-button" data-card-id="${item.exerciseID}">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="16"
@@ -43,7 +97,7 @@ window.addEventListener('load', function () {
           viewBox="0 0 32 32"
           class="exercise-item-trash"
         >
-          <use xlink:href="./img/icon-sprite.svg#trash"></use>
+          <use xlink:href="./img/icon-sprite.svg#trash"  style="fill: white; stroke: black"></use>
         </svg>
       </button>
       <button type="button" class="exercise-item-button" id="${item.id}">
@@ -107,4 +161,32 @@ deleteButtons.forEach(button => {
   button.addEventListener('click', handleDelete);
 });
 
-function handleDelete(event) {}
+function handleDelete(event) {
+  const cardId = event.target.getAttribute('data-card-id');
+
+  const newFavBox = favBox.filter(item => item.id !== cardId);
+  localStorage.setItem(LS_KEY, JSON.stringify(newFavBox));
+
+  const cardElement = event.target.closest('.exercise-item');
+  if (cardElement) {
+    cardElement.remove();
+  }
+}
+
+// 64f389465ae26083f39b17df
+// 64f389465ae26083f39b17a5
+// 64f389465ae26083f39b18d7
+
+// АНімація для кліку
+
+const recommendTextBox = document.querySelector('.recommend-text-box');
+
+const coverText = recommendTextBox.querySelector('.cover-text');
+
+function activateAnimation() {
+  coverText.style.transform = 'translateY(0)';
+}
+
+recommendTextBox.addEventListener('click', () => {
+  activateAnimation();
+});
