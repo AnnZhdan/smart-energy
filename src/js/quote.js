@@ -3,32 +3,38 @@ import { getQuoteOfTheDay } from './api.js';
 
 
 const LOCAL_STORAGE_KEY = 'quote';
-const box = document.querySelector('.qoute-inside-container');
+const box = document.querySelector('.quotes-day-box');
 
 
 
 async function getQuote() {
-    try {
-        const data = await getQuoteOfTheDay();
-        console.log('Server Response:', data);
-        
-        if (!data || !data.quote || !data.author) {
-            throw new Error('Invalid data received from the server');
-        }
+  const quotePerDay = await getQuoteOfTheDay();
+  console.log(quotePerDay);
 
-        createMarkup(data);
-        saveToLocalStorage(data);
-        
-    } catch (e) {
-        console.log(e.message);
-    }
+  if (!quotePerDay || !quotePerDay.quote || !quotePerDay.author) {
+    throw new Error('Invalid data received from the server');
+  }
+
+  createMarkup(quotePerDay);
+  saveToLocalStorage(quotePerDay);
+
+  return quotePerDay;
+}
+
+try {
+  const quoteResult = getQuote();
+  
+} catch (error) {
+  console.log(error.message);
+ 
 }
 
 function createMarkup({ quote, author }) {
-    box.innerHTML = `<div class="qoute-inside-container">
+    box.innerHTML = `
+        <h3 class="quotes-day-title">Quote of the day</h3>
         <p class="quotes-day-text">${quote}</p>
         <p class="quotes-day-author">${author}</p>
-    </div>`;
+    `;
 }
 
 function saveToLocalStorage({ quote, author }) {
@@ -42,13 +48,13 @@ function saveToLocalStorage({ quote, author }) {
         localStorage.setItem(LOCAL_STORAGE_KEY, infoJson);
     } catch (e) {
         console.log(e.message);
+      
     }
 }
 
 async function checkQuoteInLocalStorage() {
     try {
         const savedQuote = localStorage.getItem(LOCAL_STORAGE_KEY);
-        
 
         if (savedQuote) {
             let parsedData = JSON.parse(savedQuote);
