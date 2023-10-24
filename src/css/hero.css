@@ -55,15 +55,17 @@
 
 .tags__list {
     display: flex;
-    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 6px;
+    max-width: 334px;
+
     margin-top: 20px;
-    
-    
 }
 
-.tags__list-item:not(:last-child) {
+/* .tags__list-item:not(:last-child) {
     margin-right: 6px;
-  }
+  } */
 
 .tags__list-item {
     font-size: 14px;
@@ -71,6 +73,7 @@
     padding: 4px 16px;
     border: 1px solid #242424;
     border-radius: 30px;
+    /* margin-right: 0px; */
     
 }
 
