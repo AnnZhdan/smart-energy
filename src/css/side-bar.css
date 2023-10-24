@@ -135,8 +135,15 @@ img {
     -webkit-line-clamp: 5;
     -webkit-box-orient: vertical;
     text-overflow: ellipsis;
+    transition: -webkit-line-clamp cubic-bezier(1, 0, 0, 1) 1s ease-in;
+
 }
 
+.recommend-desc:hover {
+
+    -webkit-line-clamp: unset;
+
+}
 
 @media screen and (min-width: 768px) {
     .quote-section {
