@@ -212,7 +212,7 @@
 
 .footer-text {
   color: #f4f4f4;
-  font-family: 'Neue Montreal, italic';
+  /* font-family: 'Neue Montreal, italic'; */
   font-size: 40px;
   font-style: italic;
   font-weight: 400;
@@ -225,7 +225,7 @@
 @media screen and (min-width: 768px) {
   .footer-text {
     color: #f4f4f4;
-    font-family: 'Neue Montreal, italic';
+    /* font-family: 'Neue Montreal, italic'; */
     font-size: 56px;
     font-style: italic;
     font-weight: 400;
