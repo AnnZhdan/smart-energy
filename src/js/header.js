@@ -1,3 +1,4 @@
+// import bodyScrollLock from 'body-scroll-lock';
 (() => {
   const mobileContainer = document.querySelector('.mobile-menu-header');
   const mobileMenu = document.querySelector('.js-menu-container');
@@ -11,11 +12,10 @@
       openMenuBtn.getAttribute('aria-expanded') === 'true' || false;
     openMenuBtn.setAttribute('aria-expanded', !isMenuOpen);
     mobileMenu.classList.toggle('is-open');
-
-    // const scrollLockMethod = !isMenuOpen
-    //   ? 'disableBodyScroll'
-    //   : 'enableBodyScroll';
-    // bodyScrollLock[scrollLockMethod](document.body);
+  //   const scrollLockMethod = !isMenuOpen
+  //   ? "disableBodyScroll"
+  //   : "enableBodyScroll";
+  // bodyScrollLock[scrollLockMethod](document.body);
   };
 
   // if (isMenuOpen) {
