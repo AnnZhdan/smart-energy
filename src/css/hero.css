@@ -1,6 +1,6 @@
 .hero {
   
-    padding-top: 80px;
+    padding-top: 132px;
     
   }
 
@@ -12,13 +12,11 @@
 } 
 
 .container__title {
-    /* display: inline-block; */
     position: relative;
     font-style: normal;
     font-size: 40px;
     line-height: 1.2;             
     letter-spacing: -0,8px;
-   
 }
 
 .container__title-accent {
@@ -48,7 +46,7 @@
     border-radius: 30px;
     width: 100%;
     height: 450px;
-    margin-top: 16px;
+    margin-top: 20px;
 }
 
 .tags__list {
@@ -61,6 +59,7 @@
 }
 
 .tags__list-item {
+    font-style: normal;
     font-size: 14px;
     line-height: 1.29;  
     padding: 4px 13px;
@@ -71,7 +70,7 @@
 
 @media screen and (min-width: 768px) {
 .hero {
-   padding-top: 100px;
+   padding-top: 176px;
 }
 
 .hero__icon {
@@ -105,7 +104,7 @@
 }
 
 .hero__img {
-    border-radius: 30px;
+    border-radius: 60px;
     width: 704px;
     height: 550px;
     margin-top: 32px;
@@ -117,7 +116,7 @@
     justify-content: end;
     gap: 8px;
      
-    margin-top: 20px;
+    margin-top: 16px;
     
 }
 
@@ -131,9 +130,6 @@
 }
 
 @media screen and (min-width: 1440px) {
-.hero {
-    padding-top: 96px;
-}    
 
 .hero-container {
     position: relative;
