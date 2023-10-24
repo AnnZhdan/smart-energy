@@ -1,67 +1,36 @@
-let isFavorite = false;
-let favoritesText;
-let favoritesIcon;
-
 document.addEventListener("DOMContentLoaded", function() {
-  favoritesText = document.getElementById('favoritesText'); 
-  favoritesIcon = document.getElementById('favoritesIcon');
-
   const addToFavoritesButton = document.getElementById('additionalButton1');
-  const myModal = document.querySelector('.modal');
+  const myModal = document.getElementById('myModal');
 
   addToFavoritesButton.addEventListener('click', () => {
-    const exerciseID = addToFavoritesButton.getAttribute('data-exercise-id');
-    const modalName = document.querySelector('.title-modal').textContent;
-    const modalDescription = document.querySelector('.text-modal').textContent;
-    const modalBurned = myModal.querySelector('.burn-modal').textContent;
-    const modalRating = myModal.querySelector('.modal-rating').textContent;
-    const modalPart = myModal.querySelector('.modal-part').textContent;
-    const modalEquipment = myModal.querySelector('.modal-equipment').textContent;
-    const modalTarget = myModal.querySelector('.modal-target').textContent;
-    const modalPopularity = myModal.querySelector('.modal-popularity').textContent;
-
+    const exerciseData = {
+      exerciseID: addToFavoritesButton.getAttribute('data-exercise-id'),
+      exerciseName: myModal.querySelector('.title-modal').textContent,
+      exerciseDescription: myModal.querySelector('.text-modal').textContent,
+      exerciseBurned: myModal.querySelector('.burn-modal').textContent,
+      exerciseRating: myModal.querySelector('.modal-rating').textContent,
+      exercisePart: myModal.querySelector('.modal-part').textContent,
+      exerciseEquipment: myModal.querySelector('.modal-equipment').textContent,
+      exerciseTarget: myModal.querySelector('.modal-target').textContent,
+      exercisePopularity: myModal.querySelector('.modal-popularity').textContent
+    };
+    
     let favoritesList = JSON.parse(localStorage.getItem('favoritesList')) || [];
 
-    const existingExerciseIndex = favoritesList.findIndex((item) => item.exerciseID === exerciseID);
+    const existingExercise = favoritesList.find(
+      (item) => item.exerciseName === exerciseData.exerciseName
+    );
 
-    if (existingExerciseIndex !== -1) {
-      favoritesList.splice(existingExerciseIndex, 1);
-      localStorage.setItem('favoritesList', JSON.stringify(favoritesList));
+    if (existingExercise) {
+      favoritesList = favoritesList.filter(
+        (item) => item.exerciseName !== exerciseData.exerciseName
+      );
       alert('Exercise removed from favorites!');
     } else {
-      favoritesList.push({
-        exerciseID: exerciseID,
-        exerciseName: modalName,
-        exerciseDescription: modalDescription,
-        exerciseBurned: modalBurned,
-        exercisePart: modalPart,
-        exerciseEquipment: modalEquipment,
-        exerciseTarget: modalTarget,
-        exercisePopularity: modalPopularity,
-        exerciseRating: modalRating
-      });
-      localStorage.setItem('favoritesList', JSON.stringify(favoritesList));
+      favoritesList.push(exerciseData);
       alert('Exercise added to favorites!');
     }
 
-    console.log('Exercise ID:', exerciseID);
-    console.log('Exercise Name:', modalName);
-    console.log('Exercise Description:', modalDescription);
-    console.log('Favorites List:', favoritesList);
-  });
-
-  additionalButton1.addEventListener('click', () => {
-    try {
-      if (favoritesText) {
-        favoritesText.textContent = 'Add to favorites';
-      }
-      if (favoritesIcon) {
-        favoritesIcon.setAttribute('xlink:href', './img/icon-sprite.svg#heart');
-      }
-    } catch (error) {
-      console.error('Error while updating favorites:', error);
-    }
-
-    isFavorite = !isFavorite;
+    localStorage.setItem('favoritesList', JSON.stringify(favoritesList));
   });
 });
