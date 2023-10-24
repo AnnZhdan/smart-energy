@@ -154,6 +154,7 @@ window.addEventListener('load', function () {
 
           favorites.appendChild(exerciseCard);
         });
+        // Видалення картки
 
         const deleteButtons = document.querySelectorAll(
           '.favourite-delete-button'
