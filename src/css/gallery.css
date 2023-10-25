@@ -205,9 +205,9 @@
   height: 140px;
   border-radius: 15px;
   background: #fff;
-  /* overflow: hidden;
+  overflow: hidden;
   text-overflow: ellipsis;
-  white-space: nowrap; */
+  white-space: nowrap;
   padding: 16px;
 }
 .exercise-item-wrapper {
@@ -283,11 +283,14 @@
   font-style: normal;
   font-weight: 400;
   line-height: 20px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 .exercise-item-list {
   display: flex;
   gap: 9px;
-  width: 303px;
+  width: calc((100% - 15px) / 2);
 }
 .information-text:last-child {
   text-overflow: ellipsis;
@@ -454,6 +457,9 @@
     max-width: 900px;
     margin-left: auto;
   }
+  .exercise-item-wrapper {
+    width: 410px;
+  }
   .galary-item {
     width: 290px;
     height: 242px;
@@ -462,8 +468,10 @@
     width: 442px;
     height: 141px;
   }
+
   .exercise-item-subtitle {
     max-width: 442px;
+    overflow: unset;
   }
   .exercise-item-list {
     max-width: 442px;
@@ -473,5 +481,8 @@
   }
   .information-text {
     max-width: 200px;
+  }
+  .information-text:last-child {
+    overflow: unset;
   }
 }
