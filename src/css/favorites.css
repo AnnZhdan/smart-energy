@@ -1,5 +1,7 @@
 .favorites-container {
-  padding: 80px 20px;
+  /* padding: 80px 20px; */
+  padding-top: 80px;
+  padding-bottom: 80px;
 }
 .favorites-title {
   margin-bottom: 20px;
@@ -22,7 +24,6 @@
 }
 
 .favorites-box {
-  display: flex;
   margin: 0 auto;
 }
 
@@ -40,6 +41,12 @@
   border: none;
   background-color: inherit;
 }
+/* .favorites-exercise-item{
+    animation-name: girls;
+    animation-duration: 5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+} */
 
 @keyframes girls {
   0% {
@@ -124,8 +131,6 @@
     margin-top: 0px;
   }
 
-  /* .favorites-box {
-  } */
 }
 @media screen and (min-width: 1440px) {
   .favorites-title {
@@ -164,5 +169,8 @@
   }
   .favorites-exercise-item {
     max-width: 405px;
+  }
+  .favorites-list {
+    gap: 32px 16px;
   }
 }

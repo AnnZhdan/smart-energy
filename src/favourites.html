@@ -12,13 +12,152 @@
   <script type="module" src="./js/fav-page.js"></script>
 </head>
 
-<body>
-  <!-- <section>
-      <a href="./index.html">Go to home</a>
-      <h1>Welcome to page 2</h1>
-    </section> -->
-  <load="partials /header.html" />
-  <load="partials /modal.html" />
+<body><header class="header-top fixed-header">
+  <div class="container header-container">
+    <!-- logo -->
+
+    <a href="./index.html" class="logo-link">
+      <svg class="header-logo" width="132px" height="14px">
+        <use href="./img/icon-sprite.svg#icon-your-energy-1"></use>
+      </svg>
+    </a>
+
+    <!-- navigation -->
+
+    <nav class="nav-header">
+      <ul class="nav-list">
+        <li class="nav-item">
+          <a href="./index.html" class="nav-link link">Home</a>
+        </li>
+        <li class="nav-item active">
+          <a href="./favourites.html" class="nav-link link">Favorites</a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- social -->
+
+    <ul class="nav-social">
+      <li class="nav-icon">
+        <a
+          class="nav-soc-link"
+          href="https://www.facebook.com/goITclub/"
+          target="_blank"
+          rel="noopener nofollow noreferer"
+        >
+          <svg width="28px" height="28px">
+            <use href="./img/icon-sprite.svg#facebook"></use>
+          </svg>
+        </a>
+      </li>
+      <li class="nav-icon">
+        <a
+          class="nav-soc-link"
+          href="https://www.instagram.com/goitclub/"
+          target="_blank"
+          rel="noopener nofollow noreferer"
+        >
+          <svg  width="28px" height="28px">
+            <use href="./img/icon-sprite.svg#instagram"></use>
+          </svg>
+        </a>
+      </li>
+      <li class="nav-icon">
+        <a
+          class="nav-soc-link"
+          href="https://www.youtube.com/c/GoIT"
+          target="_blank"
+          rel="noopener nofollow noreferer"
+        >
+          <svg width="28px" height="28px">
+            <use href="./img/icon-sprite.svg#youtube"></use>
+          </svg>
+        </a>
+      </li>
+    </ul>
+
+    <!-- durger -->
+    <div class="header-btn">
+      <button
+        type="button"
+        class="menu-toggle js-open-menu hide-header"
+        aria-expanded="false"
+        aria-controls="mobile-menu" id="mobile-menu" 
+      >
+        <svg class="header-burger" width="32px" height="32px">
+          <use href="./img/icon-sprite.svg#align-justify"></use>
+        </svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!--------------------- mobile-menu ---------------->
+
+<!-- <button type="button" class="hide-header" id="hide-header-button"></button> -->
+ <!-- <div id="overlay" class="overlay"> -->
+<div class="mob-menu js-menu-container">
+     <button class="mob-menu-close js-close-menu">
+      <svg class="icon-close">
+        <use href="./img/icon-sprite.svg#x"></use>
+      </svg>
+    </button>
+
+    <!-- mob-nav -->
+
+    <div class="mobil-list">
+      <ul class="mobile-menu">
+        <li class="mob-item">
+          <a class="mob-link" href="./index.html">Home</a>
+        </li>
+        <li class="mob-item">
+          <a class="mob-link" href="./favourites.html">Favorites</a>
+        </li>
+      </ul>
+
+      <!-- mob-social -->
+
+      <ul class="mob-social">
+        <li class="mob-icon">
+          <a
+            class="soc-icon-mobil"
+            href="https://www.facebook.com/goITclub/"
+            target="_blank"
+            rel="noopener nofollow noreferer"
+          >
+            <svg class="mob-social-icon" width="28px" height="28px">
+              <use href="./img/icon-sprite.svg#facebook"></use>
+            </svg>
+          </a>
+        </li>
+        <li class="mob-icon">
+          <a
+            class="soc-icon-mobil"
+            href="https://www.instagram.com/goitclub/"
+            target="_blank"
+            rel="noopener nofollow noreferer"
+          >
+            <svg class="mob-social-icon" width="28px" height="28px">
+              <use href="./img/icon-sprite.svg#instagram"></use>
+            </svg>
+          </a>
+        </li>
+        <li class="mob-icon">
+          <a
+            class="soc-icon-mobil"
+            href="https://www.youtube.com/c/GoIT"
+            target="_blank"
+            rel="noopener nofollow noreferer"
+          >
+            <svg class="mob-social-icon" width="28px" height="28px">
+              <use href="./img/icon-sprite.svg#youtube"></use>
+            </svg>
+          </a>
+        </li>
+      </ul>
+    </div>
+  <!-- </div> -->
+</div>
   <main>
     <div class="container favorites-container">
       <h1 class="favorites-title timeline-content js--fadeInLeft">
@@ -96,6 +235,98 @@
         </div>
       </div>
     </div>
+
+    <div id="myModal" class="modal">
+    <div class="modal-content">
+      <button id="closeModalButton" class="close-button">
+        <svg width="24" height="24" class="modal-close">
+          <use href="/img/icon-sprite.svg#icon-x"></use>
+        </svg>
+      </button>
+      <div class="modal-info">
+        <div>
+          <img class="gif-modal" src="" alt="" width="295" height="258" />
+        </div>
+        <div class="modal-details-container">
+          <div class="title-inform-modal">
+            <h2 class="title-modal"></h2>
+            <div class="modal-rating-item">
+              <p class="modal-rating"></p>
+              <div class="modal-raring-svg">
+                <svg
+                  id="1"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="18"
+                  height="18"
+                  viewBox="0 0 100 100"
+                >
+                  <use xlink:href="/img/icon-sprite.svg#icon-Star-2"></use>
+                </svg>
+
+              </div>
+            </div>
+          </div>
+          <div class="text-container">
+            <div class="text-modal-container">
+              <p class="">
+                <strong class="modal-text-style">Body Part:</strong
+                ><span class="modal-part modal-api-style"></span>
+              </p>
+              <p>
+                <strong class="modal-text-style">Equipment:</strong
+                ><span class="modal-equipment modal-api-style"></span>
+              </p>
+              <p>
+                <strong class="modal-text-style">Target:</strong
+                ><span class="modal-target modal-api-style"></span>
+              </p>
+              <p>
+                <strong class="modal-text-style">Popular:</strong
+                ><span class="modal-popularity modal-api-style"></span>
+              </p>
+              <p>
+                <strong class="modal-text-style">Burned Calories:</strong
+                ><span class="burn-modal modal-api-style"></span
+                ><span class="time-burn modal-api-style"></span>
+              </p>
+              <p>
+                <strong class="modal-text-style"></strong>
+              </p>
+            </div>
+            <div><p class="text-modal"></p></div>
+          </div>
+        </div>
+      </div>
+      <div class="container-button">
+        <div class="button-favorites-container">
+          <button
+            id="additionalButton1"
+            class="button-favorites"
+            data-exercise-id="exerciseID"
+          >
+            <p class="button-name-favorites">Add to favorites</p>
+            <svg
+              class="favorites-svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+            >
+              <use
+                href="/img/icon-sprite.svg#heart"
+                              ></use>
+            </svg>
+          </button>
+        </div>
+        <div class="button-rating-container">
+          <button id="additionalButton2" class="button-rating">
+            <p class="button-name-rating">Give a rating</p>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
   </main>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="https://unpkg.com/scrollreveal"></script>
