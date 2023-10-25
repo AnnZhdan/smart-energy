@@ -96,13 +96,17 @@
   height: 44px;
   border-radius: 10px;
   border: 1px solid rgba(244, 244, 244, 0.1);
+
   display: flex;
   align-items: center;
   justify-content: center;
+
   cursor: pointer;
+  opacity: 80%;
+  fill: var(--primary-light-color)
 }
 
-.mob-social-icon {
+/* .mob-social-icon {
   width: 28px;
   height: 28px;
   opacity: 80%;
@@ -112,10 +116,12 @@
 .mob-social-icon:focus {
   fill: var(--primary-dark-color);
   opacity: 80%;
-}
+} */
 
 .soc-icon-mobil:hover,
 .soc-icon-mobil:focus {
+  fill: var(--primary-dark-color);
+  opacity: 80%;
   background: var(--primary-light-color);
   opacity: 80%;
 }
