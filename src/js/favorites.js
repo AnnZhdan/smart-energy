@@ -30,14 +30,14 @@ document.addEventListener("DOMContentLoaded", function () {
        Notiflix.Notify.success('Exercise removed from favorites!');
       
       addToFavoritesButton.querySelector('.button-name-favorites').textContent = 'Add to favorites';
-      addToFavoritesButton.querySelector('.favorites-svg use').setAttribute('xlink:href', './img/icon-sprite.svg#heart');
+      addToFavoritesButton.querySelector('.favorites-svg use').setAttribute('xlink:href', '/img/icon-sprite.svg#heart');
     } else {
 
       favoritesList.push(exerciseData);
       Notiflix.Notify.success('Exercise added to favorites!');
       
       addToFavoritesButton.querySelector('.button-name-favorites').textContent = 'Remove from favorites';
-      addToFavoritesButton.querySelector('.favorites-svg use').setAttribute('xlink:href', './img/icon-sprite.svg#trash');
+      addToFavoritesButton.querySelector('.favorites-svg use').setAttribute('xlink:href', '/img/icon-sprite.svg#trash');
     }
 
     localStorage.setItem('favoritesList', JSON.stringify(favoritesList));
@@ -50,6 +50,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
   if (isExerciseInFavorites) {
     addToFavoritesButton.querySelector('.button-name-favorites').textContent = 'Remove from favorites';
-    addToFavoritesButton.querySelector('.favorites-svg use').setAttribute('xlink:href', './img/icon-sprite.svg#heart-filled');
+    addToFavoritesButton.querySelector('.favorites-svg use').setAttribute('xlink:href', '/img/icon-sprite.svg#heart-filled');
   }
 });
