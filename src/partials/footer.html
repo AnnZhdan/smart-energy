@@ -1,14 +1,14 @@
 <footer class="footer">
-  <div class="container">
+  <div class="footer-container">
     <div class="footer-tab">
       <div>
-        <a href="../index.html" class="footer-logo-link">
+        <a href="../index.html">
           <svg class="footer-logo-link" width="132px" height="24px">
             <use href="../img/icon-sprite.svg#icon-your-energy-1"></use>
           </svg>
         </a>
 
-        <ul class="social">
+        <ul class="footer-social">
           <li class="footer-li">
             <a href="https://www.facebook.com/goITclub/" target="_blank">
               <svg class="footer-icons" width="24px" height="24px">
@@ -43,10 +43,10 @@
               class="footer-input"
               placeholder="Email"
               name="email"
-              id="mailto"
+              id="mailto"              
               required
           />
-          <button type="submit" class="footer-button">Send</button>
+          <button type="submit" class="footer-button" onclick="sendDataToBackend(event)">Send</button>
       </form>
       </div>
     </div>

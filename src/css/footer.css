@@ -8,8 +8,7 @@
 @media screen and (min-width: 768px) {
   .footer {
     background: #242424;
-    padding-top: 64px;
-    
+    padding-top: 64px;    
     padding-bottom: 32px;
   }
 }
@@ -17,13 +16,31 @@
 @media screen and (min-width: 1440px) {
   .footer {
     background: #242424;
-    padding-top: 64px;
-    
+    padding-top: 64px;    
     padding-bottom: 32px;
   }
 }
 
+.footer-container {
+  max-width: 375px;
+  margin: 0 auto;
+  padding-left: 20px;
+  padding-right: 20px;
+}
 
+@media screen and (min-width: 768px) {
+  .footer-container {
+    max-width: 768px;
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .footer-container {
+    max-width: 1440px;    
+  }
+}
 
 .footer-tab {
   display: unset;
@@ -50,7 +67,7 @@
   fill: #f4f4f4;
 }
 
-.social {
+.footer-social {
   display: flex;
   align-items: flex-start;
   gap: 12px;
@@ -59,7 +76,7 @@
 }
 
 @media screen and (min-width: 768px) {
-  .social {
+  .footer-social {
     display: flex;
     align-items: flex-start;
     gap: 12px;
@@ -69,7 +86,7 @@
 }
 
 @media screen and (min-width: 1440px) {
-  .social {
+  .footer-social {
     display: flex;
     align-items: flex-start;
     gap: 12px;
@@ -154,7 +171,7 @@
 
 .footer-h2 {
   color: #f4f4f4;
-  font-family: 'Neue Montreal';
+  font-family: Neue Montreal;
   font-size: 40px;
   font-style: normal;
   font-weight: 400;
@@ -189,24 +206,26 @@
     letter-spacing: -1.12px;
     margin-bottom: 40px;
     padding-left: 120px;
-    padding-right: 140px;
+    padding-right: 120px;
   }
 }
 
 .footer-text {
   color: #f4f4f4;
-  font-family: 'Neue Montreal, italic';
+  /* font-family: 'Neue Montreal, italic'; */
   font-size: 40px;
   font-style: italic;
   font-weight: 400;
   line-height: 48px;
-  letter-spacing: -0.8px;
+  opacity: 1;
+  
+  
 }
 
 @media screen and (min-width: 768px) {
   .footer-text {
     color: #f4f4f4;
-    font-family: 'Neue Montreal, italic';
+    /* font-family: 'Neue Montreal, italic'; */
     font-size: 56px;
     font-style: italic;
     font-weight: 400;
@@ -221,7 +240,7 @@
   text-align: center;
   margin: 0 auto;
   margin-bottom: 100px;
-  gap: 20px;
+  gap: 20px;  
 }
 
 @media screen and (min-width: 768px) {
@@ -254,12 +273,30 @@
   }
 }
 
+.footer-input::placeholder {
+  color: #f4f4f4; 
+}
+
+.footer-input:focus::placeholder {
+  color: transparent;
+}
+
+.footer-input:focus {
+  color: #f4f4f4; 
+}
+
+.footer-input:hover {
+  color: #f4f4f4; 
+}
+
 .footer-input {
   display: flex;
   padding: 12px 12px 14px;
   align-items: center;
   border-radius: 30px;
   border: 1px solid #f4f4f4;
+  background: #242424; 
+  color: #f4f4f4; 
 }
 
 @media screen and (min-width: 768px) {
@@ -279,7 +316,6 @@
   font-style: normal;
   font-weight: 400;
   line-height: 18px;
-
   padding-top: 12px;
   padding-bottom: 12px;
   text-align: center;
@@ -329,6 +365,25 @@
   }
 }
 
+.footer-div {
+  display: unset;
+  white-space: nowrap;
+}
+
+@media screen and (min-width: 768px) {
+  .footer-div {
+    display: flex;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .footer-div {
+    display: flex;
+    margin-top: -54px;
+    /* margin-right: 40px; */
+  }
+}
+
 .footer-p {
   color: #f4f4f4;
   font-family: Neue Montreal;
@@ -355,9 +410,21 @@
   }
 }
 
-.footer-slash {
-  margin-left: 4px;
-  margin-right: 4px;
+.div-footer {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  gap: 95px;
+}
+
+@media screen and (min-width: 768px) {
+  .div-footer {
+    display: flex;
+    justify-content: space-between;
+    width: unset;
+
+    white-space: nowrap;
+  }
 }
 
 .footer-p1 {
@@ -396,6 +463,11 @@
     margin-left: 208px;
     margin-right: 310px;
   }
+}
+
+.footer-slash {
+  margin-left: 4px;
+  margin-right: 4px;
 }
 
 .footer-p2 {
@@ -437,41 +509,8 @@
   }
 }
 
-.div-footer {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-  gap: 95px;
-}
 
-@media screen and (min-width: 768px) {
-  .div-footer {
-    display: flex;
-    justify-content: space-between;
-    width: unset;
 
-    white-space: nowrap;
-  }
-}
-
-.footer-div {
-  display: unset;
-  white-space: nowrap;
-}
-
-@media screen and (min-width: 768px) {
-  .footer-div {
-    display: flex;
-  }
-}
-
-@media screen and (min-width: 1440px) {
-  .footer-div {
-    display: flex;
-    margin-top: -54px;
-    /* margin-right: 40px; */
-  }
-}
 
 /* @media screen and (min-width: 768px) {
 }
