@@ -60,68 +60,61 @@ async function fetchExercisesByFiltersAndKeyword(
 ///Exercise details
 async function fetchExerciseDetails(exerciseID) {
   try {
-    const apiUrl = `https://your-energy.b.goit.study/api/exercises/${exerciseID}`;
+      const apiUrl = `https://your-energy.b.goit.study/api/exercises/${exerciseID}`;
+      const response = await fetch(apiUrl);
 
-    const response = await fetch(apiUrl);
+      if (!response.ok) {
+          throw new Error(`Request failed with status ${response.status}`);
+      }
 
-    if (!response.ok) {
-      throw new Error(`Request failed with status ${response.status}`);
-    }
+      const data = await response.json();
 
-    const data = await response.json();
+      if (!data.results || data.results.length === 0) {
+          console.log('Exercise not found for the specified exerciseID.');
+          return;
+      }
 
-    if (!data.results || data.results.length === 0) {
-      console.log('Exercise not found for the specified exerciseID.');
-      return;
-    }
-
-    const detailsContainer = document.getElementById('exercise-details');
-
-    const exercise = data.results[0];
-    detailsContainer.innerHTML = `
-            <h2>${exercise.name}</h2>
-            <p><strong>Body Part:</strong> ${exercise.bodyPart}</p>
-            <p><strong>Equipment:</strong> ${exercise.equipment}</p>
-            <p><strong>Target:</strong> ${exercise.target}</p>
-            <p><strong>Description:</strong> ${exercise.description}</p>
-            <p><strong>Burned Calories:</strong> ${exercise.burnedCalories}</p>
-            <p><strong>Duration:</strong> ${exercise.time} minutes</p>
-            <p><strong>Rating:</strong> ${exercise.rating}</p>
-            <p><strong>Popularity:</strong> ${exercise.popularity}</p>
-            <p><strong>GIF URL:</strong> <a href="${exercise.gifUrl}" target="_blank">View</a></p>
-        `;
+      const detailsContainer = document.getElementById('exercise-details');
+      const exercise = data.results[0];
+      detailsContainer.innerHTML = `
+          <h2>${exercise.name}</h2>
+          <p><strong>Body Part:</strong> ${exercise.bodyPart}</p>
+          <p><strong>Equipment:</strong> ${exercise.equipment}</p>
+          <p><strong>Target:</strong> ${exercise.target}</p>
+          <p><strong>Description:</strong> ${exercise.description}</p>
+          <p><strong>Burned Calories:</strong> ${exercise.burnedCalories}</p>
+          <p><strong>Duration:</strong> ${exercise.time} minutes</p>
+          <p><strong>Rating:</strong> ${exercise.rating}</p>
+          <p><strong>Popularity:</strong> ${exercise.popularity}</p>
+          <p><strong>GIF URL:</strong> <a href="${exercise.gifUrl}" target="_blank">View</a></p>
+      `;
   } catch (error) {
-    console.error(`Error: ${error.message}`);
+      console.error(`Error: ${error.message}`);
   }
 }
-
 ///Exercise rating
 async function setExerciseRating(exerciseID, rating) {
   try {
-    const apiUrl = `https://your-energy.b.goit.study/api/exercises/${exerciseID}/rating`;
-    const requestBody = JSON.stringify({ rating });
+      const apiUrl = `https://your-energy.b.goit.study/api/exercises/${exerciseID}/rating`;
+      const requestBody = JSON.stringify({ rating });
 
-    const response = await fetch(apiUrl, {
-      method: 'PATCH',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: requestBody,
-    });
+      const response = await fetch(apiUrl, {
+          method: 'PATCH',
+          headers: {
+              'Content-Type': 'application/json',
+          },
+          body: requestBody,
+      });
 
-    if (!response.ok) {
-      throw new Error(
-        `Request to set rating failed with status ${response.status}`
-      );
-    }
+      if (!response.ok) {
+          throw new Error(`Request to set rating failed with status ${response.status}`);
+      }
 
-    const data = await response.json();
+      const data = await response.json();
 
-    console.log(
-      `Rating for exercise ${exerciseID} has been updated to ${rating}.`
-    );
+      console.log(`Rating for exercise ${exerciseID} has been updated to ${rating}.`);
   } catch (error) {
-    console.error(`Error: ${error.message}`);
+      console.error(`Error: ${error.message}`);
   }
 }
 
@@ -137,8 +130,13 @@ export async function getQuoteOfTheDay() {
     const data = await response.json();
 
     if (data && data.author && data.quote) {
-      console.log(`Quote of the day: "${data.quote}" - ${data.author}`);
-      return data;
+      const quoteObject = {
+        quote: data.quote,
+        author: data.author
+      };
+
+      console.log('Quote of the day:', quoteObject);
+      return quoteObject;
     } else {
       console.log('Failed to get the quote of the day.');
     }
@@ -146,6 +144,7 @@ export async function getQuoteOfTheDay() {
     console.error('Error while fetching the quote of the day:', error);
   }
 }
+
 
 ///Subscription service
 async function subscribeToExerciseUpdates() {

@@ -1,5 +1,5 @@
 .modal {
-  display: block;
+  display: none;
   position: fixed;
   z-index: 1;
   left: 0;
@@ -259,6 +259,9 @@
 }
 
 .selectedRat {
+  display: flex;
+  justify-content: center;
+
   color: #f4f4f4;
   font-feature-settings: 'clig' off, 'liga' off;
   font-family: Neue Montreal;
