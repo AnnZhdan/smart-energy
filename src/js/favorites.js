@@ -1,4 +1,6 @@
-document.addEventListener("DOMContentLoaded", function() {
+import Notiflix from "notiflix";
+
+document.addEventListener("DOMContentLoaded", function () {
   const addToFavoritesButton = document.getElementById('additionalButton1');
   const myModal = document.getElementById('myModal');
 
@@ -25,14 +27,14 @@ document.addEventListener("DOMContentLoaded", function() {
       favoritesList = favoritesList.filter(
         (item) => item.exerciseName !== exerciseData.exerciseName
       );
-      alert('Exercise removed from favorites!');
+       Notiflix.Notify.success('Exercise removed from favorites!');
       
       addToFavoritesButton.querySelector('.button-name-favorites').textContent = 'Add to favorites';
       addToFavoritesButton.querySelector('.favorites-svg use').setAttribute('xlink:href', './img/icon-sprite.svg#heart');
     } else {
 
       favoritesList.push(exerciseData);
-      alert('Exercise added to favorites!');
+      Notiflix.Notify.success('Exercise added to favorites!');
       
       addToFavoritesButton.querySelector('.button-name-favorites').textContent = 'Remove from favorites';
       addToFavoritesButton.querySelector('.favorites-svg use').setAttribute('xlink:href', './img/icon-sprite.svg#trash');

@@ -1,3 +1,5 @@
+import Notiflix from "notiflix";
+
 import { setExerciseRating } from './api.js';
 import { currentExerciseID} from './modal.js';
 
@@ -14,30 +16,30 @@ ratingForm.addEventListener('submit', async (event) => {
   const review = commentInput.value;
 
   if (!isValidEmail(email)) {
-    alert('Введіть коректний email');
+    Notiflix.Notify.failure('Enter a valid email');
     return;
   }
 
   const _id = currentExerciseID; 
 
- const exerciseID = await getExerciseIDBy_id(_id);
+  const exerciseID = await getExerciseIDBy_id(_id);
 
-if (exerciseID) {
-  const dataToSend = {
-    rate: rate,
-    email: email,
-    review: review,
-  };
+  if (exerciseID) {
+    const dataToSend = {
+      rate: rate,
+      email: email,
+      review: review,
+    };
 
-  const requestBody = JSON.stringify(dataToSend);
+    const requestBody = JSON.stringify(dataToSend);
 
-  await setExerciseRating(exerciseID, rate, requestBody);
+    await setExerciseRating(exerciseID, rate, requestBody);
 
-  myModal2.style.display = 'none';
-} else {
-  alert('Помилка: не вдалося знайти вправу.');
-}
-
+    Notiflix.Notify.success('success');
+    myModal2.style.display = 'none';
+  } else {
+    Notiflix.Notify.failure('Error: The exercise could not be found.');
+  }
 });
 
 function isValidEmail(email) {
