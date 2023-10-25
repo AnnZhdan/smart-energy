@@ -1,31 +1,5 @@
 import ScrollReveal from 'scrollreveal';
-// const menuLinks = document.querySelectorAll('.header-menu a');
 
-// menuLinks.forEach(link => {
-//   if (link.href === currentUrl || currentUrl.includes('favourites.html')) {
-//     link.parentElement.classList.add('active');
-//   }
-// });
-
-// const listItems = document.querySelectorAll('.nav-list li');
-// const homeNavItem = listItems[0];
-// const favoritesNavItem = listItems[1];
-
-// function changeClass() {
-//   const currentPageURL = window.location.href;
-//   const isFavoritesPage = currentPageURL.includes('favorites.html');
-
-//   isFavoritesPage
-//     ? (homeNavItem.classList.remove('active'),
-//       favoritesNavItem.classList.add('active'))
-//     : (homeNavItem.classList.add('active'),
-//       favoritesNavItem.classList.remove('active'));
-// }
-
-// changeClass();
-
-// window.addEventListener('hashchange', changeClass);
-// import {updateModalWithExerciseData} from './modal.js';
 window.addEventListener('load', function () {
   // Анімація
   $(function () {
@@ -75,6 +49,8 @@ window.addEventListener('load', function () {
     });
   });
 });
+
+
 
 // Для карток з ЛС
 const LS_KEY = 'favoritesList';
@@ -132,10 +108,7 @@ function renderFavorites() {
         </ul>
       </div>
     `;
-    //   const startButton = exerciseCard.querySelector('.exercise-item-button');
-    // startButton.addEventListener('click', () => {
-    //   updateModalWithExerciseData(item.exerciseID);
-    // });
+      
 
     favoritesListCard.appendChild(exerciseCard);
   });
@@ -159,7 +132,9 @@ function renderFavorites() {
         renderFavorites();
       }
     });
-  });
+    });
+  
+    
 }
 
 function createCards() {
