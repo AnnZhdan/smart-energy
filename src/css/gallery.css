@@ -54,6 +54,7 @@
   line-height: 20px;
   padding: 0;
 }
+
 .galary-filter-checked {
   position: relative;
 }
@@ -202,6 +203,9 @@
   height: 140px;
   border-radius: 15px;
   background: #fff;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 .exercise-item-wrapper {
   padding: 16px;
@@ -276,20 +280,29 @@
   font-style: normal;
   font-weight: 400;
   line-height: 20px;
+  max-width: 303px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 .exercise-item-list {
   display: flex;
   gap: 9px;
+  overflow: hidden;
+  max-width: 303px;
+  text-overflow: ellipsis;
 }
 .exercise-item-list-information {
   display: flex;
 }
+
 .information-text {
   color: rgba(36, 36, 36, 0.4);
   font-size: 12px;
   font-style: normal;
   font-weight: 400;
   line-height: 18px;
+  white-space: nowrap;
 }
 .information-text-span {
   color: var(--primary-dark-color);
@@ -300,7 +313,8 @@
   font-style: normal;
   font-weight: 400;
   line-height: 18px;
-  margin-left: 4px;
+  text-transform: capitalize;
+  margin-left: 2px;
 }
 
 /* Пагінація */
@@ -348,6 +362,7 @@
     letter-spacing: -0.88px;
   }
   .galary-title2 {
+    /* margin-bottom: 32px; */
     margin-bottom: 32px;
     font-size: 44px;
     line-height: 48px;
@@ -358,10 +373,9 @@
   }
   .galary-filters2 {
     margin-left: auto;
-    margin-bottom: 0;
   }
   .galary-filter-checkt2::after {
-    bottom: 39px;
+    bottom: 5px;
   }
   .galary-filters-button {
     font-size: 16px;
@@ -373,6 +387,7 @@
   .galary-search-wrapper {
     width: 271px;
     margin-bottom: 32px;
+    margin-top: 0;
   }
   .galary-list {
     margin-bottom: 32px;
@@ -401,10 +416,20 @@
 }
 
 @media screen and (min-width: 1440px) {
+  .galary-sidebar-wrapper {
+    max-width: 1440px;
+    position: relative;
+    margin: 0 auto;
+  }
   .galary-container {
-    max-width: 900px;
+    /* max-width: 900px; */
+    max-width: 1376px;
   }
   .galary-title-and-list-wrapper {
+    display: flex;
+    align-items: center;
+  }
+  .galary-title-and-list-wrapper-ex {
     display: flex;
     align-items: center;
   }
@@ -422,6 +447,10 @@
   .galary-filters2 {
     margin-left: 32px;
   }
+  .galary-list {
+    max-width: 900px;
+    margin-left: auto;
+  }
   .galary-item {
     width: 290px;
     height: 242px;
@@ -429,5 +458,17 @@
   .exercise-item {
     width: 442px;
     height: 141px;
+  }
+  .exercise-item-subtitle {
+    max-width: 442px;
+  }
+  .exercise-item-list {
+    max-width: 442px;
+  }
+  .exercise-item-list-information {
+    max-width: 442px;
+  }
+  .information-text {
+    max-width: 200px;
   }
 }
