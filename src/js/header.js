@@ -2,7 +2,7 @@
 (() => {
   const mobileMenu = document.querySelector('.js-menu-container');
   const openMenuBtn = document.querySelector('.js-open-menu');
-  const closeMenuBtn = document.querySelector('.js-close-menu');
+  const closeMenuButton = document.querySelector('.js-close-menu');
   const overlayMobile = document.getElementById('overlay');
 
   const toggleMenu = () => {
@@ -24,7 +24,7 @@
   // }
 
   openMenuBtn.addEventListener('click', toggleMenu);
-  closeMenuBtn.addEventListener('click', toggleMenu);
+  closeMenuButton.addEventListener('click', toggleMenu);
 
 	window.addEventListener('resize',() => {
 		if (window.innerWidth > 768) {
