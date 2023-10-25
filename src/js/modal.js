@@ -1,3 +1,9 @@
+export let currentExerciseID = null;
+
+export function setCurrentExerciseID(exerciseID) {
+  currentExerciseID = exerciseID;
+}
+
 const closeModalButton = document.getElementById('closeModalButton');
 const additionalButton2 = document.getElementById('additionalButton2');
 const closeModalButton2 = document.getElementById('closeModalButton2');
@@ -5,7 +11,7 @@ const myModal = document.getElementById('myModal');
 const myModal2 = document.getElementById('myModal2');
 
 let currentExerciseData = null;
-let currentExerciseID = null;
+
 
 function showExerciseModal(exerciseData) {
   myModal.style.display = 'block';
@@ -32,6 +38,25 @@ function showExerciseModal(exerciseData) {
   modalRating.textContent = exerciseData.rating;
 
   currentExerciseData = exerciseData;
+
+  myModal.addEventListener('click', event => {
+    if (event.target === myModal) {
+      closeModal(myModal);
+    }
+  });
+  
+  const closeModalOnEscape = event => {
+    if (event.key === 'Escape' && myModal.style.display === 'block') {
+      closeModal(myModal);
+      document.removeEventListener('keydown', closeModalOnEscape);
+    }
+  };
+  document.addEventListener('keydown', closeModalOnEscape);
+
+  closeModalButton.addEventListener('click', () => {
+    closeModal(myModal);
+    document.removeEventListener('keydown', closeModalOnEscape);
+  });
 }
 
 async function updateModalWithExerciseData(exerciseID) {
@@ -66,8 +91,6 @@ async function fetchExerciseDetails(exerciseID) {
   }
 }
 
-// const exerciseItemButtons = document.querySelectorAll('.exercise-item-button');
-
 document.addEventListener('click', event => {
   const button = event.target.closest('.exercise-item-button');
   if (!button) {
@@ -78,21 +101,44 @@ document.addEventListener('click', event => {
   updateModalWithExerciseData(exerciseID);
 });
 
-closeModalButton.addEventListener(
-  'click',
-  () => (myModal.style.display = 'none')
-);
+function closeModal(modal) {
+  modal.style.display = 'none';
+}
+
+myModal2.addEventListener('click', event => {
+  if (event.target === myModal2) {
+    closeModal(myModal2);
+  }
+});
+
+
+const closeModalOnEscape2 = event => {
+  if (event.key === 'Escape' && myModal2.style.display === 'block') {
+    closeModal(myModal2);
+    document.removeEventListener('keydown', closeModalOnEscape2);
+  }
+};
+document.addEventListener('keydown', closeModalOnEscape2);
+
 additionalButton2.addEventListener('click', () => {
   myModal.style.display = 'none';
   if (currentExerciseData && currentExerciseID) {
     showExerciseModal(currentExerciseData);
     myModal2.style.display = 'block';
+    myModal2.addEventListener('click', event => {
+      if (event.target === myModal2) {
+        closeModal(myModal2);
+      }
+    });
   }
 });
-closeModalButton2.addEventListener(
-  'click',
-  () => (myModal2.style.display = 'none')
-);
 
-myModal.style.display = 'none';
-myModal2.style.display = 'none';
+closeModalButton.addEventListener('click', () => {
+  closeModal(myModal);
+  document.removeEventListener('keydown', closeModalOnEscape);
+});
+
+closeModalButton2.addEventListener('click', () => {
+  closeModal(myModal2);
+  document.removeEventListener('keydown', closeModalOnEscape2);
+});

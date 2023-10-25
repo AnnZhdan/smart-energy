@@ -93,10 +93,9 @@ async function fetchExerciseDetails(exerciseID) {
   }
 }
 ///Exercise rating
-async function setExerciseRating(exerciseID, rating) {
+export async function setExerciseRating(exerciseID, rating, requestBody) {
   try {
       const apiUrl = `https://your-energy.b.goit.study/api/exercises/${exerciseID}/rating`;
-      const requestBody = JSON.stringify({ rating });
 
       const response = await fetch(apiUrl, {
           method: 'PATCH',
