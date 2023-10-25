@@ -1,10 +1,6 @@
 .hero {
-    top: 0;
-  z-index: 100;
-  width: 100%;
-    padding-top: 80px;
-    
-  }
+    padding-top: 132px;
+}
 
 .hero__icon {
     stroke-width: 4px;
@@ -14,23 +10,15 @@
 } 
 
 .container__title {
-    /* display: inline-block; */
     position: relative;
-    font-style: normal;
     font-size: 40px;
     line-height: 1.2;             
     letter-spacing: -0,8px;
-   
 }
 
 .container__title-accent {
-    font-family: 'Neue Montreal, italic';
     font-style: italic;
-    font-weight: 400;
-    font-size: 40px;
-    line-height: 1.2;             
-    letter-spacing: -0,8px; 
-     
+       
 }
 
 .container__text {
@@ -50,131 +38,128 @@
     border-radius: 30px;
     width: 100%;
     height: 450px;
-    margin-top: 16px;
+    margin-top: 20px;
 }
 
 .tags__list {
     display: flex;
-    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 6px;
+     
     margin-top: 20px;
-    
-    
 }
 
-.tags__list-item:not(:last-child) {
-    margin-right: 6px;
-  }
-
 .tags__list-item {
+    font-style: normal;
     font-size: 14px;
     line-height: 1.29;  
-    padding: 4px 16px;
+    padding: 4px 13px;
     border: 1px solid #242424;
     border-radius: 30px;
     
 }
 
 @media screen and (min-width: 768px) {
-    .hero__icon {
-        width: 60px;
-        height: 60px  
-    }
+.hero {
+   padding-top: 176px;
+}
+
+.hero__icon {
+    width: 60px;
+    height: 60px  
+}
+
+.container__title {
+    max-width: 593px;
+    font-size: 74px;
+    line-height: 1;             
+    letter-spacing: -1.48px;      
+}
+
+/* .container__title-accent {
+    font-style: italic;
+} */
+
+.container__text {
+    max-width: 528px;
+    font-size: 18px;
+    line-height: 1.33;             
+    letter-spacing: -0.36px;
+    margin-top: 20px;
+
+}
+
+.hero__img {
+    border-radius: 60px;
+    width: 704px;
+    height: 550px;
+    margin-top: 32px;
+}
+
+
+.tags__list {
+    display: flex;
+    justify-content: end;
+    gap: 8px;
+     
+    margin-top: 16px;
     
-    .container__title {
-        max-width: 593px;
-        font-size: 74px;
-        line-height: 1;             
-        letter-spacing: -1.48px;
-        margin-top: 100px;
-          
-    }
+}
+
+.tags__list-item {
+    font-size: 16px;
+    line-height: 1.5;  
+    padding: 4px 13px;
+    border: 1px solid #242424;
+    border-radius: 30px;
+}
+}
+
+@media screen and (min-width: 1440px) {
+
+.hero-container {
+    position: relative;
+}
+
+.container__title {
+    min-width: 593px;
+    position: relative;        
+}
+
+.hero__img-small {
+    position: absolute;
+    top: 0px;
+    right: 32px;
+    border-radius: 20px;
+    display: block;
+    width: 168px;
+    height: 100px;
     
-    .container__title-accent {
-        font-family: 'Neue Montreal, italic';
-        font-style: italic;
-        font-size: 74px;
-        line-height: 1;             
-        letter-spacing: -1.48px;
-         
-    }
+}
+
+.tags__list {
+    position: absolute;
+    top: 135px;
+    right: 32px;
+    max-width: 182px;
+    display: flex;
+    justify-content: end;
+    align-items: flex-start;
+    align-content: flex-start;
+    gap: 8px;
     
-    .container__text {
-        max-width: 528px;
-        font-size: 18px;
-        line-height: 1.33;             
-        letter-spacing: -0.36px;
-        margin-top: 20px;
-    
-    }
-    
-    .hero__img {
-        border-radius: 30px;
-        width: 704px;
-        height: 550px;
-        margin-top: 32px;
-    }
-    
+}
 
-    .tags__list {
-        display: flex;
-        justify-content: end;
-       
-    }
-    .tags__list-item:not(:last-child) {
-        margin-right: 8px;
-      }
-    
-    .tags__list-item {
-        font-size: 16px;
-        line-height: 1.5;  
-        padding: 4px 16px;
-        border: 1px solid #242424;
-        border-radius: 30px;
-        margin-top: 16px;
-    }
-    }
+.hero__img {
+    width: 1376px;
+    height: 350px;
+    border-radius: 60px;
 
+}
 
-    @media screen and (min-width: 1440px) {
-
-    .hero-container {
-        /* max-width: 1406px; */
-        position: relative;
-    }
-
-    .container__title {
-        min-width: 593px;
-        position: relative;
-        margin-top: 100px;
-          
-    }
-
-    .hero__img-small {
-        position: absolute;
-        top: 0px;
-        right: 32px;
-        border-radius: 20px;
-        display: block;
-        width: 168px;
-        height: 100px;
-        
-    }
-
-    .tags__list {
-        position: absolute;
-        top: 135px;
-        right: 32px;
-        max-width: 182px;
-       
-    }
-
-    
-    .hero__img {
-        width: 1376px;
-        height: 350px;
-        border-radius: 60px;
-
-    }
-
+.tags__list {
+    margin-top: 0;
+}
    
 }

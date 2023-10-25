@@ -162,4 +162,7 @@
   .favorites-box {
     text-align: center;
   }
+  .favorites-exercise-item {
+    max-width: 405px;
+  }
 }

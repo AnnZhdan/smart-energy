@@ -8,7 +8,6 @@ const box = document.querySelector('.quotes-day-box');
 
 
 async function getQuote() {
-
   const quotePerDay = await getQuoteOfTheDay();
   console.log(quotePerDay);
 
@@ -22,12 +21,12 @@ async function getQuote() {
   return quotePerDay;
 }
 
-
 try {
-  const quoteResult = await getQuote();
-
+  const quoteResult = getQuote();
+  
 } catch (error) {
   console.log(error.message);
+ 
 }
 
 function createMarkup({ quote, author }) {

@@ -1,30 +1,34 @@
+export let currentExerciseID = null;
+let currentExerciseData = null;
+let firstModalOpen = false;
+
+export function setCurrentExerciseID(exerciseID) {
+  currentExerciseID = exerciseID;
+}
+
 const closeModalButton = document.getElementById('closeModalButton');
-const additionalButton2 = document.getElementById('additionalButton2');
+const openModalButton2 = document.getElementById('additionalButton2');  
 const closeModalButton2 = document.getElementById('closeModalButton2');
 const myModal = document.getElementById('myModal');
 const myModal2 = document.getElementById('myModal2');
 
-let currentExerciseData = null;
-let currentExerciseID = null;
+function showExerciseModal(exerciseData, modal) {
+  modal.style.display = 'block';
 
-
-function showExerciseModal(exerciseData) {
-  myModal.style.display = 'block';
-
-  const modalImage = myModal.querySelector('img');
-  const modalName = myModal.querySelector('h2');
-  const modalDescription = myModal.querySelector('.text-modal');
-  const modalBurned = myModal.querySelector('.burn-modal');
-  const modalRating = myModal.querySelector('.modal-rating');
-  const modalPart = myModal.querySelector('.modal-part');
-  const modalEquipment = myModal.querySelector('.modal-equipment');
-  const modalTarget = myModal.querySelector('.modal-target');
-  const modalPopularity = myModal.querySelector('.modal-popularity');
+  const modalImage = modal.querySelector('img');
+  const modalName = modal.querySelector('h2');
+  const modalDescription = modal.querySelector('.text-modal');
+  const modalBurned = modal.querySelector('.burn-modal');
+  const modalRating = modal.querySelector('.modal-rating');
+  const modalPart = modal.querySelector('.modal-part');
+  const modalEquipment = modal.querySelector('.modal-equipment');
+  const modalTarget = modal.querySelector('.modal-target');
+  const modalPopularity = modal.querySelector('.modal-popularity');
 
   modalImage.src = exerciseData.gifUrl;
   modalName.textContent = exerciseData.name.charAt(0).toUpperCase() + exerciseData.name.slice(1);
   modalDescription.textContent = exerciseData.description;
-  modalBurned.textContent = `${exerciseData.burnedCalories}/${exerciseData.time} min`;
+  modalBurned.textContent = `${exerciseData.burnedCalories} cal / ${exerciseData.time} min`;
   modalPart.textContent = exerciseData.bodyPart;
   modalEquipment.textContent = exerciseData.equipment;
   modalTarget.textContent = exerciseData.target;
@@ -32,9 +36,40 @@ function showExerciseModal(exerciseData) {
   modalRating.textContent = exerciseData.rating;
 
   currentExerciseData = exerciseData;
+
+  modal.addEventListener('click', event => {
+    if (event.target === modal) {
+      closeModal(modal);
+    }
+  });
+
+  const closeModalOnEscape = event => {
+    if (event.key === 'Escape' && modal.style.display === 'block') {
+      closeModal(modal);
+      document.removeEventListener('keydown', closeModalOnEscape);
+    }
+  };
+
+  document.addEventListener('keydown', closeModalOnEscape);
+
+  const closeButton = modal.querySelector('.close-button');
+  closeButton.addEventListener('click', () => {
+    closeModal(modal);
+    document.removeEventListener('keydown', closeModalOnEscape);
+  });
 }
 
-async function updateModalWithExerciseData(exerciseID) {
+function openSecondModal() {
+   closeModal(myModal);
+  myModal2.style.display = 'block';
+  document.addEventListener('keydown', closeModalOnEscape2);
+}
+
+openModalButton2.addEventListener('click', () => {
+  openSecondModal();
+});
+
+async function updateModalWithExerciseData(exerciseID, modal) {
   try {
     const exerciseData = await fetchExerciseDetails(exerciseID);
 
@@ -43,8 +78,12 @@ async function updateModalWithExerciseData(exerciseID) {
       return;
     }
 
-    showExerciseModal(exerciseData);
+    showExerciseModal(exerciseData, modal);
     currentExerciseID = exerciseID;
+
+    if (modal === myModal) {
+      firstModalOpen = true;
+    }
   } catch (error) {
     console.error(`Помилка: ${error.message}`);
   }
@@ -64,24 +103,40 @@ async function fetchExerciseDetails(exerciseID) {
   }
 }
 
-const exerciseItemButtons = document.querySelectorAll('.exercise-item-button');
+document.addEventListener('click', event => {
+  const button = event.target.closest('.exercise-item-button');
+  if (!button) {
+    return;
+  }
+  const exerciseID = button.getAttribute('id');
 
-exerciseItemButtons.forEach(button => {
-  button.addEventListener('click', () => {
-    const exerciseID = button.getAttribute('id');
-    updateModalWithExerciseData(exerciseID);
-  });
+  updateModalWithExerciseData(exerciseID, myModal);
 });
 
-closeModalButton.addEventListener('click', () => myModal.style.display = 'none');
-additionalButton2.addEventListener('click', () => {
-  myModal.style.display = 'none';
-  if (currentExerciseData && currentExerciseID) {
-    showExerciseModal(currentExerciseData);
-    myModal2.style.display = 'block';
+function closeModal(modal) {
+  modal.style.display = 'none';
+}
+
+function closeModal2() {
+  myModal2.style.display = 'none';
+}
+
+closeModalButton2.addEventListener('click', () => {
+  closeModal2();
+  document.removeEventListener('keydown', closeModalOnEscape2);
+});
+
+myModal2.addEventListener('click', event => {
+  if (event.target === myModal2) {
+    closeModal2();
   }
 });
-closeModalButton2.addEventListener('click', () => myModal2.style.display = 'none');
 
-myModal.style.display = 'none';
-myModal2.style.display = 'none';
+const closeModalOnEscape2 = event => {
+  if (event.key === 'Escape' && myModal2.style.display === 'block') {
+    closeModal2();
+    document.removeEventListener('keydown', closeModalOnEscape2);
+  }
+};
+
+document.addEventListener('keydown', closeModalOnEscape2);
