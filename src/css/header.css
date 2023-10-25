@@ -142,25 +142,28 @@ button {
   }
 
   /* удалить? */
-  .nav-icon {
+  /* .nav-icon {
     cursor: pointer;
     opacity: 80%;
     fill: currentColor;
     border-radius: 10px;
     border: 1px solid rgba(36, 36, 36, 0.1); 
-  }
+  } */
+
   .nav-soc-link {
     width: 44px;
     height: 44px;
     border-radius: 10px;
-    /* border: 1px solid rgba(36, 36, 36, 0.1); */
+    border: 1px solid rgba(36, 36, 36, 0.1);
+
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    /* cursor: pointer;
+    
+    cursor: pointer;
     opacity: 80%;
-    fill: currentColor; */
+    fill: currentColor;
   }
 
   .nav-soc-link:hover {
