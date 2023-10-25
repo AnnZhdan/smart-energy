@@ -10,6 +10,46 @@
   overflow: auto;
 }
 
+.favorites-svg {
+  width: 24px;
+  height: 24px;
+  fill: white;
+  stroke: black;
+}
+ 
+.button-favorites-container:hover .favorites-svg {
+  fill: black; 
+  stroke: white;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.close-button:hover .modal-close {
+  animation: pulse 1s infinite;
+}
+
+.button-favorites:hover .favorites-svg {
+  animation: pulse 1s infinite;
+}
+
+.rating-container label:hover svg use {
+  animation: pulse 1s infinite;
+}
+
+.rating-container label:focus svg use {
+  animation: pulse 1s infinite;
+}
+
 .modal-content {
   width: 335px;
   border-radius: 20px;
