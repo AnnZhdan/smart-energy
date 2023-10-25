@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Your Energy</title>
   
-  <script type="module" crossorigin src="/smart-energy/assets/index-94152e54.js"></script>
+  <script type="module" crossorigin src="/smart-energy/assets/index-bc2e789e.js"></script>
   <link rel="modulepreload" crossorigin href="/smart-energy/assets/quote-534e9576.js">
   <link rel="stylesheet" href="/smart-energy/assets/quote-5452fbc7.css">
 </head>
@@ -78,27 +78,27 @@
     </ul>
 
     <!-- durger -->
-    <!-- <div class="header-btn"> -->
+    <div class="header-btn">
       <button
         type="button"
-        class="menu-toggle js-open-menu"
+        class="menu-toggle js-open-menu hide-header"
         aria-expanded="false"
-        aria-controls="mobile-menu"
+        aria-controls="mobile-menu" id="mobile-menu" 
       >
         <svg class="header-burger" width="32px" height="32px">
           <use href="../img/icon-sprite.svg#align-justify"></use>
         </svg>
       </button>
-    <!-- </div> -->
+    </div>
   </div>
 </header>
 
 <!--------------------- mobile-menu ---------------->
 
 <!-- <button type="button" class="hide-header" id="hide-header-button"></button> -->
-<div class="mobile-menu-header">
-  <div class="mob-menu js-menu-container">
-    <button class="mob-menu-close js-close-menu is-hidden-burger">
+ <!-- <div id="overlay" class="overlay"> -->
+<div class="mob-menu js-menu-container">
+     <button class="mob-menu-close js-close-menu">
       <svg class="icon-close">
         <use href="../img/icon-sprite.svg#x"></use>
       </svg>
@@ -157,7 +157,7 @@
         </li>
       </ul>
     </div>
-  </div>
+  <!-- </div> -->
 </div>
 
 
