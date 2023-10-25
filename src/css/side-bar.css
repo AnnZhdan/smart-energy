@@ -214,8 +214,8 @@ img {
 
 @media screen and (min-width: 1440px) {
   .quote-section {
-    position: absolute;
-    top: 842px;
+    /* position: absolute;
+    top: 0; */
   }
   .qoute-container {
     flex-direction: column;

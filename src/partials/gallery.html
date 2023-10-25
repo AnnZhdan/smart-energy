@@ -1,29 +1,43 @@
 <section class="galary">
   <div class="galary-container">
-
     <div class="galary-title-and-list-wrapper-ex is-hidden">
       <h2 class="galary-title2">Exercises / <span></span></h2>
       <div class="galary-searc-filters-wrapper">
         <div class="galary-search-wrapper">
-        <input type="search" name="search" placeholder="Search" class="galary-search">
-        <svg class="galary-search-svg" width="18" height="18">
-                <use href="./img/icon-sprite.svg#search"></use>
-              </svg>
+          <input
+            type="search"
+            name="search"
+            placeholder="Search"
+            class="galary-search"
+          />
+          <svg class="galary-search-svg" width="18" height="18">
+            <use href="./img/icon-sprite.svg#search"></use>
+          </svg>
+        </div>
+        <ul class="galary-filters2">
+          <li>
+            <button
+              type="button"
+              class="galary-filters-button4 galary-filter-checkt2"
+            >
+              Body parts
+            </button>
+          </li>
+          <li>
+            <button type="button" class="galary-filters-button5">
+              Muscles
+            </button>
+          </li>
+          <li>
+            <button type="button" class="galary-filters-button6">
+              Equipment
+            </button>
+          </li>
+        </ul>
       </div>
-      <ul class="galary-filters2">
-        <button
-          type="button"
-          class="galary-filters-button4 galary-filter-checkt2"
-        >
-          Body parts
-        </button>
-        <button type="button" class="galary-filters-button5">Muscles</button>
-        <button type="button" class="galary-filters-button6">Equipment</button>
-      </ul>
     </div>
-  </div>
 
-<!--------Так як ми і говорили в цей дів ти будеш перемальовувати секцію з фільтрами 
+    <!--------Так як ми і говорили в цей дів ти будеш перемальовувати секцію з фільтрами 
   коли нажимаєш на картку, бо там має добавлятись /Waist та Searhch,
   а також міняється позиціонування (варіант з пошуком буде нижче)-->
 
@@ -36,12 +50,22 @@
       (так буде підкреслюватись поточний фільтр)----------->
 
       <ul class="galary-filters">
-        <button
-          type="button"
-          class="galary-filters-button1 galary-filter-checked"
-        >Body parts</button>
-        <button type="button" class="galary-filters-button2">Muscles</button>
-        <button type="button" class="galary-filters-button3">Equipment</button>
+        <li>
+          <button
+            type="button"
+            class="galary-filters-button1 galary-filter-checked"
+          >
+            Body parts
+          </button>
+        </li>
+        <li>
+          <button type="button" class="galary-filters-button2">Muscles</button>
+        </li>
+        <li>
+          <button type="button" class="galary-filters-button3">
+            Equipment
+          </button>
+        </li>
       </ul>
     </div>
 
@@ -49,9 +73,10 @@
      Ці li покищо тут (створив декілька, щоб візуально бачити як воно виглядає, 
      тобі потрібна тільки одна), але ти скопіюєш її в свою функцію і відмалюєш через innerHTML,
     а звідси видалиш)))-->
-
-    <ul class="galary-list">
-      <!-- <li class="galary-item">
+    <div class="galary-sidebar-wrapper">
+      <div class="galary-pagination-wrapper">
+        <ul class="galary-list">
+          <!-- <li class="galary-item">
         <img
           src="./img/back_wzzphw.jpg"
           alt="${yourAlt}"
@@ -91,26 +116,31 @@
         <h3 class="galary-item-subtitle">Back</h3>
         <p class="galery-item-text">Body parts</p>
       </li> -->
-    </ul>
+        </ul>
 
-    <!-------------Пагінація
+        <!-------------Пагінація
       Тут треба додавати клас current-page на поточну сторінку---------------->
 
-    <ul class="pagination">
-      <li>
-        <button type="button" class="pagination-button current-page">1</button>
-      </li>
-      <li>
-        <button type="button" class="pagination-button ">2</button>
-      </li>
-      <li>
-        <button type="button" class="pagination-button">3</button>
-      </li>
-    </ul>
+        <ul class="pagination">
+          <li>
+            <button type="button" class="pagination-button current-page">
+              1
+            </button>
+          </li>
+          <li>
+            <button type="button" class="pagination-button">2</button>
+          </li>
+          <li>
+            <button type="button" class="pagination-button">3</button>
+          </li>
+        </ul>
+      </div>
 
+      <load ="partials/side-bar.html" />
+    </div>
     <!----- це розділ з фільтрами, яки ти будеш перемальвувати при натисканні на картку-->
 
-<!-- <div class="galary-title-and-list-wrapper">
+    <!-- <div class="galary-title-and-list-wrapper">
       <h2 class="galary-title2">Exercises / <span></span></h2>
       <div class="galary-searc-filters-wrapper">
         <div class="galary-search-wrapper">
@@ -131,7 +161,6 @@
       </ul>
     </div>
   </div> -->
-
 
     <!-- При натисканні на картку буде відмальовуватись список вправ. Я зверстав одну
   вправу. Тут також скопіюєш <li> в свою функцію, а тут все видалиш -->
@@ -288,8 +317,6 @@
         </div>
       </li>
           </ul> -->
-        </div>
-      </li>
-    </ul>
+    <!--Dana-->
   </div>
 </section>
