@@ -1,5 +1,31 @@
 import ScrollReveal from 'scrollreveal';
+// const menuLinks = document.querySelectorAll('.header-menu a');
 
+// menuLinks.forEach(link => {
+//   if (link.href === currentUrl || currentUrl.includes('favourites.html')) {
+//     link.parentElement.classList.add('active');
+//   }
+// });
+
+// const listItems = document.querySelectorAll('.nav-list li');
+// const homeNavItem = listItems[0];
+// const favoritesNavItem = listItems[1];
+
+// function changeClass() {
+//   const currentPageURL = window.location.href;
+//   const isFavoritesPage = currentPageURL.includes('favorites.html');
+
+//   isFavoritesPage
+//     ? (homeNavItem.classList.remove('active'),
+//       favoritesNavItem.classList.add('active'))
+//     : (homeNavItem.classList.add('active'),
+//       favoritesNavItem.classList.remove('active'));
+// }
+
+// changeClass();
+
+// window.addEventListener('hashchange', changeClass);
+// import {updateModalWithExerciseData} from './modal.js';
 window.addEventListener('load', function () {
   // Анімація
   $(function () {
@@ -48,142 +74,110 @@ window.addEventListener('load', function () {
       duration: 800,
     });
   });
+});
 
-  // const currentUrl = window.location.href;
-  // const menuLinks = document.querySelectorAll('.header-menu a');
+// Для карток з ЛС
+const LS_KEY = 'favoritesList';
+const paragraph = document.querySelector('.favorites-box-deskription');
+const favoritesListCard = document.querySelector('.favorites-list');
 
-  // menuLinks.forEach(link => {
-  //   if (link.href === currentUrl || currentUrl.includes('favourites.html')) {
-  //     link.parentElement.classList.add('active');
-  //   }
-  // });
+function renderFavorites() {
+  favoritesListCard.innerHTML = '';
 
-  // const listItems = document.querySelectorAll('.nav-list li');
-  // const homeNavItem = listItems[0];
-  // const favoritesNavItem = listItems[1];
+  const savedFavorites = JSON.parse(localStorage.getItem(LS_KEY)) || [];
 
-  // function changeClass() {
-  //   const currentPageURL = window.location.href;
-  //   const isFavoritesPage = currentPageURL.includes('favorites.html');
-
-  //   isFavoritesPage
-  //     ? (homeNavItem.classList.remove('active'),
-  //       favoritesNavItem.classList.add('active'))
-  //     : (homeNavItem.classList.add('active'),
-  //       favoritesNavItem.classList.remove('active'));
-  // }
-
-  // changeClass();
-
-  // window.addEventListener('hashchange', changeClass);
-
-  // Для карток з ЛС
-
-  const LS_KEY = 'favoritesList';
-  const favorites = document.querySelector('.favorites-box');
-  const paragraph = document.querySelector('.favorites-box-deskription');
-  let favBox = [];
-
-  function createCards() {
-    try {
-      const save = localStorage.getItem(LS_KEY);
-      if (save) {
-        paragraph.style.display = 'none';
-        favBox = JSON.parse(save);
-        favBox.forEach(item => {
-          const exerciseCard = document.createElement('ul');
-          exerciseCard.classList.add('galary-list');
-
-          exerciseCard.innerHTML = `
-<li class="exercise-item timeline-content js--fadeInLeft">
-  <div class="exercise-item-wrapper">
-    <div class="exercise-item-firth-wrapper">
-      <p class="exercise-item-workout">${item.exerciseName}</p>
-      <button type="button" class="button favourite-delete-button" data-card-id="${item.exerciseID}">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="16"
-          height="16"
-          viewBox="0 0 32 32"
-          class="exercise-item-trash"
-        >
-          <use xlink:href="./img/icon-sprite.svg#trash"  style="fill: white; stroke: black"></use>
-        </svg>
-      </button>
-      <button type="button" class="exercise-item-button" id="${item.id}">
-        Start&nbsp;&nbsp;
-        <svg width="16" height="16">
-          <use href="./img/icon-sprite.svg#arrow"></use>
-        </svg>
-      </button>
-    </div>
-    <div class="exercise-item-second-wrapper">
-      <div class="exercise-item-run-box">
-        <svg class="exercise-item-run" width="16" height="16">
-          <use href="./img/icon-sprite.svg#Group"></use>
-        </svg>
+  savedFavorites.forEach(item => {
+    const exerciseCard = document.createElement('li');
+    exerciseCard.className = 'exercise-item favorites-exercise-item timeline-content js--fadeInLeft';
+    exerciseCard.innerHTML = `
+      <div class="exercise-item-wrapper ">
+        <div class="exercise-item-firth-wrapper">
+          <p class="exercise-item-workout">${item.exerciseName}</p>
+          <button type="button" class="button favourite-delete-button" data-card-id="${item.exerciseID}">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" class="exercise-item-trash">
+              <use xlink:href="./img/icon-sprite.svg#trash" style="fill: white; stroke: black"></use>
+            </svg>
+          </button>
+          <button type="button" class="exercise-item-button" id="${item.exerciseID}">
+            Start&nbsp;&nbsp;
+            <svg width="16" height="16">
+              <use href="./img/icon-sprite.svg#arrow"></use>
+            </svg>
+          </button>
+        </div>
+        <div class="exercise-item-second-wrapper">
+          <div class="exercise-item-run-box">
+            <svg class="exercise-item-run" width="16" height="16">
+              <use href="./img/icon-sprite.svg#Group"></use>
+            </svg>
+          </div>
+          <h3 class="exercise-item-subtitle">${item.exerciseName}</h3>
+        </div>
+        <ul class="exercise-item-list">
+          <li class="exercise-item-list-information">
+            <p class="information-text">
+              Burned calories:<span class="information-text-span">${item.exerciseBurned}</span>
+            </p>
+          </li>
+          <li class="exercise-item-list-information">
+            <p class="information-text">
+              Body part:<span class="information-text-span">${item.exercisePart}</span>
+            </p>
+          </li>
+          <li class="exercise-item-list-information">
+            <p class="information-text">
+              Target:<span class="information-text-span">${item.exerciseTarget}</span>
+            </p>
+          </li>
+        </ul>
       </div>
-      <h3 class="exercise-item-subtitle">${item.exerciseName}</h3>
-    </div>
-    <ul class="exercise-item-list">
-      <li class="exercise-item-list-information">
-        <p class="information-text">
-          Burned calories:<span class="information-text-span"
-            >${item.exerciseBurned}
-          </span>
-        </p>
-      </li>
-      <li class="exercise-item-list-information">
-        <p class="information-text">
-          Body part:<span class="information-text-span"
-            >${item.exercisePart}</span
-          >
-        </p>
-      </li>
-      <li class="exercise-item-list-information">
-        <p class="information-text">
-          Target:<span class="information-text-span"
-            >${item.exerciseTrget}</span
-          >
-        </p>
-      </li>
-    </ul>
-  </div>
-</li>
-          `;
+    `;
+    //   const startButton = exerciseCard.querySelector('.exercise-item-button');
+    // startButton.addEventListener('click', () => {
+    //   updateModalWithExerciseData(item.exerciseID);
+    // });
 
-          favorites.appendChild(exerciseCard);
-        });
-        // Видалення картки
+    favoritesListCard.appendChild(exerciseCard);
+  });
+  
+  if (savedFavorites.length === 0) {
+    paragraph.style.display = 'block';
 
-        const deleteButtons = document.querySelectorAll(
-          '.favourite-delete-button'
-        );
-        deleteButtons.forEach(button => {
-          button.addEventListener('click', handleDelete);
-        });
-
-        function handleDelete(event) {
-          const cardId = event.target.getAttribute('data-card-id');
-
-          const newFavBox = favBox.filter(item => item.id !== cardId);
-          localStorage.setItem(LS_KEY, JSON.stringify(newFavBox));
-
-          const cardElement = event.target.closest('.exercise-item');
-          if (cardElement) {
-            cardElement.remove();
-          }
-        }
-      } else {
-        paragraph.style.display = 'block';
-      }
-    } catch (error) {
-      console.error(error);
-    }
   }
 
-  createCards();
-});
+  const deleteButtons = document.querySelectorAll('.favourite-delete-button');
+    deleteButtons.forEach(deleteButton => {
+    deleteButton.addEventListener('click', function () {
+
+      const cardId = deleteButton.getAttribute('data-card-id');
+      let exercises = JSON.parse(localStorage.getItem(LS_KEY)) || [];
+      const indexToRemove = exercises.findIndex(exercise => exercise.exerciseID === cardId);
+
+      if (indexToRemove !== -1) {
+        exercises.splice(indexToRemove, 1);
+        localStorage.setItem(LS_KEY, JSON.stringify(exercises));
+        renderFavorites();
+      }
+    });
+  });
+}
+
+function createCards() {
+  try {
+    const save = localStorage.getItem(LS_KEY);
+    if (save) {
+      paragraph.style.display = 'none';
+      renderFavorites();
+    } else {
+      paragraph.style.display = 'block';
+    }
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+createCards();
+
 
 // АНімація для кліку
 
