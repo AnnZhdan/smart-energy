@@ -86,8 +86,7 @@ button {
     display: none;
   }
 
-
-   .header-container {
+  .header-container {
     padding-left: 32px;
     padding-right: 32px;
     height: 76px;
@@ -179,3 +178,4 @@ button {
     width: 265px;
   }
 }
+
