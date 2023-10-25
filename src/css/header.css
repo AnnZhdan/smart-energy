@@ -13,7 +13,6 @@ button {
   top: 0;
   z-index: 10;
   width: 100%;
- 
 }
 
 .header-container {
@@ -29,14 +28,14 @@ button {
 .fixed-header {
   position: fixed;
   width: 100%;
-  background-color: var(--primary-light-color); 
-  z-index: 1;
+  background-color: var(--primary-light-color);
+  z-index: 10;
 }
 
 .hide-header {
- padding-right: 20px;
- padding-top: 20px;
-  z-index: 1;
+  padding-right: 20px;
+  padding-top: 20px;
+  z-index: 10;
 }
 
 .logo-link {
@@ -74,8 +73,8 @@ button {
 
   .header-btn {
     display: none;
-    }
-    
+  }
+
   .mob-menu-close {
     display: none;
     margin: 0;
@@ -151,24 +150,17 @@ button {
     align-items: center;
     justify-content: center;
     cursor: pointer;
+    opacity: 80%;
+    fill: currentColor;
   }
 
   .nav-soc-link:hover {
     border: 10px;
     background: rgba(36, 36, 36, 0.8);
+    fill: var(--primary-light-color);
+    opacity: 100%;
   }
-}
-.nav-icon-social {
-  width: 28px;
-  height: 28px;
-  opacity: 80%;
-  fill: currentColor;
-}
 
-.nav-icon-social:hover {
-  background: none;
-  fill: var(--primary-light-color);
-  opacity: 100%;
 }
 
 /*  min-width: 1440px */
@@ -178,4 +170,3 @@ button {
     width: 265px;
   }
 }
-

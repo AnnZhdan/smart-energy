@@ -23,7 +23,7 @@
 .mob-menu {
   width: 210px;
   height: 100%;
-  padding: 200px 87px 40px;
+  padding: 280px 87px 40px;
 
   position: fixed;
   background-color: var(--primary-dark-color);
@@ -32,7 +32,7 @@
   top: 0;
   overflow: scroll;
   transform: translate(100%);
-  transition: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: opacity 0.8s ease-in-out 0s, transform 0.8s ease-in-out 0s;
 }
 
 .mob-menu.is-open {
