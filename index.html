@@ -1,17 +1,17 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <link rel="icon" type="image/svg+xml" href="/smart-energy/basket-ball-icon.svg" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Your Energy</title>
-  
-  <script type="module" crossorigin src="/smart-energy/assets/index-f4572e40.js"></script>
-  <link rel="modulepreload" crossorigin href="/smart-energy/assets/quote-fa2deadc.js">
-  <link rel="stylesheet" href="/smart-energy/assets/quote-884909c9.css">
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/smart-energy/basket-ball-icon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Your Energy</title>
+    
+    <script type="module" crossorigin src="/smart-energy/assets/index-95cfd251.js"></script>
+    <link rel="modulepreload" crossorigin href="/smart-energy/assets/quote-9fc8ef49.js">
+    <link rel="stylesheet" href="/smart-energy/assets/quote-7615d983.css">
+  </head>
 
-<body>
+  <body>
     <!--Anna V.-->
     <header class="header-top fixed-header">
   <div class="container header-container">
@@ -198,34 +198,47 @@
  </section>
  
  
-      <div class="galary-sidebar-wrapper">
-        <!--Andrii H.-->
-        <section class="galary">
+      <!--Andrii H.-->
+      <section class="galary">
   <div class="galary-container">
-
     <div class="galary-title-and-list-wrapper-ex is-hidden">
       <h2 class="galary-title2">Exercises / <span></span></h2>
       <div class="galary-searc-filters-wrapper">
         <div class="galary-search-wrapper">
-        <input type="search" name="search" placeholder="Search" class="galary-search">
-        <svg class="galary-search-svg" width="18" height="18">
-                <use href="/smart-energy/assets/icon-sprite-4c9b95a6.svg#search"></use>
-              </svg>
+          <input
+            type="search"
+            name="search"
+            placeholder="Search"
+            class="galary-search"
+          />
+          <svg class="galary-search-svg" width="18" height="18">
+            <use href="/smart-energy/assets/icon-sprite-4c9b95a6.svg#search"></use>
+          </svg>
+        </div>
+        <ul class="galary-filters2">
+          <li>
+            <button
+              type="button"
+              class="galary-filters-button4 galary-filter-checkt2"
+            >
+              Body parts
+            </button>
+          </li>
+          <li>
+            <button type="button" class="galary-filters-button5">
+              Muscles
+            </button>
+          </li>
+          <li>
+            <button type="button" class="galary-filters-button6">
+              Equipment
+            </button>
+          </li>
+        </ul>
       </div>
-      <ul class="galary-filters2">
-        <button
-          type="button"
-          class="galary-filters-button4 galary-filter-checkt2"
-        >
-          Body parts
-        </button>
-        <button type="button" class="galary-filters-button5">Muscles</button>
-        <button type="button" class="galary-filters-button6">Equipment</button>
-      </ul>
     </div>
-  </div>
 
-<!--------Так як ми і говорили в цей дів ти будеш перемальовувати секцію з фільтрами 
+    <!--------Так як ми і говорили в цей дів ти будеш перемальовувати секцію з фільтрами 
   коли нажимаєш на картку, бо там має добавлятись /Waist та Searhch,
   а також міняється позиціонування (варіант з пошуком буде нижче)-->
 
@@ -238,12 +251,22 @@
       (так буде підкреслюватись поточний фільтр)----------->
 
       <ul class="galary-filters">
-        <button
-          type="button"
-          class="galary-filters-button1 galary-filter-checked"
-        >Body parts</button>
-        <button type="button" class="galary-filters-button2">Muscles</button>
-        <button type="button" class="galary-filters-button3">Equipment</button>
+        <li>
+          <button
+            type="button"
+            class="galary-filters-button1 galary-filter-checked"
+          >
+            Body parts
+          </button>
+        </li>
+        <li>
+          <button type="button" class="galary-filters-button2">Muscles</button>
+        </li>
+        <li>
+          <button type="button" class="galary-filters-button3">
+            Equipment
+          </button>
+        </li>
       </ul>
     </div>
 
@@ -251,9 +274,10 @@
      Ці li покищо тут (створив декілька, щоб візуально бачити як воно виглядає, 
      тобі потрібна тільки одна), але ти скопіюєш її в свою функцію і відмалюєш через innerHTML,
     а звідси видалиш)))-->
-
-    <ul class="galary-list">
-      <!-- <li class="galary-item">
+    <div class="galary-sidebar-wrapper">
+      <div class="galary-pagination-wrapper">
+        <ul class="galary-list">
+          <!-- <li class="galary-item">
         <img
           src="./img/back_wzzphw.jpg"
           alt="${yourAlt}"
@@ -293,26 +317,101 @@
         <h3 class="galary-item-subtitle">Back</h3>
         <p class="galery-item-text">Body parts</p>
       </li> -->
-    </ul>
+        </ul>
 
-    <!-------------Пагінація
+        <!-------------Пагінація
       Тут треба додавати клас current-page на поточну сторінку---------------->
 
-    <ul class="pagination">
-      <li>
-        <button type="button" class="pagination-button current-page">1</button>
-      </li>
-      <li>
-        <button type="button" class="pagination-button ">2</button>
-      </li>
-      <li>
-        <button type="button" class="pagination-button">3</button>
-      </li>
-    </ul>
+        <ul class="pagination">
+          <li>
+            <button type="button" class="pagination-button current-page">
+              1
+            </button>
+          </li>
+          <li>
+            <button type="button" class="pagination-button">2</button>
+          </li>
+          <li>
+            <button type="button" class="pagination-button">3</button>
+          </li>
+        </ul>
+      </div>
 
+      <div class="sidebar-wrapper">
+  <section class="quote-section">
+    <!-- <div class="container"> -->
+    <div class="qoute-container">
+      <div class="quote-box">
+        <div class="qoute-run-box">
+          <svg class="quote-run-icon" width="18" height="20">
+            <use href="/smart-energy/assets/icon-sprite-4c9b95a6.svg#Group"></use>
+          </svg>
+        </div>
+        <div class="quotes-day-box">
+          <div class="quote-icon-box">
+            <!-- <h3 class="quotes-day-title">Quote of the day</h3> -->
+            <svg class="qoute-item-icon" width="24" height="24">
+              <use href="/smart-energy/assets/icon-sprite-4c9b95a6.svg#inverted-commas"></use>
+            </svg>
+          </div>
+          <div class="qoute-inside-container"></div>
+        </div>
+      </div>
+      <div class="quote-image-box">
+        <picture>
+          <source
+            media="(min-width: 1440px)"
+            srcset="/smart-energy/assets/image2_desc@1x-eab1c07c.webp 1x, /smart-energy/assets/image2_desc@2x-c1507b3a.webp 2x"
+          />
+          <source
+            media="(min-width: 768px)"
+            type="image/webp"
+            srcset="/smart-energy/assets/image2_tab@1x-cfbdedde.webp 1x, /smart-energy/assets/image2_tab@2x-9120a89c.webp 2x"
+          />
+          <source
+            media="(max-width: 767px)"
+            type="image/webp"
+            image=""
+            srcset="/smart-energy/assets/image2_mob@1x-9daf6212.webp 1x, /smart-energy/assets/image2_mob@2x-f3e885ca.webp 2x"
+          />
+          <img
+            src="/smart-energy/assets/image2_mob@1x-5860c4d1.jpg"
+            srcset="./img/image2_mob@2x.jpg, 2x"
+            alt="girls talking"
+            class="quote-girls-img"
+          />
+        </picture>
+      </div>
+      <div class="recommend-box">
+        <div class="recommend-icon-box">
+          <svg class="recommend-item-icon" width="20" height="20">
+            <use href="/smart-energy/assets/icon-sprite-4c9b95a6.svg#fluent_food"></use>
+          </svg>
+        </div>
+        <div class="recommend-text-box">
+          <h3 class="recommend-title">110 min</h3>
+          <p class="recommend-text">Daily norm of sports</p>
+          <p class="recommend-desc">
+            The World Health Organization recommends at least 150 minutes of
+            moderate-intensity aerobic physical activity throughout the week for
+            adults aged 18-64. However, what happens if we adjust that number to
+            110 minutes every day? While it might seem like a high number to
+            hit, dedicating 110 minutes daily to sporting activities may offer
+            unparalleled benefits to physical health, mental well-being, and
+            overall quality of life.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!-- </div> -->
+  </section>
+</div>
+
+
+    </div>
     <!----- це розділ з фільтрами, яки ти будеш перемальвувати при натисканні на картку-->
 
-<!-- <div class="galary-title-and-list-wrapper">
+    <!-- <div class="galary-title-and-list-wrapper">
       <h2 class="galary-title2">Exercises / <span></span></h2>
       <div class="galary-searc-filters-wrapper">
         <div class="galary-search-wrapper">
@@ -333,7 +432,6 @@
       </ul>
     </div>
   </div> -->
-
 
     <!-- При натисканні на картку буде відмальовуватись список вправ. Я зверстав одну
   вправу. Тут також скопіюєш <li> в свою функцію, а тут все видалиш -->
@@ -490,73 +588,10 @@
         </div>
       </li>
           </ul> -->
-        </div>
-      </li>
-    </ul>
+    <!--Dana-->
   </div>
 </section>
 
-        <!--Dana-->
-        <section class="quote-section">
-    <!-- <div class="container"> -->
-    <div class="qoute-container container">
-        <div class="quote-box">
-            <div class="qoute-run-box">
-                <svg class="quote-run-icon" width="18" height="20">
-                    <use href="/smart-energy/assets/icon-sprite-4c9b95a6.svg#Group"></use>
-                </svg>
-            </div>
-            <div class="quotes-day-box">
-                <div class="quote-icon-box">
-                    <!-- <h3 class="quotes-day-title">Quote of the day</h3> -->
-                    <svg class="qoute-item-icon" width="24" height="24">
-                        <use href="/smart-energy/assets/icon-sprite-4c9b95a6.svg#inverted-commas"></use>
-                    </svg>
-                </div>
-                <div class="qoute-inside-container">
-
-                </div>
-            </div>
-        </div>
-        <div class="quote-image-box">
-            <picture>
-                <source media="(min-width: 1440px)"
-                    srcset="/smart-energy/assets/image2_desc@1x-eab1c07c.webp 1x, /smart-energy/assets/image2_desc@2x-c1507b3a.webp 2x" />
-                <source media="(min-width: 768px)" type="image/webp"
-                    srcset="/smart-energy/assets/image2_tab@1x-cfbdedde.webp 1x, /smart-energy/assets/image2_tab@2x-9120a89c.webp 2x" />
-                <source media="(max-width: 767px)" type="image/webp" image=""
-                    srcset="/smart-energy/assets/image2_mob@1x-9daf6212.webp 1x, /smart-energy/assets/image2_mob@2x-f3e885ca.webp 2x" /> <img
-                    src="/smart-energy/assets/image2_mob@1x-5860c4d1.jpg" srcset="./img/image2_mob@2x.jpg, 2x " alt="girls talking"
-                    class="quote-girls-img" />
-            </picture>
-        </div>
-        <div class="recommend-box">
-            <div class="recommend-icon-box">
-                <svg class="recommend-item-icon" width="20" height="20">
-                    <use href="/smart-energy/assets/icon-sprite-4c9b95a6.svg#fluent_food"></use>
-                </svg>
-
-            </div>
-            <div class="recommend-text-box">
-                <h3 class="recommend-title">110 min</h3>
-                <p class="recommend-text">Daily norm of sports</p>
-                <p class="recommend-desc">The World Health Organization recommends at least 150 minutes of
-                    moderate-intensity aerobic physical
-                    activity throughout
-                    the week for adults aged 18-64. However, what happens if we adjust that number to 110 minutes
-                    every
-                    day?
-                    While it might
-                    seem like a high number to hit, dedicating 110 minutes daily to sporting activities may offer
-                    unparalleled benefits to
-                    physical health, mental well-being, and overall quality of life.</p>
-            </div>
-        </div>
-    </div>
-    <!-- </div> -->
-</section>
-
-      </div>
       <!-- Anna V. SCROLL-UP  -->
       <button class="scroll-up">
     <svg class="scroll-up-btn" width="30" height="30">
