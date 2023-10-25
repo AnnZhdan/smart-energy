@@ -2,6 +2,8 @@ document.addEventListener("DOMContentLoaded", function() {
   const addToFavoritesButton = document.getElementById('additionalButton1');
   const myModal = document.getElementById('myModal');
 
+  let favoritesList = JSON.parse(localStorage.getItem('favoritesList')) || [];
+
   addToFavoritesButton.addEventListener('click', () => {
     const exerciseData = {
       exerciseID: addToFavoritesButton.getAttribute('data-exercise-id'),
@@ -15,8 +17,6 @@ document.addEventListener("DOMContentLoaded", function() {
       exercisePopularity: myModal.querySelector('.modal-popularity').textContent
     };
     
-    let favoritesList = JSON.parse(localStorage.getItem('favoritesList')) || [];
-
     const existingExercise = favoritesList.find(
       (item) => item.exerciseName === exerciseData.exerciseName
     );
@@ -26,11 +26,28 @@ document.addEventListener("DOMContentLoaded", function() {
         (item) => item.exerciseName !== exerciseData.exerciseName
       );
       alert('Exercise removed from favorites!');
+      
+      addToFavoritesButton.querySelector('.button-name-favorites').textContent = 'Add to favorites';
+      addToFavoritesButton.querySelector('.favorites-svg use').setAttribute('xlink:href', './img/icon-sprite.svg#heart');
     } else {
+
       favoritesList.push(exerciseData);
       alert('Exercise added to favorites!');
+      
+      addToFavoritesButton.querySelector('.button-name-favorites').textContent = 'Remove from favorites';
+      addToFavoritesButton.querySelector('.favorites-svg use').setAttribute('xlink:href', './img/icon-sprite.svg#trash');
     }
 
     localStorage.setItem('favoritesList', JSON.stringify(favoritesList));
   });
+
+  const exerciseName = myModal.querySelector('.title-modal').textContent;
+  const isExerciseInFavorites = favoritesList.some(
+    (item) => item.exerciseName === exerciseName
+  );
+
+  if (isExerciseInFavorites) {
+    addToFavoritesButton.querySelector('.button-name-favorites').textContent = 'Remove from favorites';
+    addToFavoritesButton.querySelector('.favorites-svg use').setAttribute('xlink:href', './img/icon-sprite.svg#heart-filled');
+  }
 });
