@@ -63,9 +63,7 @@ function openSecondModal() {
    closeModal(myModal);
   myModal2.style.display = 'block';
   document.addEventListener('keydown', closeModalOnEscape2);
-
 }
-
 
 openModalButton2.addEventListener('click', () => {
   openSecondModal();
