@@ -21,9 +21,17 @@ import { fetchFilters } from './api.js';
   let currentFilterBtn = bodyPartsBtn;
   let currentPaginationBtn = listPaginationBtn.children[0].firstElementChild;
   let perPage = 9;
+  let lengthTarget = 3;
+  let lengthBodyPart = 5;
+  let arr1 = [];
 
   const screenWidth = window.screen.availWidth;
-
+  function setLengthOfWords() {
+    if (screenWidth >= 768) {
+      return (lengthTarget = 10), (lengthBodyPart = 15);
+    }
+  }
+  setLengthOfWords();
   function setPerPage() {
     if (screenWidth >= 768) {
       return (perPage = 12);
@@ -144,18 +152,26 @@ import { fetchFilters } from './api.js';
       reInitPagination(data.totalPages, page);
       filtersEx.classList.remove('is-hidden');
       filtersBp.classList.add('is-hidden');
-      listExersice.insertAdjacentHTML(
-        'beforeend',
-        exCreateMarkUp(data.results)
-      );
+      cutWordInArr(data.results);
+      console.log(arr1);
+      listExersice.insertAdjacentHTML('beforeend', exCreateMarkUp(arr1));
       titleSpan.textContent = `${category}`;
     } catch (error) {
       console.error(`Error: ${error.message}`);
     }
   }
 
+  function cutWordInArr(arr) {
+    for (let i = 0; i < arr.length; i++) {
+      arr[i].target = cutWord(arr[i].target, lengthTarget);
+      arr[i].bodyPart = cutWord(arr[i].bodyPart, lengthBodyPart);
+      arr1.push(arr[i]);
+    }
+    console.log(arr1);
+  }
+
   function exCreateMarkUp(arr) {
-    return arr
+    return arr1
       .map(
         ({ name, target, rating, burnedCalories, time, _id, bodyPart }) => `
                <li class="exercise-item">
@@ -212,6 +228,14 @@ import { fetchFilters } from './api.js';
       )
       .join('');
   }
+
+  function cutWord(word, length) {
+    if (word.length > length) {
+      word = word.slice(0, length) + '...';
+    }
+    return word;
+  }
+
   // Search
   document
     .querySelector('.galary-search-wrapper input')
