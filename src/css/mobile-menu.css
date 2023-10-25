@@ -1,4 +1,3 @@
-
 .menu-toggle {
   display: flex;
  align-items: center;
@@ -110,7 +109,6 @@
   fill: var(--primary-light-color)
 }
 
-
 .mob-social-icon:focus {
   fill: var(--primary-dark-color);
   opacity: 80%;
@@ -121,4 +119,3 @@
   background: var(--primary-light-color);
   opacity: 80%;
 }
-
