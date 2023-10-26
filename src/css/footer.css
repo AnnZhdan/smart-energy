@@ -116,6 +116,10 @@
   /* opacity: 100%; */
 }
 
+.footer-li:hover svg {
+  fill: #242424;
+}
+
 .footer-icons {
   width: 44px;
   height: 44px;
@@ -125,20 +129,7 @@
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-}
-
-.footer-icons:hover {
-  /* border: 10px;
-  background: rgba(36, 36, 36, 0.8); */
-  fill: #242424;
-  opacity: 100%;
-}
-
-.footer-icons:focus {
-  fill: #242424;
-  /* background: #F4F4F4; */
-  opacity: 100%;
-  /* background: rgba(36, 36, 36, 0.8); */
+  fill: #f4f4f4;
 }
 
 @media screen and (min-width: 768px) {
