@@ -1,48 +1,46 @@
-// import bodyScrollLock from 'body-scroll-lock';
+import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
+
 (() => {
+  const overlayMobile = document.getElementById('overlay');
+  
   const mobileMenu = document.querySelector('.js-menu-container');
   const openMenuBtn = document.querySelector('.js-open-menu');
   const closeMenuButton = document.querySelector('.js-close-menu');
-  const overlayMobile = document.getElementById('overlay');
+
+  let isMenuOpen = false; 
 
   const toggleMenu = () => {
-    const isMenuOpen =
-      openMenuBtn.getAttribute('aria-expanded') === 'true' || false;
-    openMenuBtn.setAttribute('aria-expanded', !isMenuOpen);
+    isMenuOpen = !isMenuOpen; 
+    openMenuBtn.setAttribute('aria-expanded', isMenuOpen);
     mobileMenu.classList.toggle('is-open');
 
-  //   const scrollLockMethod = !isMenuOpen
-  //   ? "disableBodyScroll"
-  //   : "enableBodyScroll";
-  // bodyScrollLock[scrollLockMethod](document.body);
+    if (isMenuOpen) {
+      disableBodyScroll(document.body);
+      overlay.style.display = 'block';
+       
+    } else {
+      enableBodyScroll(document.body);
+      overlay.style.display = 'none'; 
+     
+    }
   };
-
-  // if (isMenuOpen) {
-  //   overlayMobile.style.display = 'none'; 
-  // } else {
-  //   overlayMobile.style.display = 'block'; 
-  // }
 
   openMenuBtn.addEventListener('click', toggleMenu);
   closeMenuButton.addEventListener('click', toggleMenu);
 
-  window.addEventListener('resize',() => {
-    if (window.innerWidth > 768) {
-   mobileMenu.classList.remove('is-open');
-  //  overlayMobile.style.display = 'none';
- }
-});
-
-/ ---------Приховати header  ----------/ 
-
-document.addEventListener('DOMContentLoaded', function () {
-  const header = document.querySelector('.fixed-header');
-  const hideHeaderButton = document.getElementById('hide-header-button');
-  
-  hideHeaderButton.addEventListener('click', function () {
-    header.style.display = 'none'; 
-    // overlayMobile.style.display = 'none';
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 768 && isMenuOpen) {
+      mobileMenu.classList.remove('is-open');
+      enableBodyScroll(document.body);
+      overlay.style.display = 'none'
+    }
   });
-});
+
+  /* --------- Приховати header ---------- */
+
+  document.addEventListener('DOMContentLoaded', function () {
+    const header = document.querySelector('.fixed-header');
+  
+
+  });
 })();
- 

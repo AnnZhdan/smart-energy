@@ -1,12 +1,12 @@
 .menu-toggle {
   display: flex;
- align-items: center;
- justify-content: center;
- margin: 0 0 0 auto;
- padding: 0;
- background-color: transparent;
- cursor: pointer;
- border: none;
+  align-items: center;
+  justify-content: center;
+  margin: 0 0 0 auto;
+  padding: 0;
+  background-color: transparent;
+  cursor: pointer;
+  border: none;
 }
 
 .overlay {
@@ -16,7 +16,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(4, 4, 4, 0.40);
+  background-color: rgba(4, 4, 4, 0.4);
   z-index: 5;
 }
 
@@ -32,7 +32,9 @@
   top: 0;
   overflow: scroll;
   transform: translate(100%);
-  transition: opacity 0.8s ease-in-out 0s, transform 0.8s ease-in-out 0s;
+  transition:
+    opacity 0.8s ease-in-out 0s,
+    transform 0.8s ease-in-out 0s;
 }
 
 .mob-menu.is-open {
@@ -47,8 +49,6 @@
 
   top: 20px;
   right: 20px;
-  /* margin: 0;
-  padding: 0; */
 
   width: 40px;
   height: 40px;
@@ -84,7 +84,6 @@
   gap: 12px;
 }
 
- 
 .mob-icon:focus {
   border-radius: 10px;
   border: 1px solid rgba(244, 244, 244, 0.1);
@@ -103,20 +102,8 @@
 
   cursor: pointer;
   opacity: 80%;
-  fill: var(--primary-light-color)
+  fill: var(--primary-light-color);
 }
-
-/* .mob-social-icon {
-  width: 28px;
-  height: 28px;
-  opacity: 80%;
-  fill: var(--primary-light-color)
-}
-
-.mob-social-icon:focus {
-  fill: var(--primary-dark-color);
-  opacity: 80%;
-} */
 
 .soc-icon-mobil:hover,
 .soc-icon-mobil:focus {
