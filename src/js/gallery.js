@@ -186,19 +186,19 @@ import { fetchFilters } from './api.js';
                 viewBox="0 0 100 130"
                 class="exercise-item-star"
               >
-                <use href="/img/icon-sprite.svg#icon-Star-2"></use>
+                <use href="./img/icon-sprite.svg#icon-Star-2"></use>
               </svg>
               <button type="button" class="exercise-item-button" id=${_id}>
                 Start&nbsp;&nbsp;
                 <svg width="16" height="16">
-                  <use href="/img/icon-sprite.svg#arrow"></use>
+                  <use href="./img/icon-sprite.svg#arrow"></use>
                 </svg>
               </button>
             </div>
             <div class="exercise-item-second-wrapper">
               <div class="exercise-item-run-box">
                 <svg class="exercise-item-run" width="16" height="16">
-                  <use href="/img/icon-sprite.svg#Group"></use>
+                  <use href="./img/icon-sprite.svg#Group"></use>
                 </svg>
               </div>
               <h3 class="exercise-item-subtitle">${name}</h3>
