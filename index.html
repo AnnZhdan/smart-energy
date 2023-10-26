@@ -6,99 +6,99 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Your Energy</title>
     
-    <script type="module" crossorigin src="/smart-energy/assets/index-479fab1c.js"></script>
-    <link rel="modulepreload" crossorigin href="/smart-energy/assets/header-29f82943.js">
-    <link rel="stylesheet" href="/smart-energy/assets/header-6884c9b6.css">
+    <script type="module" crossorigin src="/smart-energy/assets/index-a4729db6.js"></script>
+    <link rel="modulepreload" crossorigin href="/smart-energy/assets/header-36c6262d.js">
+    <link rel="stylesheet" href="/smart-energy/assets/header-048ed6ac.css">
   </head>
 
   <body>
     <!--Anna V.-->
-    <header class="header-top fixed-header">
-  <div class="container header-container">
-    <!-- logo -->
+    <div id="overlay" class="overlay"></div>
+ <header class="header-top fixed-header">
+       <div class="container header-container">
+      <!-- logo -->
 
-    <a href="./index.html" class="logo-link">
-      <svg class="header-logo" width="132px" height="14px">
-        <use href="/smart-energy/assets/icon-sprite-4c9b95a6.svg#icon-your-energy-1"></use>
-      </svg>
-    </a>
+      <a href="./index.html" class="logo-link">
+        <svg class="header-logo" width="132px" height="14px">
+          <use href="/smart-energy/assets/icon-sprite-4c9b95a6.svg#icon-your-energy-1"></use>
+        </svg>
+      </a>
 
-    <!-- navigation -->
+      <!-- navigation -->
 
-    <nav class="nav-header">
-      <ul class="nav-list">
-        <li class="nav-item active">
-          <a href="./index.html" class="nav-link link">Home</a>
+      <nav class="nav-header">
+        <ul class="nav-list">
+          <li class="nav-item active">
+            <a href="./index.html" class="nav-link link">Home</a>
+          </li>
+          <li class="nav-item">
+            <a href="./favourites.html" class="nav-link link">Favorites</a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- social -->
+
+      <ul class="nav-social">
+        <li class="nav-icon">
+          <a
+            class="nav-soc-link"
+            href="https://www.facebook.com/goITclub/"
+            target="_blank"
+            rel="noopener nofollow noreferer"
+          >
+            <svg width="28px" height="28px">
+              <use href="/smart-energy/assets/icon-sprite-4c9b95a6.svg#facebook"></use>
+            </svg>
+          </a>
         </li>
-        <li class="nav-item">
-          <a href="./favourites.html" class="nav-link link">Favorites</a>
+        <li class="nav-icon">
+          <a
+            class="nav-soc-link"
+            href="https://www.instagram.com/goitclub/"
+            target="_blank"
+            rel="noopener nofollow noreferer"
+          >
+            <svg width="28px" height="28px">
+              <use href="/smart-energy/assets/icon-sprite-4c9b95a6.svg#instagram"></use>
+            </svg>
+          </a>
+        </li>
+        <li class="nav-icon">
+          <a
+            class="nav-soc-link"
+            href="https://www.youtube.com/c/GoIT"
+            target="_blank"
+            rel="noopener nofollow noreferer"
+          >
+            <svg width="28px" height="28px">
+              <use href="/smart-energy/assets/icon-sprite-4c9b95a6.svg#youtube"></use>
+            </svg>
+          </a>
         </li>
       </ul>
-    </nav>
 
-    <!-- social -->
-
-    <ul class="nav-social">
-      <li class="nav-icon">
-        <a
-          class="nav-soc-link"
-          href="https://www.facebook.com/goITclub/"
-          target="_blank"
-          rel="noopener nofollow noreferer"
+      <!-- durger -->
+      <div class="header-btn">
+        <button
+          type="button"
+          class="menu-toggle js-open-menu hide-header"
+          aria-expanded="false"
+          aria-controls="hide-header-button"
+          id="hide-header-button"
         >
-          <svg width="28px" height="28px">
-            <use href="/smart-energy/assets/icon-sprite-4c9b95a6.svg#facebook"></use>
+          <svg class="header-burger" width="32px" height="32px">
+            <use href="/smart-energy/assets/icon-sprite-4c9b95a6.svg#align-justify"></use>
           </svg>
-        </a>
-      </li>
-      <li class="nav-icon">
-        <a
-          class="nav-soc-link"
-          href="https://www.instagram.com/goitclub/"
-          target="_blank"
-          rel="noopener nofollow noreferer"
-        >
-          <svg  width="28px" height="28px">
-            <use href="/smart-energy/assets/icon-sprite-4c9b95a6.svg#instagram"></use>
-          </svg>
-        </a>
-      </li>
-      <li class="nav-icon">
-        <a
-          class="nav-soc-link"
-          href="https://www.youtube.com/c/GoIT"
-          target="_blank"
-          rel="noopener nofollow noreferer"
-        >
-          <svg width="28px" height="28px">
-            <use href="/smart-energy/assets/icon-sprite-4c9b95a6.svg#youtube"></use>
-          </svg>
-        </a>
-      </li>
-    </ul>
+        </button>
+      </div>
+   </div>
+   </header>
 
-    <!-- durger -->
-    <div class="header-btn">
-      <button
-        type="button"
-        class="menu-toggle js-open-menu hide-header"
-        aria-expanded="false"
-        aria-controls="mobile-menu" id="mobile-menu" 
-      >
-        <svg class="header-burger" width="32px" height="32px">
-          <use href="/smart-energy/assets/icon-sprite-4c9b95a6.svg#align-justify"></use>
-        </svg>
-      </button>
-    </div>
-  </div>
-</header>
+  <!--------------------- mobile-menu ---------------->
 
-<!--------------------- mobile-menu ---------------->
-
-<!-- <button type="button" class="hide-header" id="hide-header-button"></button> -->
- <!-- <div id="overlay" class="overlay"> -->
-<div class="mob-menu js-menu-container">
-     <button class="mob-menu-close js-close-menu">
+   <div class="mob-menu js-menu-container">
+    <button class="mob-menu-close js-close-menu">
       <svg class="icon-close">
         <use href="/smart-energy/assets/icon-sprite-4c9b95a6.svg#x"></use>
       </svg>
@@ -157,8 +157,8 @@
         </li>
       </ul>
     </div>
-  <!-- </div> -->
-</div>
+  </div>
+
 
 
     <main>
@@ -579,7 +579,7 @@
       <!-- Anna V. SCROLL-UP  -->
       <button class="scroll-up">
     <svg class="scroll-up-btn" width="30" height="30">
-    <use href="../img/icon-sprite.svg#icon-arrow-top-right"></use>
+    <use href="/smart-energy/assets/icon-sprite-4c9b95a6.svg#icon-arrow-top-right"></use>
 </svg>
 </button>
     </main>
