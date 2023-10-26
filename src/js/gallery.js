@@ -1,16 +1,32 @@
 import { fetchFilters } from './api.js';
+import { Notify } from 'notiflix/build/notiflix-notify-aio';
+
 (() => {
   const $root = document.querySelector('section.galary');
   if (!$root) {
     return;
   }
 
-  console.log(window.innerWidth);
+  // console.log(window.innerWidth);
+
+  // const container = document.getElementsByClassName('pagination')[0];
+  // const pagination = new Pagination(container);
+  // pagination.on('beforeMove', evt => {
+  //   const { page } = evt;
+  //   // const result = ajax.call({ page });
+  //   console.log(8888, evt);
+
+  //   if (result) {
+  //     // pagination.movePageTo(page);
+  //   } else {
+  //     return false;
+  //   }
+  // });
 
   const listGallery = document.querySelector('.galary-list');
-  const bodyPartsBtn = document.querySelector('.galary-filters-button1');
-  const musclesBtn = document.querySelector('.galary-filters-button2');
-  const equipmentBtn = document.querySelector('.galary-filters-button3');
+  const bodyPartsBtn = document.querySelector('.galary-filters-button4');
+  const musclesBtn = document.querySelector('.galary-filters-button5');
+  const equipmentBtn = document.querySelector('.galary-filters-button6');
   const listPaginationBtn = document.querySelector('.pagination');
   const titleSpan = document.querySelector('.galary-title2 span');
   const listExersice = document.querySelector('.galary-list');
@@ -51,7 +67,7 @@ import { fetchFilters } from './api.js';
   function handleClick(event) {
     event.preventDefault();
     currentFilterBtn.classList.remove('galary-filter-checked');
-    filter = String(this.textContent);
+    filter = String(this.textContent).trim();
     this.classList.add('galary-filter-checked');
     drawCurrentFilterPage(filter, 1, perPage);
     currentFilterBtn = this;
@@ -69,7 +85,8 @@ import { fetchFilters } from './api.js';
         reInitPagination(currentFilters.totalPages, page);
       }
     });
-
+    titleSpan.textContent = '';
+    filtersEx.classList.add('category-page');
     function createMarkUp(arr) {
       return arr
         .map(
@@ -104,7 +121,7 @@ import { fetchFilters } from './api.js';
       currentPaginationBtn = $el;
 
       const page = Number(currentPaginationBtn.textContent);
-      console.log(page);
+      // console.log(page);
       paginationFn(filter, page);
       document
         .getElementsByClassName('galary-title-and-list-wrapper')[0]
@@ -115,7 +132,7 @@ import { fetchFilters } from './api.js';
   listGallery.addEventListener('click', selectExercise);
 
   function selectExercise(event) {
-    console.log(event);
+    // console.log(event);
     const item = event.target.closest('.galary-item');
     if (!item) {
       return;
@@ -135,7 +152,10 @@ import { fetchFilters } from './api.js';
     limit = perPage
   ) {
     try {
-      const apiUrl = `https://your-energy.b.goit.study/api/exercises?category=${category}&page=${page}&limit=${limit}`;
+      const superFilter = (
+        filter === 'Body parts' ? 'BoDyPaRt' : filter
+      ).toLowerCase();
+      const apiUrl = `https://your-energy.b.goit.study/api/exercises?${superFilter}=${category}&page=${page}&limit=${limit}`;
 
       const response = await fetch(apiUrl);
 
@@ -150,12 +170,13 @@ import { fetchFilters } from './api.js';
         return;
       }
       reInitPagination(data.totalPages, page);
-      filtersEx.classList.remove('is-hidden');
-      filtersBp.classList.add('is-hidden');
-      cutWordInArr(data.results);
-      console.log(arr1);
-      listExersice.insertAdjacentHTML('beforeend', exCreateMarkUp(arr1));
-      titleSpan.textContent = `${category}`;
+      filtersEx.classList.remove('category-page');
+      // filtersEx.classList.remove('is-hidden');
+      // filtersBp.classList.add('is-hidden');
+      const arr = cutWordInArr(data.results);
+      // console.log(arr);
+      listExersice.innerHTML = exCreateMarkUp(arr);
+      titleSpan.textContent = `/ ${category}`;
     } catch (error) {
       console.error(`Error: ${error.message}`);
     }
@@ -167,11 +188,12 @@ import { fetchFilters } from './api.js';
       arr[i].bodyPart = cutWord(arr[i].bodyPart, lengthBodyPart);
       arr1.push(arr[i]);
     }
-    console.log(arr1);
+    // console.log(arr1);
+    return arr;
   }
 
   function exCreateMarkUp(arr) {
-    return arr1
+    return arr
       .map(
         ({ name, target, rating, burnedCalories, time, _id, bodyPart }) => `
                <li class="exercise-item">
@@ -239,7 +261,7 @@ import { fetchFilters } from './api.js';
   // Search
   document
     .querySelector('.galary-search-wrapper input')
-    .addEventListener('input', goToSearch);
+    .addEventListener('keydown', goToSearch);
 
   async function fetchExercisesByFiltersAndKeywordAndSearch(
     category,
@@ -259,27 +281,31 @@ import { fetchFilters } from './api.js';
       const data = await response.json();
 
       if (!data.results || data.results.length === 0) {
-        console.log('No results found for your search parameters.');
+        Notify.failure('No results found for your search parameters.');
         return;
       }
       reInitPagination(data.totalPages, page);
-      filtersEx.classList.remove('is-hidden');
-      filtersBp.classList.add('is-hidden');
-      listExersice.insertAdjacentHTML(
-        'beforeend',
-        exCreateMarkUp(data.results)
-      );
-      titleSpan.textContent = `${category}`;
+      // filtersEx.classList.remove('is-hidden');
+      // filtersBp.classList.add('is-hidden');
+      listExersice.innerHTML = exCreateMarkUp(data.results);
+      titleSpan.textContent = `/ ${category}`;
     } catch (error) {
       console.error(`Error: ${error.message}`);
     }
   }
 
   function goToSearch(event) {
-    console.log(event);
     const keyword = event.target.value;
-    paginationFn = (filter, page, limit) =>
-      fetchExercisesByFiltersAndKeywordAndSearch(filter, page, keyword, limit);
+    if (event.keyCode === 13 || event.code === 'Enter') {
+      paginationFn = (filter, page = 1, limit) =>
+        fetchExercisesByFiltersAndKeywordAndSearch(
+          filter,
+          page,
+          keyword,
+          limit
+        );
+      paginationFn();
+    }
   }
 
   function reInitPagination(totalPage, currentPage = 1) {
@@ -289,12 +315,18 @@ import { fetchFilters } from './api.js';
         <button type="button" class="pagination-button">${number}</button>
       </li>`;
     const elementArray = [];
-    for (let i = 1; i <= totalPage; i++) {
+    const gap = 3;
+    for (
+      let i = Math.max(1, currentPage - gap);
+      i <= Math.min(currentPage + gap, totalPage);
+      i++
+    ) {
       elementArray.push(generateElement(i));
     }
     $root.innerHTML = elementArray.join('\n');
     currentPaginationBtn =
-      listPaginationBtn.children[currentPage - 1]?.firstElementChild;
+      listPaginationBtn.children[currentPage - Math.max(1, currentPage - gap)]
+        ?.firstElementChild;
     currentPaginationBtn?.classList?.add('current-page');
     $root.classList.remove('is-hidden');
   }
