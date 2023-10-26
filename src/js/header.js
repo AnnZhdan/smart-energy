@@ -36,11 +36,4 @@ import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
     }
   });
 
-  /* --------- Приховати header ---------- */
-
-  document.addEventListener('DOMContentLoaded', function () {
-    const header = document.querySelector('.fixed-header');
-  
-
-  });
-})();
+ })();
