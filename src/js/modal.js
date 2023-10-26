@@ -9,10 +9,10 @@ export function setCurrentExerciseID(exerciseID) {
 const closeModalButton = document.getElementById('closeModalButton');
 const openModalButton2 = document.getElementById('additionalButton2');  
 const closeModalButton2 = document.getElementById('closeModalButton2');
-const myModal = document.getElementById('myModal');
+export const myModal = document.getElementById('myModal');
 const myModal2 = document.getElementById('myModal2');
 
-function showExerciseModal(exerciseData, modal) {
+export function showExerciseModal(exerciseData, modal) {
   modal.style.display = 'block';
 
   const modalImage = modal.querySelector('img');
@@ -69,7 +69,7 @@ openModalButton2.addEventListener('click', () => {
   openSecondModal();
 });
 
-async function updateModalWithExerciseData(exerciseID, modal) {
+export async function updateModalWithExerciseData(exerciseID, modal) {
   try {
     const exerciseData = await fetchExerciseDetails(exerciseID);
 
