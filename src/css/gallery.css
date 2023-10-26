@@ -31,6 +31,10 @@
   letter-spacing: -0.56px;
 }
 
+.galary-title-and-list-wrapper-ex {
+  margin-bottom: 28px;
+}
+
 /* Фільтри */
 
 .galary-filters {
@@ -426,6 +430,9 @@
   }
   .current-page {
     padding: 0 12px;
+  }
+  .galary-title-and-list-wrapper-ex {
+    margin-bottom: 40px;
   }
 }
 

@@ -2,7 +2,7 @@ import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
 
 (() => {
   const overlayMobile = document.getElementById('overlay');
-  
+
   const mobileMenu = document.querySelector('.js-menu-container');
   const openMenuBtn = document.querySelector('.js-open-menu');
   const closeMenuButton = document.querySelector('.js-close-menu');
@@ -16,11 +16,11 @@ import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
 
     if (isMenuOpen) {
       disableBodyScroll(document.body);
-      overlay.style.display = 'block';
+      overlayMobile.style.display = 'block';
        
     } else {
       enableBodyScroll(document.body);
-      overlay.style.display = 'none'; 
+      overlayMobile.style.display = 'none'; 
      
     }
   };
@@ -32,15 +32,8 @@ import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
     if (window.innerWidth > 768 && isMenuOpen) {
       mobileMenu.classList.remove('is-open');
       enableBodyScroll(document.body);
-      overlay.style.display = 'none'
+      overlayMobile.style.display = 'none'
     }
   });
 
-  /* --------- Приховати header ---------- */
-
-  document.addEventListener('DOMContentLoaded', function () {
-    const header = document.querySelector('.fixed-header');
-  
-
-  });
-})();
+ })();
