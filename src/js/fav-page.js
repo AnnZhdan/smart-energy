@@ -1,6 +1,5 @@
 import ScrollReveal from 'scrollreveal';
-import { updateModalWithExerciseData, setCurrentExerciseID, showExerciseModal, myModal } from './modal.js';
-// import {toggleMenu} from './header'
+// import { updateModalWithExerciseData, setCurrentExerciseID, showExerciseModal, myModal } from './modal.js';
 
 window.addEventListener('load', function () {
   // Анімація
@@ -141,14 +140,14 @@ document.addEventListener('DOMContentLoaded', function() {
         </div>
       `;
       
-       const startButton = exerciseCard.querySelector('.exercise-item-button');
-      startButton.addEventListener('click', () => {
-        const exerciseID = startButton.getAttribute('id');
-        setCurrentExerciseID(exerciseID);
-        updateModalWithExerciseData(exerciseID, myModal);
+      //  const startButton = exerciseCard.querySelector('.exercise-item-button');
+      // startButton.addEventListener('click', () => {
+      //   const exerciseID = startButton.getAttribute('id');
+      //   setCurrentExerciseID(exerciseID);
+      //   updateModalWithExerciseData(exerciseID, myModal);
   
-        showExerciseModal(exerciseData, myModal);
-      });
+      //   showExerciseModal(exerciseData, myModal);
+      // });
       
   
       favoritesListCard.appendChild(exerciseCard);
