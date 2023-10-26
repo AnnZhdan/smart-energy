@@ -25,12 +25,12 @@ Notiflix needs to be appended to the "<`+d+'>" element, but you called it before
                 viewBox="0 0 100 130"
                 class="exercise-item-star"
               >
-                <use href="./img/icon-sprite.svg#icon-Star-2"></use>
+                <use href="/img/icon-sprite.svg#icon-Star-2"></use>
               </svg>
               <button type="button" class="exercise-item-button" id=${W}>
                 Start&nbsp;&nbsp;
                 <svg width="16" height="16">
-                  <use href="./img/icon-sprite.svg#arrow"></use>
+                  <use href="/img/icon-sprite.svg#arrow"></use>
                 </svg>
               </button>
             </div>
