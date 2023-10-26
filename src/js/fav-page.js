@@ -142,7 +142,6 @@ document.addEventListener('DOMContentLoaded', function() {
       });
     //////////////////////////////////////// Модалка якщо юзати імпорт\\\\\\\\
 
-  
     // document.addEventListener('click', event => {
     //   const button = event.target.closest('.exercise-item-button');
     //   if (button) {
