@@ -1,4 +1,7 @@
 import ScrollReveal from 'scrollreveal';
+import './header.js';
+import svgSprite from '../img/icon-sprite.svg'
+// import { fetchExerciseDetails } from './api';
 // import { updateModalWithExerciseData, setCurrentExerciseID, showExerciseModal, myModal } from './modal.js';
 
 window.addEventListener('load', function () {
@@ -51,37 +54,6 @@ window.addEventListener('load', function () {
   });
 });
 
-//..........................  Бургер меню
-const openMenuBtn = document.querySelector('.js-open-menu');
-const closeMenuButton = document.querySelector('.js-close-menu');
- const toggleMenu = () => {
-    const isMenuOpen =
-      openMenuBtn.getAttribute('aria-expanded') === 'true' || false;
-    openMenuBtn.setAttribute('aria-expanded', !isMenuOpen);
-    mobileMenu.classList.toggle('is-open');
-  };
-
-  openMenuBtn.addEventListener('click', toggleMenu);
-  closeMenuButton.addEventListener('click', toggleMenu);
-
-  window.addEventListener('resize',() => {
-    if (window.innerWidth > 768) {
-   mobileMenu.classList.remove('is-open');
- }
-});
-
-/ ---------Приховати header  ----------/ 
-
-document.addEventListener('DOMContentLoaded', function () {
-  const header = document.querySelector('.fixed-header');
-  const hideHeaderButton = document.getElementById('hide-header-button');
-  
-  hideHeaderButton.addEventListener('click', function () {
-    header.style.display = 'none';
-  });
-});
- 
-
 document.addEventListener('DOMContentLoaded', function() {
   // Для карток з ЛС
   const LS_KEY = 'favoritesList';
@@ -102,7 +74,7 @@ document.addEventListener('DOMContentLoaded', function() {
             <p class="exercise-item-workout">${item.exerciseName}</p>
             <button type="button" class="button favourite-delete-button" data-card-id="${item.exerciseID}">
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" class="exercise-item-trash">
-                <use xlink:href="./img/icon-sprite.svg#trash" style="fill: white; stroke: black"></use>
+                <use xlink:href="${svgSprite}#trash" style="fill: white; stroke: black"></use>
               </svg>
             </button>
             <button type="button" class="exercise-item-button" id="${item.exerciseID}">
@@ -140,16 +112,6 @@ document.addEventListener('DOMContentLoaded', function() {
         </div>
       `;
       
-      //  const startButton = exerciseCard.querySelector('.exercise-item-button');
-      // startButton.addEventListener('click', () => {
-      //   const exerciseID = startButton.getAttribute('id');
-      //   setCurrentExerciseID(exerciseID);
-      //   updateModalWithExerciseData(exerciseID, myModal);
-  
-      //   showExerciseModal(exerciseData, myModal);
-      // });
-      
-  
       favoritesListCard.appendChild(exerciseCard);
     });
     
@@ -169,11 +131,22 @@ document.addEventListener('DOMContentLoaded', function() {
         if (indexToRemove !== -1) {
           exercises.splice(indexToRemove, 1);
           localStorage.setItem(LS_KEY, JSON.stringify(exercises));
-          renderFavorites();
+         
         }
+        if (!exercises || exercises.length === 0) {
+          paragraph.style.display = 'block';
+        }
+         renderFavorites();
       });
       });
-    
+    // document.addEventListener('click', event => {
+    //   const button = event.target.closest('.exercise-item-button');
+    //   if (button) {
+    //     const exerciseID = button.getAttribute('id');
+    //     setCurrentExerciseID(exerciseID);
+    //     updateModalWithExerciseData(exerciseID, myModal);
+    //   }
+    // });
       
   }
   
@@ -208,3 +181,9 @@ function activateAnimation() {
 recommendTextBox.addEventListener('click', () => {
   activateAnimation();
 });
+
+
+
+
+
+

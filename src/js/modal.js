@@ -89,7 +89,7 @@ export async function updateModalWithExerciseData(exerciseID, modal) {
   }
 }
 
-async function fetchExerciseDetails(exerciseID) {
+export async function fetchExerciseDetails(exerciseID) {
   try {
     const response = await fetch(`https://your-energy.b.goit.study/api/exercises/${exerciseID}`);
     if (!response.ok) {
