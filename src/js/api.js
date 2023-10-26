@@ -181,12 +181,12 @@ async function subscribeToExerciseUpdates() {
   }
 }
 
-// Usage
-fetchFilters('Muscles', 1, 12).then(filters => {
-  if (filters) {
-    console.log(filters);
-  }
-});
+// // Usage
+// fetchFilters('Muscles', 1, 12).then(filters => {
+//   if (filters) {
+//     console.log(filters);
+//   }
+// });
 
-fetchExercisesByFiltersAndKeyword('back', 'lats', 'barbell', 'pull', 1, 10);
-fetchExerciseDetails('64f389465ae26083f39b17c2');
+// fetchExercisesByFiltersAndKeyword('back', 'lats', 'barbell', 'pull', 1, 10);
+// fetchExerciseDetails('64f389465ae26083f39b17c2');
