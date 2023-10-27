@@ -3,12 +3,14 @@
   padding-top: 80px;
   padding-bottom: 80px;
 }
+
 .favorites-title {
   margin-bottom: 20px;
   font-size: 28px;
   line-height: 1.35;
   letter-spacing: -0.56px;
 }
+
 .favorites-img-girl {
   margin: auto;
   width: 335px;
@@ -34,13 +36,16 @@
   text-align: center;
   line-height: 1.28;
 }
+
 .exercise-item-trash {
   stroke: #fff;
 }
+
 .favourite-delete-button {
   border: none;
   background-color: inherit;
 }
+
 /* .favorites-exercise-item{
     animation-name: girls;
     animation-duration: 5s;
@@ -61,6 +66,7 @@
     transform: scale(1);
   }
 }
+
 .cover-text {
   position: absolute;
   background-color: #fff;
@@ -77,9 +83,11 @@
   overflow: hidden;
   position: relative;
 }
+
 .recommend-text-box:hover .recommend-desc {
   display: inline;
 }
+
 @media screen and (min-width: 768px) {
   .favorites-title {
     margin-bottom: 32px;
@@ -112,6 +120,10 @@
     justify-content: space-between;
   }
 
+  .quotes-day-text {
+    max-width: unset;
+  }
+
   .favorites-recomend-box {
     max-width: 344px;
     height: 100%;
@@ -132,11 +144,13 @@
   }
 
 }
+
 @media screen and (min-width: 1440px) {
   .favorites-title {
     margin-top: 90px;
     margin-bottom: 44px;
   }
+
   .favorites-quote-box {
     width: 494px;
     max-height: 230px;
@@ -159,17 +173,21 @@
     display: flex;
     gap: 32px;
   }
+
   .favorites-box-deskription {
     padding-top: 102px;
     line-height: 1.33;
     text-align: center;
   }
+
   .favorites-box {
     text-align: center;
   }
+
   .favorites-exercise-item {
     max-width: 405px;
   }
+
   .favorites-list {
     gap: 32px 16px;
   }
