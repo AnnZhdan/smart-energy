@@ -7,7 +7,7 @@ export function setCurrentExerciseID(exerciseID) {
 }
 
 const closeModalButton = document.getElementById('closeModalButton');
-const openModalButton2 = document.getElementById('additionalButton2');  
+const openModalButton2 = document.getElementById('additionalButton2');
 const closeModalButton2 = document.getElementById('closeModalButton2');
 export const myModal = document.getElementById('myModal');
 const myModal2 = document.getElementById('myModal2');
@@ -24,6 +24,8 @@ export function showExerciseModal(exerciseData, modal) {
   const modalEquipment = modal.querySelector('.modal-equipment');
   const modalTarget = modal.querySelector('.modal-target');
   const modalPopularity = modal.querySelector('.modal-popularity');
+  const favoritesButton = modal.querySelector('.button-name-favorites');
+  const favoritesSVG = modal.querySelector('.favorites-svg');
 
   modalImage.src = exerciseData.gifUrl;
   modalName.textContent = exerciseData.name.charAt(0).toUpperCase() + exerciseData.name.slice(1);
@@ -36,6 +38,23 @@ export function showExerciseModal(exerciseData, modal) {
   modalRating.textContent = exerciseData.rating;
 
   currentExerciseData = exerciseData;
+  const exerciseName = exerciseData.name.charAt(0).toUpperCase() + exerciseData.name.slice(1);
+
+  const isExerciseInFavoritesResult = isExerciseInFavorites(exerciseName);
+
+  if (isExerciseInFavoritesResult) {
+    favoritesButton.textContent = 'Remove from favorites';
+    favoritesSVG.querySelector('use').setAttribute('href', './img/icon-sprite.svg#heart-filled');
+  } else {
+    favoritesButton.textContent = 'Add to favorites';
+    favoritesSVG.querySelector('use').setAttribute('href', './img/icon-sprite.svg#heart');
+  }
+
+  if (isExerciseInFavorites(exerciseName)) {
+    console.log(`Вправа "${exerciseName}" є у списку улюблених.`);
+  } else {
+    console.log(`Вправа "${exerciseName}" відсутня в списку улюблених.`);
+  }
 
   modal.addEventListener('click', event => {
     if (event.target === modal) {
@@ -59,8 +78,24 @@ export function showExerciseModal(exerciseData, modal) {
   });
 }
 
+function isExerciseInFavorites(exerciseName) {
+  const favoritesList = JSON.parse(localStorage.getItem('favoritesList'));
+
+  if (favoritesList && Array.isArray(favoritesList)) {
+    return favoritesList.some(item => {
+      return item.exerciseName === exerciseName;
+    });
+  }
+
+  return false;
+}
+
+function getExerciseInFavoritesResult(exerciseName) {
+  return isExerciseInFavorites(exerciseName);
+}
+
 function openSecondModal() {
-   closeModal(myModal);
+  closeModal(myModal);
   myModal2.style.display = 'block';
   document.addEventListener('keydown', closeModalOnEscape2);
 }
