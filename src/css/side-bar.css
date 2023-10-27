@@ -43,7 +43,7 @@ img {
 }
 
 .quotes-day-text {
-  max-width: 243px;
+  max-width: 233px;
   color: rgba(244, 244, 244, 0.6);
   font-size: 14px;
   font-weight: 400;
@@ -60,8 +60,9 @@ img {
 
 .quote-icon-box {
   display: flex;
-  gap: 80px;
-  margin-bottom: 20px;
+  gap: 70px;
+  margin-bottom: 6px;
+
 }
 
 .qoute-item-icon {
