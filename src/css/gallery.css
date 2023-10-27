@@ -52,6 +52,7 @@
   border: none;
   background-color: transparent;
   color: var(--primary-dark-color);
+  opacity: 60%;
   font-family: Neue Montreal;
   font-size: 14px;
   font-style: normal;
@@ -62,6 +63,7 @@
 
 .galary-filter-checked {
   position: relative;
+  opacity: unset;
 }
 .galary-filter-checked::after {
   position: absolute;
@@ -99,8 +101,8 @@
   border-radius: 30px;
   border: 1px solid var(--primary-dark-color);
   display: flex;
-  /* margin-bottom: 20px;
-  margin-top: 40px; */
+  margin-bottom: 20px;
+  /* margin-top: 40px; */
 }
 .galary-search {
   background-color: transparent;
@@ -389,10 +391,8 @@
     margin-bottom: 32px;
   }
   .galary-filters2 {
-    margin-left: auto;
-  }
-  .galary-filter-checkt2::after {
-    /* bottom: 5px; */
+    margin-left: unset;
+    margin-bottom: 32px;
   }
   .galary-filters-button {
     font-size: 16px;
@@ -400,11 +400,11 @@
   }
   .galary-searc-filters-wrapper {
     display: flex;
-    align-items: center;
   }
   .galary-search-wrapper {
     width: 271px;
-    /* margin-bottom: 32px; */
+    margin-bottom: 32px;
+    margin-right: auto;
     /* margin-top: 0; */
   }
   .galary-list {
@@ -432,7 +432,7 @@
     padding: 0 12px;
   }
   .galary-title-and-list-wrapper-ex {
-    margin-bottom: 40px;
+    margin-bottom: 0;
   }
 }
 
