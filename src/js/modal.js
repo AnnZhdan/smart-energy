@@ -13,6 +13,19 @@ const closeModalButton2 = document.getElementById('closeModalButton2');
 export const myModal = document.getElementById('myModal');
 const myModal2 = document.getElementById('myModal2');
 
+function setRatingStars(rating) {
+  const ratingContainer = myModal.querySelector('.modal-rating-svg');
+  const stars = ratingContainer.querySelectorAll('svg use');
+
+  stars.forEach((star, index) => {
+    if (index < rating) {
+      star.parentElement.classList.add('active');
+    } else {
+      star.parentElement.classList.remove('active');
+    }
+  });
+}
+
 export function showExerciseModal(exerciseData, modal) {
   modal.style.display = 'block';
 
@@ -37,6 +50,10 @@ export function showExerciseModal(exerciseData, modal) {
   modalTarget.textContent = exerciseData.target;
   modalPopularity.textContent = exerciseData.popularity;
   modalRating.textContent = exerciseData.rating;
+
+  setRatingStars(exerciseData.rating);
+  
+   currentExerciseData = exerciseData;
 
   currentExerciseData = exerciseData;
   const exerciseName = exerciseData.name.charAt(0).toUpperCase() + exerciseData.name.slice(1);
