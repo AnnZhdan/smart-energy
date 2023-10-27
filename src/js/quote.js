@@ -3,7 +3,7 @@ import { getQuoteOfTheDay } from './api.js';
 
 
 const LOCAL_STORAGE_KEY = 'quote';
-const box = document.querySelector('.quotes-day-box');
+const box = document.querySelector('.qoute-inside-container');
 
 
 
@@ -31,7 +31,7 @@ try {
 
 function createMarkup({ quote, author }) {
     box.innerHTML = `
-        <h3 class="quotes-day-title">Quote of the day</h3>
+        
         <p class="quotes-day-text">${quote}</p>
         <p class="quotes-day-author">${author}</p>
     `;
