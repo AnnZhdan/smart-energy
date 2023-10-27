@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function() {
       exerciseCard.innerHTML = `
         <div class="exercise-item-wrapper ">
           <div class="exercise-item-firth-wrapper">
-            <p class="exercise-item-workout">${item.exerciseName}</p>
+             <p class="exercise-item-workout">WORKOUT</p>
             <button type="button" class="button favourite-delete-button" data-card-id="${item.exerciseID}">
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" class="exercise-item-trash">
                 <use xlink:href="${svgSprite}#trash" style="fill: white; stroke: black"></use>
