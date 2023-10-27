@@ -191,4 +191,7 @@
   .favorites-list {
     gap: 32px 16px;
   }
+  .exercise-item-fav{
+  margin-left: 100px;
+  }
 }
