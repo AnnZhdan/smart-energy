@@ -1,3 +1,4 @@
+import svgSprite from "../img/icon-sprite.svg";
 export let currentExerciseID = null;
 let currentExerciseData = null;
 let firstModalOpen = false;
@@ -42,12 +43,13 @@ export function showExerciseModal(exerciseData, modal) {
 
   const isExerciseInFavoritesResult = isExerciseInFavorites(exerciseName);
 
+
   if (isExerciseInFavoritesResult) {
     favoritesButton.textContent = 'Remove from favorites';
-    favoritesSVG.querySelector('use').setAttribute('href', './img/icon-sprite.svg#heart-filled');
+    favoritesSVG.querySelector('use').setAttribute(`href`, `${svgSprite}#trash`);
   } else {
     favoritesButton.textContent = 'Add to favorites';
-    favoritesSVG.querySelector('use').setAttribute('href', './img/icon-sprite.svg#heart');
+    favoritesSVG.querySelector('use').setAttribute(`href`, `${svgSprite}#heart`);
   }
 
   if (isExerciseInFavorites(exerciseName)) {
